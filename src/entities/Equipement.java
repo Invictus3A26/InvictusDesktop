@@ -12,17 +12,19 @@ package entities;
 public class Equipement {
     private int id;
     private String typeEquipement,nomEquipement,detailEquipement,zoneEquipement,etatEquipement;
+    private int id_departement ;
 
     public Equipement() {
     }
 
-    public Equipement(int id, String typeEquipement, String nomEquipement, String detailEquipement, String zoneEquipement, String etatEquipement) {
+    public Equipement(int id, String typeEquipement, String nomEquipement, String detailEquipement, String zoneEquipement, String etatEquipement, int id_departement ) {
         this.id = id;
         this.typeEquipement = typeEquipement;
         this.nomEquipement = nomEquipement;
         this.detailEquipement = detailEquipement;
         this.zoneEquipement = zoneEquipement;
         this.etatEquipement = etatEquipement;
+        this.id_departement = id_departement;
     }
 
     public int getId() {
@@ -73,10 +75,20 @@ public class Equipement {
         this.etatEquipement = etatEquipement;
     }
 
+    public int getId_departement() {
+        return id_departement;
+    }
+
+    public void setId_departement(int id_departement) {
+        this.id_departement = id_departement;
+    }
+
     @Override
     public String toString() {
-        return "Equipement{" + "id=" + id + ", typeEquipement=" + typeEquipement + ", nomEquipement=" + nomEquipement + ", detailEquipement=" + detailEquipement + ", zoneEquipement=" + zoneEquipement + ", etatEquipement=" + etatEquipement + '}';
+        return "Equipement{" + "id=" + id + ", typeEquipement=" + typeEquipement + ", nomEquipement=" + nomEquipement + ", detailEquipement=" + detailEquipement + ", zoneEquipement=" + zoneEquipement + ", etatEquipement=" + etatEquipement + ", id_departement=" + id_departement + '}';
     }
+
+    
 
     
     

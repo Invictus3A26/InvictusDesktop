@@ -23,7 +23,7 @@ public class EquipementService {
         cnx=MaConnexion.getInstance().getCnx();
     }
     public void ajouterEquipement(Equipement p){
-        String sql="INSERT INTO `equipements`(`id`, `typeEquipement`, `nomEquipement` , `detailEquipement` , `zoneEquipement` , `etatEquipement` ) VALUES ('"+p.getId()+"','"+p.getTypeEquipement()+"','"+p.getNomEquipement()+"','"+p.getDetailEquipement()+"','"+p.getZoneEquipement()+"','"+p.getEtatEquipement()+"')";
+        String sql="INSERT INTO `equipements`(`id`, `typeEquipement`, `nomEquipement` , `detailEquipement` , `zoneEquipement` , `etatEquipement`,`id_departement` ) VALUES ('"+p.getId()+"','"+p.getTypeEquipement()+"','"+p.getNomEquipement()+"','"+p.getDetailEquipement()+"','"+p.getZoneEquipement()+"','"+p.getEtatEquipement()+"','"+p.getId_departement()+"')";
         try {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
@@ -50,6 +50,7 @@ public class EquipementService {
                 p.setDetailEquipement(rs.getString("detailEquipement"));
                 p.setZoneEquipement(rs.getString("zoneEquipement"));
                 p.setEtatEquipement(rs.getString("etatEquipement"));
+                p.setId_departement(rs.getInt("id_departement"));
                 equipement.add(p);
                 
             }
@@ -85,13 +86,14 @@ public class EquipementService {
             ste=cnx.prepareStatement(
                     "UPDATE `equipements` SET `typeEquipement`=?,`nomEquipement`=?,"
                             + "`detailEquipement`=?,`zoneEquipement`=?,"
-                            + "`etatEquipement`=? WHERE id=?");
+                            + "`etatEquipement`=?,`id_departement`=? WHERE id=?");
             ste.setString(1,p.getTypeEquipement());
             ste.setString(2,p.getNomEquipement());
             ste.setString(3,p.getDetailEquipement());
             ste.setString(4, p.getZoneEquipement());
             ste.setString(5,p.getEtatEquipement());
-            ste.setLong(6, id);
+            ste.setInt(6,p.getId_departement());
+            ste.setLong(7, id);
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());

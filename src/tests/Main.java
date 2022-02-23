@@ -24,21 +24,21 @@ public class Main {
     public static void main(String[] args) {
         MaConnexion mc = MaConnexion.getInstance();
         
-       // Equipement p1 = new Equipement(111, "afaaf", "aaaaafaaa" , "3a26" , "dddddd" , "djfjdfj");
-       // EquipementService ps = new EquipementService();
-        //ps.ajouterEquipement(p1);
-        //ps.modifierEquipement(123,p1);
+        //Equipement p1 = new Equipement(111, "afaaf", "aaaaafaaa" , "3a26" , "dddddd" , "djfjdfj",1446);
+        //EquipementService ps = new EquipementService();
+       // ps.ajouterEquipement(p1);
+       // ps.modifierEquipement(111,p1);
        // ps.supprimerEquipement(111);
-        //System.out.println(ps.afficherEquipement());
+       // System.out.println(ps.afficherEquipement());
         
         
         
-        Departement d1 = new Departement(1445 , "hkhjk", "hjgfds" , "sdff" );
+        //Departement d1 = new Departement(1446 , "hkh", "hjgdfdfds" , "sqqsqdff"  );
         DepartementService ds = new DepartementService();
         //ds.ajouterDepartement(d1);
        // ds.modifierDepartement(1444,d1);
-        ds.supprimerDepartement(1445);
-        System.out.println(ds.afficherDepartement());
+        ds.supprimerDepartement(1446);
+        //System.out.println(ds.afficherDepartement());
     }
     
 }
