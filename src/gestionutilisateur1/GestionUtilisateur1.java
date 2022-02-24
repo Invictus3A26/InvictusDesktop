@@ -31,8 +31,8 @@ public class GestionUtilisateur1 {
         
       us.ajouter(u);
        //us.supprimer(7);
-       // System.out.println(us.afficher());
-       // us.modifier(10, u);
+       //System.out.println(us.afficher());
+       //us.modifier(10, u);
     }
     
 }
