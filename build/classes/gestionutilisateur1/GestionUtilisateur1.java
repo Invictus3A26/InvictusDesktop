@@ -32,7 +32,7 @@ public class GestionUtilisateur1 {
         Article a = new Article("test", "test", "test", "dd", 9);
         ArticleService as = new ArticleService();
 
-      //  us.ajouter(u);
+        us.ajouter(u);
         //us.supprimer(15);
         //System.out.println(us.afficher());
         //us.modifier(12, u);
@@ -52,7 +52,7 @@ public class GestionUtilisateur1 {
         //as.ajouter(a);
         //as.modifier(0, a);
         //as.supprimer(1);
-        System.out.println(as.afficher());
+        //System.out.println(as.afficher());
         //System.out.println(as.findById(3));
         //System.out.println(as.findByTitre("foot"));
         //System.out.println(as.findByNbrLike(5));
