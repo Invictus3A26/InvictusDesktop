@@ -28,12 +28,12 @@ public class Invictus {
         Aeroport a2 = new Aeroport(2,"paris airport","Paris");
         Escale e1 = new Escale(1,"11:30","12:30","60");
         Escale e2 = new Escale(1,"9;30","10:00","30");
-        Vols v1 = new Vols(1,155,0,"12/03/2021","13/03/2021","23:00","00:30","Paris airport","passager","depart","france airline");
-        Vols v2 = new Vols(1,155,0,"12/03/2021","13/03/2021","23:00","00:30","Tunis carthage","passager","depart","france airline");
+        Vols v1 = new Vols(1,155,0,"12/03/2021","13/03/2021","23:00","00:30",4,"passager","depart","france airline",122,"0",0);
+        Vols v2 = new Vols(3,155,0,"12/03/2021","13/03/2021","23:00","00:30",3,"passager","depart","france airline",140,"0",1);
         AeroportService ser = new AeroportService();
         EscaleService escal = new EscaleService();
         VolsService vo = new VolsService();
-      // ser.ajouterAeroport(a2);
+      //ser.ajouterAeroport(a2);
       // ser.ajouterAeroport(a1);
       // ser.deleteAeroport(2);
       //ser.updateAeroport(a1, 1);
@@ -41,9 +41,9 @@ public class Invictus {
       //System.out.println(escal.afficherEscale());
      // escal.deleteEscale(1);
       // escal.updateEscale(e2, 2);
-     // vo.ajouterVols(v1);
+    vo.ajouterVols(v2);
       //System.out.println(vo.afficherEscale());
-      //vo.deleteVols(1);
+     // vo.deleteVols(3);
       //vo.updateVols(v2, 1);
     }
     

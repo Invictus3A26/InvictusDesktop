@@ -46,7 +46,7 @@ public class EscaleService {
             ResultSet rs= ste.executeQuery();
             while(rs.next()){
                 Escale a = new Escale();
-                a.setId(rs.getInt("id"));
+                a.setId(rs.getInt("id_escale"));
                 a.setHeureArriveEscale(rs.getString("heureArriveEscale"));
                 a.setHeureDepartEscale(rs.getString("heureDepartEscale"));
                 a.setDurée(rs.getString("durée"));
@@ -60,7 +60,7 @@ public class EscaleService {
     }
         
         public void deleteEscale(int id){
-        String sql ="DELETE FROM `escale` WHERE id = ? ";
+        String sql ="DELETE FROM `escale` WHERE id_escale = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
               ste.setInt(1, id);
@@ -74,7 +74,7 @@ public class EscaleService {
         
          public void updateEscale(Escale escale,int id){
         
-         String sql ="UPDATE escale SET heureArriveEscale= ?,heureDepartEscale=?,durée=? WHERE id = ? ";
+         String sql ="UPDATE escale SET heureArriveEscale= ?,heureDepartEscale=?,durée=? WHERE id_escale = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
              ste.setString(1,escale.getHeureArriveEscale());

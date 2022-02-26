@@ -11,16 +11,21 @@ package entities;
  */
 public class Vols {
     
-    private int id,num_vol,escales ;
-    private String date_depart_vol,date_arrivé_vol,heure_depart_vol,heure_arrivé_vol,nom_aeroport,type_avion,type_vol,nomCom;
+    private int id_vol,num_vol,id_escale,nom_aeroport,nombrePassager_vol,annulation_vol ;
+    private String date_depart_vol,date_arrivé_vol,heure_depart_vol,heure_arrivé_vol,type_avion,type_vol,nomCom,durée_retard_vol;
+   
+
+
+
+  
 
     public Vols() {
     }
 
-    public Vols(int id, int num_vol, int escales, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, String nom_aeroport, String type_avion, String type_vol, String nomCom) {
-        this.id = id;
+    public Vols(int id, int num_vol, int id_escale, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, int nom_aeroport, String type_avion, String type_vol, String nomCom, int nombrePassager_vol,String durée_retard_vol, int annulation_vol ){
+        this.id_vol = id;
         this.num_vol = num_vol;
-        this.escales = escales;
+        this.id_escale = id_escale;
         this.date_depart_vol = date_depart_vol;
         this.date_arrivé_vol = date_arrivé_vol;
         this.heure_depart_vol = heure_depart_vol;
@@ -28,12 +33,16 @@ public class Vols {
         this.nom_aeroport = nom_aeroport;
         this.type_avion = type_avion;
         this.type_vol = type_vol;
-       
         this.nomCom = nomCom;
+        this.nombrePassager_vol=nombrePassager_vol;
+        this.durée_retard_vol=durée_retard_vol;
+        this.annulation_vol=annulation_vol;
+        
+        
     }
 
     public int getId() {
-        return id;
+        return id_vol;
     }
 
     public int getNum_vol() {
@@ -41,7 +50,7 @@ public class Vols {
     }
 
     public int getEscale() {
-        return escales;
+        return id_escale;
     }
 
     public String getDate_depart_vol() {
@@ -60,7 +69,7 @@ public class Vols {
         return heure_arrivé_vol;
     }
 
-    public String getNom_aeroport() {
+    public int getNom_aeroport() {
         return nom_aeroport;
     }
 
@@ -77,9 +86,21 @@ public class Vols {
     public String getNomCom() {
         return nomCom;
     }
+    
+        public int getNombrePassager_vol() {
+        return nombrePassager_vol;
+    }
+
+    public String getDurée_retard_vol() {
+        return durée_retard_vol;
+    }
+
+    public int isAnnulation_vol() {
+        return annulation_vol;
+    }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_vol = id;
     }
 
     public void setNum_vol(int num_vol) {
@@ -87,7 +108,7 @@ public class Vols {
     }
 
     public void setEscale(int escales) {
-        this.escales = escales;
+        this.id_escale = escales;
     }
 
     public void setDate_depart_vol(String date_depart_vol) {
@@ -106,12 +127,24 @@ public class Vols {
         this.heure_arrivé_vol = heure_arrivé_vol;
     }
 
-    public void setNom_aeroport(String nom_aeroport) {
+    public void setNom_aeroport(int nom_aeroport) {
         this.nom_aeroport = nom_aeroport;
     }
 
     public void setType_avion(String type_avion) {
         this.type_avion = type_avion;
+    }
+
+    public void setNombrePassager_vol(int nombrePassager_vol) {
+        this.nombrePassager_vol = nombrePassager_vol;
+    }
+
+    public void setDurée_retard_vol(String durée_retard_vol) {
+        this.durée_retard_vol = durée_retard_vol;
+    }
+
+    public void setAnnulation_vol(int annulation_vol) {
+        this.annulation_vol = annulation_vol;
     }
 
     public void setType_vol(String type_vol) {
@@ -126,8 +159,10 @@ public class Vols {
 
     @Override
     public String toString() {
-        return "Vols{" + "id=" + id + ", num_vol=" + num_vol + ", escale=" + escales + ", date_depart_vol=" + date_depart_vol + ", date_arriv\u00e9_vol=" + date_arrivé_vol + ", heure_depart_vol=" + heure_depart_vol + ", heure_arriv\u00e9_vol=" + heure_arrivé_vol + ", nom_aeroport=" + nom_aeroport + ", type_avion=" + type_avion + ", type_vol=" + type_vol + ", nomCom=" + nomCom + '}';
+        return "Vols{" + "id_vol=" + id_vol + ", num_vol=" + num_vol + ", id_escale=" + id_escale + ", nom_aeroport=" + nom_aeroport + ", nombrePassager_vol=" + nombrePassager_vol + ", date_depart_vol=" + date_depart_vol + ", date_arriv\u00e9_vol=" + date_arrivé_vol + ", heure_depart_vol=" + heure_depart_vol + ", heure_arriv\u00e9_vol=" + heure_arrivé_vol + ", type_avion=" + type_avion + ", type_vol=" + type_vol + ", nomCom=" + nomCom + ", dur\u00e9e_retard_vol=" + durée_retard_vol + ", annulation_vol=" + annulation_vol + '}';
     }
+
+  
     
     
 }

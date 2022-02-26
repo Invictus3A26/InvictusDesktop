@@ -11,7 +11,7 @@ package entities;
  * @author islem
  */
 public class Escale {
-    private int id ;
+    private int id_escale ;
     private String heureArriveEscale;
     private String heureDepartEscale;
     private String Durée;
@@ -20,7 +20,7 @@ public class Escale {
     }
 
     public Escale(int id, String heureArriveEscale, String heureDepartEscale, String Durée) {
-        this.id = id;
+        this.id_escale = id;
         this.heureArriveEscale = heureArriveEscale;
         this.heureDepartEscale = heureDepartEscale;
         this.Durée = Durée;
@@ -28,11 +28,11 @@ public class Escale {
 
     @Override
     public String toString() {
-        return "Escale{" + "id=" + id + ", heureArriveEscale=" + heureArriveEscale + ", heureDepartEscale=" + heureDepartEscale + ", Dur\u00e9e=" + Durée + '}';
+        return "Escale{" + "id=" + id_escale + ", heureArriveEscale=" + heureArriveEscale + ", heureDepartEscale=" + heureDepartEscale + ", Dur\u00e9e=" + Durée + '}';
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_escale = id;
     }
 
     public void setHeureArriveEscale(String heureArriveEscale) {
@@ -48,7 +48,7 @@ public class Escale {
     }
 
     public int getId() {
-        return id;
+        return id_escale;
     }
 
     public String getHeureArriveEscale() {

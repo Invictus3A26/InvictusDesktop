@@ -42,7 +42,7 @@ public class AeroportService {
             ResultSet rs= ste.executeQuery();
             while(rs.next()){
                 Aeroport a = new Aeroport();
-                a.setId(rs.getInt("id"));
+                a.setId(rs.getInt("id_aeroport"));
                 a.setNom_aeroport(rs.getString("nom_aeroport"));
                 a.setVille_aeroport(rs.getString("ville_aeroport"));
                 aeroports.add(a);
@@ -56,7 +56,7 @@ public class AeroportService {
     
     
     public void deleteAeroport(int id){
-        String sql ="DELETE FROM `airport` WHERE id = ? ";
+        String sql ="DELETE FROM `airport` WHERE id_aeroport = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
               ste.setInt(1, id);
@@ -71,7 +71,7 @@ public class AeroportService {
     
     public void updateAeroport(Aeroport aeroport,int id){
         
-         String sql ="UPDATE airport SET nom_aeroport= ?,ville_aeroport=? WHERE id = ? ";
+         String sql ="UPDATE airport SET nom_aeroport= ?,ville_aeroport=? WHERE id_aeroport = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
              ste.setString(1, aeroport.getNom_aeroport());

@@ -10,7 +10,7 @@ package entities;
  * @author islem
  */
 public class Aeroport {
-    private int id;
+    private int id_aeroport;
     private String nom_aeroport ;
     private String ville_aeroport;
 
@@ -18,13 +18,13 @@ public class Aeroport {
     }
 
     public Aeroport(int id, String nom_aeroport, String ville_aeroport) {
-        this.id = id;
+        this.id_aeroport = id;
         this.nom_aeroport = nom_aeroport;
         this.ville_aeroport = ville_aeroport;
     }
 
     public int getId() {
-        return id;
+        return id_aeroport;
     }
 
     public String getNom_aeroport() {
@@ -36,7 +36,7 @@ public class Aeroport {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_aeroport = id;
     }
 
     public void setNom_aeroport(String nom_aeroport) {
@@ -49,7 +49,7 @@ public class Aeroport {
 
     @Override
     public String toString() {
-        return "aeroport{" + "id=" + id + ", nom_aeroport=" + nom_aeroport + ", ville_aeroport=" + ville_aeroport + '}';
+        return "aeroport{" + "id=" + id_aeroport + ", nom_aeroport=" + nom_aeroport + ", ville_aeroport=" + ville_aeroport + '}';
     }
     
     
