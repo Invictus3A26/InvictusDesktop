@@ -11,8 +11,8 @@ package entities;
  */
 public class Vols {
     
-    private int id_vol,num_vol,id_escale,nom_aeroport,nombrePassager_vol,annulation_vol ;
-    private String date_depart_vol,date_arrivé_vol,heure_depart_vol,heure_arrivé_vol,type_avion,type_vol,nomCom,durée_retard_vol;
+    private int id_vol,num_vol,id_escale,id_aeroport,nombrePassager_vol,annulation_vol;
+    private String date_depart_vol,date_arrivé_vol,heure_depart_vol,heure_arrivé_vol,type_vol,durée_retard_vol , type_avion,id_comp ;
    
 
 
@@ -22,7 +22,7 @@ public class Vols {
     public Vols() {
     }
 
-    public Vols(int id, int num_vol, int id_escale, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, int nom_aeroport, String type_avion, String type_vol, String nomCom, int nombrePassager_vol,String durée_retard_vol, int annulation_vol ){
+    public Vols(int id, int num_vol, int id_escale, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, int nom_aeroport, String type_avion, String type_vol, String id_comp, int nombrePassager_vol,String durée_retard_vol, int annulation_vol ){
         this.id_vol = id;
         this.num_vol = num_vol;
         this.id_escale = id_escale;
@@ -30,10 +30,10 @@ public class Vols {
         this.date_arrivé_vol = date_arrivé_vol;
         this.heure_depart_vol = heure_depart_vol;
         this.heure_arrivé_vol = heure_arrivé_vol;
-        this.nom_aeroport = nom_aeroport;
+        this.id_aeroport = nom_aeroport;
         this.type_avion = type_avion;
         this.type_vol = type_vol;
-        this.nomCom = nomCom;
+        this.id_comp = id_comp;
         this.nombrePassager_vol=nombrePassager_vol;
         this.durée_retard_vol=durée_retard_vol;
         this.annulation_vol=annulation_vol;
@@ -70,7 +70,7 @@ public class Vols {
     }
 
     public int getNom_aeroport() {
-        return nom_aeroport;
+        return id_aeroport;
     }
 
     public String getType_avion() {
@@ -84,7 +84,7 @@ public class Vols {
 
 
     public String getNomCom() {
-        return nomCom;
+        return id_comp;
     }
     
         public int getNombrePassager_vol() {
@@ -128,7 +128,7 @@ public class Vols {
     }
 
     public void setNom_aeroport(int nom_aeroport) {
-        this.nom_aeroport = nom_aeroport;
+        this.id_aeroport = nom_aeroport;
     }
 
     public void setType_avion(String type_avion) {
@@ -153,14 +153,16 @@ public class Vols {
 
   
 
-    public void setNomCom(String nomCom) {
-        this.nomCom = nomCom;
+    public void setNomCom(String id_comp) {
+        this.id_comp = id_comp;
     }
 
     @Override
     public String toString() {
-        return "Vols{" + "id_vol=" + id_vol + ", num_vol=" + num_vol + ", id_escale=" + id_escale + ", nom_aeroport=" + nom_aeroport + ", nombrePassager_vol=" + nombrePassager_vol + ", date_depart_vol=" + date_depart_vol + ", date_arriv\u00e9_vol=" + date_arrivé_vol + ", heure_depart_vol=" + heure_depart_vol + ", heure_arriv\u00e9_vol=" + heure_arrivé_vol + ", type_avion=" + type_avion + ", type_vol=" + type_vol + ", nomCom=" + nomCom + ", dur\u00e9e_retard_vol=" + durée_retard_vol + ", annulation_vol=" + annulation_vol + '}';
+        return "Vols{" + "id_vol=" + id_vol + ", num_vol=" + num_vol + ", id_escale=" + id_escale + ", id_aeroport=" + id_aeroport + ", nombrePassager_vol=" + nombrePassager_vol + ", annulation_vol=" + annulation_vol + ", date_depart_vol=" + date_depart_vol + ", date_arriv\u00e9_vol=" + date_arrivé_vol + ", heure_depart_vol=" + heure_depart_vol + ", heure_arriv\u00e9_vol=" + heure_arrivé_vol + ", type_vol=" + type_vol + ", dur\u00e9e_retard_vol=" + durée_retard_vol + ", type_avion=" + type_avion + ", id_comp=" + id_comp + '}';
     }
+
+ 
 
   
     

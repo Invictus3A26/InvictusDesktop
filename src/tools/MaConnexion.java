@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MaConnexion {
-    public String url="jdbc:mysql://localhost:3306/pi";
+    public String url="jdbc:mysql://localhost:3306/piaeroport";
     public String user="root";
     public String pwd="";
     
