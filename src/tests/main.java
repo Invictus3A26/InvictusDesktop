@@ -34,7 +34,11 @@ public class main {
        
        avis a1;
        Date d1 =new Date(2021,4,18);
+<<<<<<< HEAD
        a1 = new avis(3,200,d1,"aaaa");
+=======
+       a1 = new avis(1,200,d1,"amen");
+>>>>>>> 870b1ec42e8da68ac25c50f7ca8133a76b4c2aed
        AvisServices pa = new AvisServices();
      
  //ps.ajouterReclamation(r1);
@@ -44,10 +48,17 @@ public class main {
        
        
        
+<<<<<<< HEAD
       // pa.ajouterAvis(a1);
       //pa.modifierAvis(1,a1);
       //pa.supprimerAvis(2);
       System.out.println(pa.afficher());
+=======
+       //pa.ajouterAvis(a1);
+      //pa.modifierAvis(1,a1);
+      //pa.supprimerAvis(2);
+     // System.out.println(pa.afficher());
+>>>>>>> 870b1ec42e8da68ac25c50f7ca8133a76b4c2aed
    
       
        
