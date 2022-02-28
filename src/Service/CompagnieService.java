@@ -5,6 +5,7 @@
  */
 package Service;
 
+import Entities.AvCom;
 import Entities.CompagnieModel;
 import Tools.DBConnexion;
 import java.sql.Connection;
@@ -26,7 +27,7 @@ public class CompagnieService {
         cnx=DBConnexion.getInstance().getCnx();
     }
  public void ajouterCompagnie(CompagnieModel C){
-          String sql="INSERT INTO compagnie(Code_IATA, NomCom, Link, Pays, Number, Siege, AeBase, PassagerNum, PoidsM, PoidsS, Description) VALUES ('"+C.getCode_IATA()+"','"+C.getNomCom()+"','"+C.getLink()+"','"+C.getPays()+"','"+C.getNumber()+"','"+C.getSiege()+"','"+C.getAeBase()+"','"+C.getPassagerNum()+"','"+C.getPoidsM()+"','"+C.getPoidsM()+"','"+C.getDescription()+"')";
+          String sql="INSERT INTO compagnie(Code_IATA, NomCom, Link, Pays, Number, Siege, AeBase, PassagerNum,  Description,id_aeroport) VALUES ('"+C.getCode_IATA()+"','"+C.getNomCom()+"','"+C.getLink()+"','"+C.getPays()+"','"+C.getNumber()+"','"+C.getSiege()+"','"+C.getAeBase()+"','"+C.getPassagerNum()+"','"+C.getDescription()+"','"+C.getId_aeroport()+"')";
            try {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
@@ -54,9 +55,8 @@ public class CompagnieService {
                 C.setSiege(rs.getString("Siege"));
                 C.setAeBase(rs.getString("AeBase"));
                 C.setPassagerNum(rs.getFloat("PassagerNum"));
-                C.setPoidsM(rs.getFloat("PoidsM"));
-                C.setPoidsS(rs.getFloat("PoidsS"));
                 C.setDescription(rs.getString("Description"));
+                C.setId_aeroport(rs.getInt("id_aeroport"));
                 compagnie.add(C);
                 
             }
@@ -85,7 +85,7 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             ste=cnx.prepareStatement(
                     "UPDATE compagnie SET NomCom=?,Link=?,"
                             + "Pays=?,Number=?,Siege=?,"
-                            + "AeBase=?,PassagerNum=?,PoidsM=?,PoidsS=?,Description=? WHERE Code_IATA=?");
+                            + "AeBase=?,PassagerNum=?,Description=?,id_aeroport=? WHERE Code_IATA=?");
             ste.setString(1,c.getNomCom());
             ste.setString(2,c.getLink());
             ste.setString(3,c.getPays());
@@ -93,21 +93,41 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             ste.setString(5,c.getSiege());
             ste.setString(6, c.getAeBase());
             ste.setFloat(7,c.getPassagerNum());
-            ste.setFloat(8,c.getPoidsM());
-            ste.setFloat(9,c.getPoidsS());
-            ste.setString(10,c.getDescription());
-            ste.setString(11, Code_IATA);
+            ste.setString(8,c.getDescription());
+            ste.setInt(9,c.getId_aeroport());
+            ste.setString(10, Code_IATA);
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
-
-
-
-
     }
-
+        public List<AvCom> CalculAvionC(){
+        List<AvCom> avcom = new ArrayList<>();
+        String query="SELECT CodeC, C.NomCom, COUNT(*) 'nombreAv'\n" +
+"FROM compagnie C , avion A \n" +
+"WHERE CodeC=C.Code_IATA\n" +
+"GROUP BY C.Code_IATA;";
+       String sql = "INSERT INTO `avcom`(`CodeCom`, `NomC`, `numbAvC`) Values (?,?,?)";
+        try {
+            PreparedStatement ste = cnx.prepareStatement(query);
+            PreparedStatement st = cnx.prepareStatement(sql);
+            ResultSet rs= ste.executeQuery();
+            while(rs.next()){
+                AvCom AC = new AvCom();
+                AC.setCodeCom(rs.getString("CodeC"));
+                AC.setNomC(rs.getString("NomCom"));
+                AC.setNumbAvC(rs.getInt("nombreAv"));
+                st.setString(1, AC.getCodeCom());
+                st.setString(2, AC.getNomC());
+                st.setInt(3, AC.getNumbAvC());
+                avcom.add(AC);
+                st.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+         return avcom;
+        }
 
     
    

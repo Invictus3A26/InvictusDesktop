@@ -20,19 +20,21 @@ public class main{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // CompagnieModel C = new CompagnieModel("DR", "Abfuibiebfze" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,25,10,"bienvenue en tunisair");
-        // CompagnieService CS = new CompagnieService();
-         // CS.ajouterCompagnie(C);
+         //CompagnieModel C = new CompagnieModel("AC", "CANADA" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,"bienvenue en tunisair",2);
+         //CompagnieService CS = new CompagnieService();
+          //CS.ajouterCompagnie(C);
         //CS.modifierCompagnie("TN",C);
-        //CS.deleteCompagnie("TN");
-       // System.out.println(CS.afficherCompagnie());
-       AvionModel A = new AvionModel("CR7", "Small" , "bus" ,78);
-         AvionService AS = new AvionService();
-         // AS.ajouterAvion(A);
+     //  CS.deleteCompagnie("DR");
+        //System.out.println(CS.afficherCompagnie());
+      AvionModel A = new AvionModel("de", "Small" , "bus" , 88,"AC");
+        AvionService AS = new AvionService();
+          AS.ajouterAvion(A);
         //AS.modifierAvion("CR7",A);
       //
-      AS.deleteAvion("CR7");
+      //AS.deleteAvion("CR7");
         //System.out.println(AS.afficherAvion());
+    CompagnieService AC = new CompagnieService();
+     System.out.println(AC.CalculAvionC());
     }
     
 }

@@ -26,7 +26,7 @@ public class AvionService {
         cnx=DBConnexion.getInstance().getCnx();
     }
  public void ajouterAvion(AvionModel A){
-          String sql="INSERT INTO avion(CodeAvion,TypeA,Model,PassagerN) VALUES ('"+A.getCodeAvion()+"','"+A.getTypeA()+"','"+A.getModel()+"','"+A.getPassagerN()+"')";
+          String sql="INSERT INTO avion(CodeAvion,TypeA,Model,PassagerN,CodeC) VALUES ('"+A.getCodeAvion()+"','"+A.getTypeA()+"','"+A.getModel()+"','"+A.getPassagerN()+"','"+A.getCodeC()+"')";
            try {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
@@ -50,6 +50,7 @@ public class AvionService {
                 A.setTypeA(rs.getString("TypeA"));
                 A.setModel(rs.getString("Model"));
                 A.setPassagerN(rs.getFloat("PassagerN"));
+                  A.setCodeC(rs.getString("CodeC"));
                 avion.add(A);
                 
             }
@@ -76,21 +77,17 @@ public void modifierAvion(String CodeAvion, AvionModel A) {
         try {
             PreparedStatement ste;
             ste=cnx.prepareStatement(
-                    "UPDATE `avion` SET `CodeAvion`=?,`TypeA`=?,`Model`=?,`PassagerN`=? WHERE CodeAvion=?");
+                    "UPDATE `avion` SET `CodeAvion`=?,`TypeA`=?,`Model`=?,`PassagerN`=? ,`CodeC`=? WHERE CodeAvion=?");
             ste.setString(1,A.getCodeAvion());
             ste.setString(2,A.getTypeA());
             ste.setString(3,A.getModel());
             ste.setFloat(4,A.getPassagerN());
-            ste.setString(5, CodeAvion);
+              ste.setString(5,A.getCodeC());
+            ste.setString(6, CodeAvion);
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
-
-
-
-
     }
 
 }

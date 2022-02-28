@@ -5,6 +5,8 @@
  */
 package Entities;
 
+
+
 /**
  *
  * @author Anis
@@ -18,12 +20,11 @@ public class CompagnieModel {
     private String Siege;
     private String AeBase ;
     private float PassagerNum ;
-    private float PoidsM ;
-    private float PoidsS ;
     private String Description ;
+    private int id_aeroport;
     public CompagnieModel(){};
 
-    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, float PassagerNum, float PoidsM, float PoidsS, String Description) {
+    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, float PassagerNum, String Description, int id_aeroport) {
         this.Code_IATA = Code_IATA;
         this.NomCom = NomCom;
         this.Link = Link;
@@ -32,9 +33,8 @@ public class CompagnieModel {
         this.Siege = Siege;
         this.AeBase = AeBase;
         this.PassagerNum = PassagerNum;
-        this.PoidsM = PoidsM;
-        this.PoidsS = PoidsS;
         this.Description = Description;
+        this.id_aeroport = id_aeroport;
     }
 
     public String getCode_IATA() {
@@ -101,22 +101,6 @@ public class CompagnieModel {
         this.PassagerNum = PassagerNum;
     }
 
-    public float getPoidsM() {
-        return PoidsM;
-    }
-
-    public void setPoidsM(float PoidsM) {
-        this.PoidsM = PoidsM;
-    }
-
-    public float getPoidsS() {
-        return PoidsS;
-    }
-
-    public void setPoidsS(float PoidsS) {
-        this.PoidsS = PoidsS;
-    }
-
     public String getDescription() {
         return Description;
     }
@@ -125,10 +109,19 @@ public class CompagnieModel {
         this.Description = Description;
     }
 
+    public int getId_aeroport() {
+        return id_aeroport;
+    }
+
+    public void setId_aeroport(int id_aeroport) {
+        this.id_aeroport = id_aeroport;
+    }
+
     @Override
     public String toString() {
-        return "CompagnieModel{" + "Code_IATA=" + Code_IATA + ", NomCom=" + NomCom + ", Link=" + Link + ", Pays=" + Pays + ", Number=" + Number + ", Siege=" + Siege + ", AeBase=" + AeBase + ", PassagerNum=" + PassagerNum + ", PoidsM=" + PoidsM + ", PoidsS=" + PoidsS + ", Description=" + Description + '}';
+        return "CompagnieModel{" + "Code_IATA=" + Code_IATA + ", NomCom=" + NomCom + ", Link=" + Link + ", Pays=" + Pays + ", Number=" + Number + ", Siege=" + Siege + ", AeBase=" + AeBase + ", PassagerNum=" + PassagerNum + ", Description=" + Description + ", id_aeroport=" + id_aeroport + '}';
     }
-    
-    
+
+   
+
 }

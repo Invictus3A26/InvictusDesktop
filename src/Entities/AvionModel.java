@@ -5,6 +5,8 @@
  */
 package Entities;
 
+
+
 /**
  *
  * @author Anis
@@ -14,16 +16,20 @@ public class AvionModel {
     private String TypeA;
     private String Model;
     private float PassagerN;
+    private String CodeC;
 
     public AvionModel() {
     }
 
-    public AvionModel(String CodeAvion, String TypeA, String Model, float PassagerN) {
+    public AvionModel(String CodeAvion, String TypeA, String Model, float PassagerN, String CodeC) {
         this.CodeAvion = CodeAvion;
         this.TypeA = TypeA;
         this.Model = Model;
         this.PassagerN = PassagerN;
+        this.CodeC = CodeC;
     }
+
+   
 
     public String getCodeAvion() {
         return CodeAvion;
@@ -57,10 +63,19 @@ public class AvionModel {
         this.PassagerN = PassagerN;
     }
 
+    public String getCodeC() {
+        return CodeC;
+    }
+
+    public void setCodeC(String CodeC) {
+        this.CodeC = CodeC;
+    }
+
     @Override
     public String toString() {
-        return "AvionModel{" + "CodeAvion=" + CodeAvion + ", TypeA=" + TypeA + ", Model=" + Model + ", PassagerN=" + PassagerN + '}';
+        return "AvionModel{" + "CodeAvion=" + CodeAvion + ", TypeA=" + TypeA + ", Model=" + Model + ", PassagerN=" + PassagerN + ", CodeC=" + CodeC + '}';
     }
+
 
   
 }

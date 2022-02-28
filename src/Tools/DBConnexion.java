@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author Anis
  */
 public class DBConnexion {
-    public String url="jdbc:mysql://localhost:3306/pidev";
+    public String url="jdbc:mysql://localhost:3306/piaeroport";
     public String user="root";
     public String pwd="";
     
