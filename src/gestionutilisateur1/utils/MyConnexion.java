@@ -17,13 +17,13 @@ import java.util.logging.Logger;
  */
 public class MyConnexion {
     
-    private final String URL="jdbc:mysql://127.0.0.1:3306/airport" ;
+    private final String URL="jdbc:mysql://127.0.0.1:3306/airporttt" ;
     private final String USER="root";
     private final String PWD="";
     
     private static Connection cnx;
     private static MyConnexion instance;
-
+g
     private MyConnexion() {
         
         try {
