@@ -7,8 +7,8 @@ package tests;
 
 import Entities.AvionModel;
 import Entities.CompagnieModel;
-import Service.AvionService;
-import Service.CompagnieService;
+import Services.AvionService;
+import Services.CompagnieService;
 
 /**
  *
@@ -26,15 +26,15 @@ public class main{
         //CS.modifierCompagnie("TN",C);
      //  CS.deleteCompagnie("DR");
         //System.out.println(CS.afficherCompagnie());
-      AvionModel A = new AvionModel("de", "Small" , "bus" , 88,"AC");
-        AvionService AS = new AvionService();
-          AS.ajouterAvion(A);
+     // AvionModel A = new AvionModel("de", "Small" , "bus" , 88,"AC");
+       // AvionService AS = new AvionService();
+        //  AS.ajouterAvion(A);
         //AS.modifierAvion("CR7",A);
       //
       //AS.deleteAvion("CR7");
         //System.out.println(AS.afficherAvion());
-    CompagnieService AC = new CompagnieService();
-     System.out.println(AC.CalculAvionC());
+    //CompagnieService AC = new CompagnieService();
+    // System.out.println(AC.CalculAvionC());
     }
     
 }
