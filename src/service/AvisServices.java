@@ -37,7 +37,11 @@ public class AvisServices {
     
      public void ajouterAvis(avis a) {
 
+<<<<<<< HEAD
         String sql="insert into avis(id,rating,description,datecreation) values(?,?,?,?,?)";
+=======
+        String sql="insert into avis(id,rating,description,datecreation) values(?,?,?,?)";
+>>>>>>> 870b1ec42e8da68ac25c50f7ca8133a76b4c2aed
         try {
             PreparedStatement ste= cnx.prepareStatement(sql);
             ste.setInt(1,a.getId());
