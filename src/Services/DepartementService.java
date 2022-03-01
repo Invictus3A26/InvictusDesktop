@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package Services;
 
-import entitie.Departement;
+import Entities.Departement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +13,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import tools.MaConnexion;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import Tools.MaConnexion;
 
 /**
  *
@@ -95,5 +98,32 @@ public class DepartementService {
         
         
 
-    }
+   
+   }
+    public void ChercherDepartement() throws SQLException 
+{ System.out.println("entre l Id de departement a Chercher");
+        Scanner sc5 = new Scanner(System.in);
+        String f = sc5.nextLine();
+    List<Departement> departement = new ArrayList<>();
+        try {
+
+String sql = "Select * from departement WHERE `id` ="+f;
+ResultSet rs;
+PreparedStatement ste;
+ste=cnx.prepareStatement(sql);
+rs = ste.executeQuery();
+
+while (rs.next()){
+    Departement u = new Departement ();
+    u.setId(rs.getInt(1));
+    u.setNomDepartement(rs.getString(2));
+    u.setZoneDepartement(rs.getString(3));
+    u.setDetailDepartement(rs.getString(4));
+
+    departement.add(u);
+}}
+catch (SQLException ex) {Logger.getLogger(DepartementService.class.getName()).log(Level.SEVERE, null, ex);
+
+}System.out.println(departement);
+}
 }
