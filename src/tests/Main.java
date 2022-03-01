@@ -6,9 +6,9 @@
 package tests;
 
 
-import entities.Departement;
+import entitie.Departement;
 import services.DepartementService;
-import entities.Equipement;
+import entitie.Equipement;
 import services.EquipementService;
 import tools.MaConnexion;
 
