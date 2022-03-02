@@ -51,7 +51,7 @@ public class VolsService {
                 Vols a = new Vols();
                 a.setId(rs.getInt("id_vol"));
                 a.setNum_vol(rs.getInt("num_vol"));
-                a.setEscale(rs.getInt("id_escale"));             
+                a.setId_escale(rs.getInt("id_escale"));             
                 a.setDate_depart_vol(rs.getString("date_depart_vol"));
                 a.setDate_arrivé_vol(rs.getString("date_arrivé_vol"));
                 a.setHeure_depart_vol(rs.getString("heure_depart_vol"));
@@ -131,7 +131,7 @@ public class VolsService {
                 vol.setNom_aeroport(rs.getInt("id_aeroport"));
                 vol.setType_avion(rs.getString("type_avion"));
                 vol.setType_vol(rs.getString("type_vol"));
-                vol.setEscale(rs.getInt("id_escale"));
+                vol.setId_escale(rs.getInt("id_escale"));
                 vol.setNomCom(rs.getString("id_comp"));
                 vol.setNombrePassager_vol(rs.getInt("nombrePassager_vol"));
                 vol.setDurée_retard_vol(rs.getString("durée_retard_vol"));

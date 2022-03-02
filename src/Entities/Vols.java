@@ -11,16 +11,44 @@ package entities;
  */
 public class Vols {
     
-    private int id_vol,num_vol,id_escale,id_aeroport,nombrePassager_vol,annulation_vol;
+    private int id_vol,num_vol,id_aeroport,nombrePassager_vol,annulation_vol,id_escale;
     private String date_depart_vol,date_arrivé_vol,heure_depart_vol,heure_arrivé_vol,type_vol,durée_retard_vol , type_avion,id_comp ;
+   // private Escale id_escale;
+
+    public Vols(int num_vol, int id_aeroport, int nombrePassager_vol, int annulation_vol, int id_escale, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, String type_vol, String durée_retard_vol, String type_avion, String id_comp) {
+        this.num_vol = num_vol;
+        this.id_aeroport = id_aeroport;
+        this.nombrePassager_vol = nombrePassager_vol;
+        this.annulation_vol = annulation_vol;
+        this.id_escale = id_escale;
+        this.date_depart_vol = date_depart_vol;
+        this.date_arrivé_vol = date_arrivé_vol;
+        this.heure_depart_vol = heure_depart_vol;
+        this.heure_arrivé_vol = heure_arrivé_vol;
+        this.type_vol = type_vol;
+        this.durée_retard_vol = durée_retard_vol;
+        this.type_avion = type_avion;
+        this.id_comp = id_comp;
+    }
    
 
 
 
-  
+  public Vols(int num_vol,int nombrePassager_vol,String date_depart_vol,String date_arrivé_vol, String type_vol,String durée_retard_vol,int annulation_vol){
+      this.num_vol=num_vol;
+      this.nombrePassager_vol=nombrePassager_vol;
+      this.date_depart_vol=date_depart_vol;
+      this.date_arrivé_vol=date_arrivé_vol;
+      this.type_vol=type_vol;
+      this.durée_retard_vol=durée_retard_vol;
+      this.annulation_vol=annulation_vol;
+      
+  }
 
-    public Vols() {
-    }
+   
+   public Vols(){
+      
+   }
 
     public Vols(int id, int num_vol, int id_escale, String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, int nom_aeroport, String type_avion, String type_vol, String id_comp, int nombrePassager_vol,String durée_retard_vol, int annulation_vol ){
         this.id_vol = id;
@@ -107,9 +135,15 @@ public class Vols {
         this.num_vol = num_vol;
     }
 
-    public void setEscale(int escales) {
-        this.id_escale = escales;
-    }
+   // public void setId_escale(Escale id_escale) {
+     //   this.id_escale.setId(id_escale.getId());
+    //    this.id_escale.setDurée(id_escale.getDurée());
+      //  this.id_escale.setHeureArriveEscale(id_escale.getHeureArriveEscale());
+      //  this.id_escale.setHeureDepartEscale(id_escale.getHeureDepartEscale());
+        
+    //}
+
+  
 
     public void setDate_depart_vol(String date_depart_vol) {
         this.date_depart_vol = date_depart_vol;
@@ -137,6 +171,9 @@ public class Vols {
 
     public void setNombrePassager_vol(int nombrePassager_vol) {
         this.nombrePassager_vol = nombrePassager_vol;
+    }
+    public void setId_escale(int id_escale) {
+        this.id_escale= id_escale;
     }
 
     public void setDurée_retard_vol(String durée_retard_vol) {

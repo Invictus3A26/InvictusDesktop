@@ -3,13 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/invictus/Invictus.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/entities/Aeroport.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/services/AeroportService.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tests/Invictus.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/services/VolsService.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tests/FXMain.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteVolsController.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/entities/Vols.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/services/EscaleService.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tools/MaConnexion.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionVolController.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionVol.fxml</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteVols.fxml</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/gestionvol.css</file>
         </group>
     </open-files>
 </project-private>

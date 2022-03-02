@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package invictus;
+package tests;
 
 import entities.Aeroport;
 import entities.Escale;
 import entities.Vols;
+
 import services.AeroportService;
 import services.EscaleService;
 import services.VolsService;
@@ -18,6 +19,10 @@ import tools.MaConnexion;
  * @author islem
  */
 public class Invictus {
+    
+    
+    
+  
 
     /**
      * @param args the command line arguments
@@ -49,7 +54,7 @@ public class Invictus {
       //vo.updateVols(v2, 1);
       //vo.rechercheAvecNumVol(154);
       //vo.afficherVols();
-        System.out.println(vo.triNum_vol());  
+       // System.out.println(vo.triNum_vol());  
     }
     
 }
