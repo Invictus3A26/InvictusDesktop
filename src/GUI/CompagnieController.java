@@ -65,6 +65,25 @@ public class CompagnieController implements Initializable {
     private TableColumn<CompagnieModel, String> Description;
     ObservableList<CompagnieModel> compagnieList = FXCollections.observableArrayList();
     @FXML
+    private TextField CI;
+    @FXML
+    private TextField NM;
+    @FXML
+    private TextField SW;
+    @FXML
+    private TextField PS;
+    @FXML
+    private TextField NT;
+    @FXML
+    private TextField SG;
+    @FXML
+    private TextField ADB;
+    @FXML
+    private TextField NP;
+    @FXML
+    private TextField DS;
+    @FXML
+    private Button btnSavePerso;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -96,4 +115,20 @@ public class CompagnieController implements Initializable {
             TCompagnie.setItems(compagnieList);
         }
         }
+    @FXML
+    private void savePerso(ActionEvent event)  {
+   
+        String CoIA = CI.getText();
+         String No = NM.getText();
+         String Lin = SW.getText();
+         String Pay = PS.getText();
+         int Nu = Integer.parseInt(NT.getText());
+         String Sg = SG.getText();
+         String Adb = ADB.getText();
+         int Np = Integer.parseInt(NP.getText());
+         String Ds = DS.getText();
+         CompagnieModel C = new CompagnieModel(CoIA,No,Lin,Pay,Nu,Sg,Adb,Np,Ds);
+         CompagnieService CS =new CompagnieService();
+         CS.ajouterCompagnie(C);    
+    }
 }

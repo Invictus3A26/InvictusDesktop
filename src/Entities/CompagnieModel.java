@@ -19,11 +19,11 @@ public class CompagnieModel {
     private int  Number;
     private String Siege;
     private String AeBase ;
-    private float PassagerNum ;
+    private int PassagerNum ;
     private String Description ;
     public CompagnieModel(){};
 
-    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, float PassagerNum, String Description) {
+    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, int PassagerNum, String Description) {
         this.Code_IATA = Code_IATA;
         this.NomCom = NomCom;
         this.Link = Link;
@@ -92,11 +92,11 @@ public class CompagnieModel {
         this.AeBase = AeBase;
     }
 
-    public float getPassagerNum() {
+    public int getPassagerNum() {
         return PassagerNum;
     }
 
-    public void setPassagerNum(float PassagerNum) {
+    public void setPassagerNum(int PassagerNum) {
         this.PassagerNum = PassagerNum;
     }
 

@@ -54,7 +54,7 @@ public class CompagnieService {
                 C.setNumber(rs.getInt("Number"));
                 C.setSiege(rs.getString("Siege"));
                 C.setAeBase(rs.getString("AeBase"));
-                C.setPassagerNum(rs.getFloat("PassagerNum"));
+                C.setPassagerNum(rs.getInt("PassagerNum"));
                 C.setDescription(rs.getString("Description"));
                 compagnie.add(C);
                 
@@ -91,7 +91,7 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             ste.setInt(4, c.getNumber());
             ste.setString(5,c.getSiege());
             ste.setString(6, c.getAeBase());
-            ste.setFloat(7,c.getPassagerNum());
+            ste.setInt(7,c.getPassagerNum());
             ste.setString(8,c.getDescription());
             ste.setString(9, Code_IATA);
             ste.executeUpdate();
