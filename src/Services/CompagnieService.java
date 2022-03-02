@@ -27,7 +27,7 @@ public class CompagnieService {
         cnx=DBConnexion.getInstance().getCnx();
     }
  public void ajouterCompagnie(CompagnieModel C){
-          String sql="INSERT INTO compagnie(Code_IATA, NomCom, Link, Pays, Number, Siege, AeBase, PassagerNum,  Description,id_aeroport) VALUES ('"+C.getCode_IATA()+"','"+C.getNomCom()+"','"+C.getLink()+"','"+C.getPays()+"','"+C.getNumber()+"','"+C.getSiege()+"','"+C.getAeBase()+"','"+C.getPassagerNum()+"','"+C.getDescription()+"','"+C.getId_aeroport()+"')";
+          String sql="INSERT INTO compagnie(Code_IATA, NomCom, Link, Pays, Number, Siege, AeBase, PassagerNum,  Description) VALUES ('"+C.getCode_IATA()+"','"+C.getNomCom()+"','"+C.getLink()+"','"+C.getPays()+"','"+C.getNumber()+"','"+C.getSiege()+"','"+C.getAeBase()+"','"+C.getPassagerNum()+"','"+C.getDescription()+"')";
            try {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
@@ -56,7 +56,6 @@ public class CompagnieService {
                 C.setAeBase(rs.getString("AeBase"));
                 C.setPassagerNum(rs.getFloat("PassagerNum"));
                 C.setDescription(rs.getString("Description"));
-                C.setId_aeroport(rs.getInt("id_aeroport"));
                 compagnie.add(C);
                 
             }
@@ -94,8 +93,7 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             ste.setString(6, c.getAeBase());
             ste.setFloat(7,c.getPassagerNum());
             ste.setString(8,c.getDescription());
-            ste.setInt(9,c.getId_aeroport());
-            ste.setString(10, Code_IATA);
+            ste.setString(9, Code_IATA);
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());

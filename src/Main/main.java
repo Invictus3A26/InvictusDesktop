@@ -20,21 +20,21 @@ public class main{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         //CompagnieModel C = new CompagnieModel("AC", "CANADA" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,"bienvenue en tunisair",2);
-         //CompagnieService CS = new CompagnieService();
-          //CS.ajouterCompagnie(C);
+         CompagnieModel C = new CompagnieModel("DZ", "England" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,"bienvenue en tunisair");
+        CompagnieService CS = new CompagnieService();
+         CS.ajouterCompagnie(C);
         //CS.modifierCompagnie("TN",C);
      //  CS.deleteCompagnie("DR");
         //System.out.println(CS.afficherCompagnie());
-     // AvionModel A = new AvionModel("de", "Small" , "bus" , 88,"AC");
-       // AvionService AS = new AvionService();
+     // AvionModel A = new AvionModel("engfez", "Small" , "bus" , 88,"EN");
+      // AvionService AS = new AvionService();
         //  AS.ajouterAvion(A);
         //AS.modifierAvion("CR7",A);
       //
       //AS.deleteAvion("CR7");
         //System.out.println(AS.afficherAvion());
     //CompagnieService AC = new CompagnieService();
-    // System.out.println(AC.CalculAvionC());
+     //System.out.println(AC.CalculAvionC());
     }
     
 }

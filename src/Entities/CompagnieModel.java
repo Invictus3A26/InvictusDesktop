@@ -21,10 +21,9 @@ public class CompagnieModel {
     private String AeBase ;
     private float PassagerNum ;
     private String Description ;
-    private int id_aeroport;
     public CompagnieModel(){};
 
-    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, float PassagerNum, String Description, int id_aeroport) {
+    public CompagnieModel(String Code_IATA, String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, float PassagerNum, String Description) {
         this.Code_IATA = Code_IATA;
         this.NomCom = NomCom;
         this.Link = Link;
@@ -34,7 +33,7 @@ public class CompagnieModel {
         this.AeBase = AeBase;
         this.PassagerNum = PassagerNum;
         this.Description = Description;
-        this.id_aeroport = id_aeroport;
+       
     }
 
     public String getCode_IATA() {
@@ -109,17 +108,11 @@ public class CompagnieModel {
         this.Description = Description;
     }
 
-    public int getId_aeroport() {
-        return id_aeroport;
-    }
 
-    public void setId_aeroport(int id_aeroport) {
-        this.id_aeroport = id_aeroport;
-    }
 
     @Override
     public String toString() {
-        return "CompagnieModel{" + "Code_IATA=" + Code_IATA + ", NomCom=" + NomCom + ", Link=" + Link + ", Pays=" + Pays + ", Number=" + Number + ", Siege=" + Siege + ", AeBase=" + AeBase + ", PassagerNum=" + PassagerNum + ", Description=" + Description + ", id_aeroport=" + id_aeroport + '}';
+        return "CompagnieModel{" + "Code_IATA=" + Code_IATA + ", NomCom=" + NomCom + ", Link=" + Link + ", Pays=" + Pays + ", Number=" + Number + ", Siege=" + Siege + ", AeBase=" + AeBase + ", PassagerNum=" + PassagerNum + ", Description=" + Description + '}';
     }
 
    
