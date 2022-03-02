@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  * @author Aziz
  */
 public class FXMain extends Application {
+   // MaConnexion mc = MaConnexion.getInstance();
     
     @Override
     public void start(Stage primaryStage) {

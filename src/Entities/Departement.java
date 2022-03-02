@@ -23,6 +23,12 @@ public class Departement {
         this.detailDepartement = detailDepartement;
     }
 
+    public Departement(String nomDepartement, String zoneDepartement, String detailDepartement) {
+        this.nomDepartement = nomDepartement;
+        this.zoneDepartement = zoneDepartement;
+        this.detailDepartement = detailDepartement;
+    }
+
     public int getId() {
         return id;
     }

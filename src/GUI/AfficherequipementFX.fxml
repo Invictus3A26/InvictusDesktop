@@ -5,17 +5,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.AfficherequipementFXController">
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherequipementFXController">
     <children>
-      <Line endX="-100.0" endY="-65.0" layoutX="400.0" layoutY="95.0" startX="-100.0" startY="262.0" />
-      <Label fx:id="lbltypeEquipement" layoutX="72.0" layoutY="106.0" text="typeEquipement" />
-      <Label fx:id="lblnomEquipement" layoutX="72.0" layoutY="154.0" text="nomEquipement" />
-      <Label fx:id="lbldetailEquipement" layoutX="72.0" layoutY="106.0" text="detailEquipement" />
-      <Label fx:id="lblzoneEquipement" layoutX="72.0" layoutY="154.0" text="zoneEquipement" />
-      <Label fx:id="lbletatEquipement" layoutX="72.0" layoutY="106.0" text="etatEquipement" />
-      <Label fx:id="lblid_departement" layoutX="72.0" layoutY="154.0" text="id_departement" />
+      <Line endX="-100.0" endY="-65.0" layoutX="400.0" layoutY="95.0" startX="-100.0" startY="276.0" />
+      <Label fx:id="lbltypeEquipement" layoutX="72.0" layoutY="44.0" text="typeEquipement" />
+      <Label fx:id="lblnomEquipement" layoutX="72.0" layoutY="109.0" text="nomEquipement" />
+      <Label fx:id="lbldetailEquipement" layoutX="73.0" layoutY="167.0" text="detailEquipement" />
+      <Label fx:id="lblzoneEquipement" layoutX="76.0" layoutY="231.0" text="zoneEquipement" />
+      <Label fx:id="lbletatEquipement" layoutX="74.0" layoutY="289.0" text="etatEquipement" />
+      <Label fx:id="lblid_departement" layoutX="75.0" layoutY="347.0" text="id_departement" />
       <Label fx:id="lblList" layoutX="327.0" layoutY="44.0" prefHeight="266.0" prefWidth="244.0" />
-      <Button layoutX="414.0" layoutY="331.0" mnemonicParsing="false" onAction="#showEquipement" text="Show All" />
+      <Button layoutX="428.0" layoutY="503.0" mnemonicParsing="false" onAction="#showEquipement" text="Show All" />
    </children>
     
 </AnchorPane>

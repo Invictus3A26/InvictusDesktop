@@ -27,6 +27,15 @@ public class Equipement {
         this.id_departement = id_departement;
     }
 
+    public Equipement(String typeEquipement, String nomEquipement, String detailEquipement, String zoneEquipement, String etatEquipement, int id_departement) {
+        this.typeEquipement = typeEquipement;
+        this.nomEquipement = nomEquipement;
+        this.detailEquipement = detailEquipement;
+        this.zoneEquipement = zoneEquipement;
+        this.etatEquipement = etatEquipement;
+        this.id_departement = id_departement;
+    }
+
     public int getId() {
         return id;
     }
