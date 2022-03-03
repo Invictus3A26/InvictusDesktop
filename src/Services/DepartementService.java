@@ -96,13 +96,11 @@ public class DepartementService {
     }
 
     public void ChercherDepartement() throws SQLException {
-        System.out.println("entre l Id de departement a Chercher");
-        Scanner sc5 = new Scanner(System.in);
-        String f = sc5.nextLine();
+        
         List<Departement> departement = new ArrayList<>();
         try {
 
-            String sql = "Select * from departement WHERE `id` =" + f;
+            String sql = "Select * from departement WHERE `id` =" ;
             ResultSet rs;
             PreparedStatement ste;
             ste = cnx.prepareStatement(sql);

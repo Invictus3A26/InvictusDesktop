@@ -4,11 +4,22 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Main/Main.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AjouterdepartementFX.fxml</file>
             <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Services/EquipementService.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AjouterequipementFX.fxml</file>
             <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Tools/MaConnexion.java</file>
-            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Entities/Equipement.java</file>
-            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Services/DepartementService.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AjouterdepartementFXController.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/ModifierdepartementFX.fxml</file>
             <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Entities/Departement.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AjouterequipementFXController.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AfficherdepartementFX.fxml</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AfficherequipementFXController.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AfficherdepartementFXController.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Entities/Equipement.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/AfficherequipementFX.fxml</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Main/FXMain.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/Services/DepartementService.java</file>
+            <file>file:/C:/Users/Aziz/Downloads/JavaApplication3A26/src/GUI/ModifierdepartementFXController.java</file>
         </group>
     </open-files>
 </project-private>

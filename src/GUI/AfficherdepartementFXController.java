@@ -7,13 +7,31 @@ package GUI;
 
 import Entities.Departement;
 import Services.DepartementService;
+import Tools.MaConnexion;
+import java.io.IOException;
 import java.net.URL;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+//import java.util.List;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+//import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+//import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -21,44 +39,77 @@ import javafx.scene.control.Label;
  * @author Aziz
  */
 public class AfficherdepartementFXController implements Initializable {
+
     @FXML
-    private Label lblnomDepartement;
+    private TableView<Departement> departementTable;
+
+    ObservableList<Departement> departementList = FXCollections.observableArrayList();
     @FXML
-    private Label lblzoneDepartement;
+    private TableColumn<Departement, String> tblnomDepartement;
     @FXML
-    private Label lbldetailDepartement;
+    private TableColumn<Departement, String> tblzoneDepartement;
     @FXML
-    private Label lblList;
+    private TableColumn<Departement, String> tbldetailDepartement;
+    
+    Departement departement = null;
+    @FXML
+    private TableColumn<Departement, String> id;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    } 
-    @FXML
-    private void showDepartement(ActionEvent event) {
-        DepartementService ds = new DepartementService();
-        List<Departement> list = ds.afficherDepartement();
-        String res = "";
-        for (Departement d : list) {
-            res += d.getNomDepartement() + " " + d.getZoneDepartement() + " " + d.getDetailDepartement() + "\n";
+        try {
+            Connection con = MaConnexion.getInstance().getCnx();
+            ResultSet rs = con.createStatement().executeQuery("select * from departement");
+
+            while (rs.next()) {
+                departementList.add(new Departement(
+                        rs.getInt("id"),
+                        rs.getString("nomDepartement"),
+                        rs.getString("zoneDepartement"),
+                        rs.getString("detailDepartement")
+                        
+                ));
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherdepartementFXController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        lblList.setText(res);
+        loadDate();
+        departementTable.setItems(departementList);
+
     }
 
-    public void setNomDepartement(String nomDepartement) {
-        lblnomDepartement.setText(nomDepartement);
+    private void loadDate() {
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tblnomDepartement.setCellValueFactory(new PropertyValueFactory<>("nomDepartement"));
+        tblzoneDepartement.setCellValueFactory(new PropertyValueFactory<>("zoneDepartement"));
+        tbldetailDepartement.setCellValueFactory(new PropertyValueFactory<>("detailDepartement"));
+
     }
 
-    public void setZoneDepartement(String zoneDepartement) {
-        lblzoneDepartement.setText(zoneDepartement);
+    @FXML
+    private void AjouteDepartement(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("../GUI/AjouterdepartementFX.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherdepartementFXController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public void setDetailDepartement(String detailDepartement) {
-        lbldetailDepartement.setText(detailDepartement);
+    @FXML
+    private void deleteDepartement(MouseEvent event) {
+         departement = departementTable.getSelectionModel().getSelectedItem();
+                                DepartementService ds = new DepartementService();
+                                ds.supprimerDepartement(departement.getId());
     }
 
-    
 }

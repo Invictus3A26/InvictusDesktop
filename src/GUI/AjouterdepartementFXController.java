@@ -55,7 +55,6 @@ public class AjouterdepartementFXController implements Initializable {
 
         //try {
         ds.ajouterDepartement(d);
-       
         //alert.setTitle("Success");
         //alert.setHeaderText("Added");
         //alert.setContentText("Departement added successfully !");
@@ -83,6 +82,5 @@ public class AjouterdepartementFXController implements Initializable {
         //alert.showAndWait();
         //}
     }
-    
 
 }
