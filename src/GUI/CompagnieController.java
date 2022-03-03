@@ -83,8 +83,13 @@ public class CompagnieController implements Initializable {
     @FXML
     private TextField DS;
     @FXML
-    private Button btnSavePerso;
-    
+    private Button btnSaveCompagnie;
+    @FXML
+    private Button BtnDeleteCompagnie;
+    @FXML
+    private Button BtnEditCompagnie;
+    @FXML
+    private Button btneupdateCompagnie1;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
@@ -116,7 +121,7 @@ public class CompagnieController implements Initializable {
         }
         }
     @FXML
-    private void savePerso(ActionEvent event)  {
+    private void saveCompagnie(ActionEvent event)  {
    
         String CoIA = CI.getText();
          String No = NM.getText();
@@ -130,5 +135,40 @@ public class CompagnieController implements Initializable {
          CompagnieModel C = new CompagnieModel(CoIA,No,Lin,Pay,Nu,Sg,Adb,Np,Ds);
          CompagnieService CS =new CompagnieService();
          CS.ajouterCompagnie(C);    
+    }
+    @FXML
+    private void deleteCompagnie(ActionEvent event) {
+         CompagnieModel C = TCompagnie.getSelectionModel().getSelectedItem();
+                                CompagnieService CS = new CompagnieService();
+                                CS.deleteCompagnie(C.getCode_IATA());
+    }
+@FXML
+    private void editCompagnie(ActionEvent event) {
+         CompagnieModel C = TCompagnie.getSelectionModel().getSelectedItem();
+      CI.setText(C.getCode_IATA());
+      NM.setText(C.getNomCom());
+    SW.setText(C.getLink());
+      PS.setText(C.getPays());
+      NT.setText(String.valueOf(C.getNumber()));
+      SG.setText(C.getSiege());
+      ADB.setText(C.getAeBase());
+     NP.setText(String.valueOf(C.getPassagerNum()));
+       DS.setText(C.getDescription());
+    }
+      @FXML
+    private void UpdateCompagnie(ActionEvent event)  {
+   
+        String CoIA = CI.getText();
+         String No = NM.getText();
+         String Lin = SW.getText();
+         String Pay = PS.getText();
+         int Nu = Integer.parseInt(NT.getText());
+         String Sg = SG.getText();
+         String Adb = ADB.getText();
+         int Np = Integer.parseInt(NP.getText());
+         String Ds = DS.getText();
+         CompagnieModel C = new CompagnieModel(CoIA,No,Lin,Pay,Nu,Sg,Adb,Np,Ds);
+         CompagnieService CS =new CompagnieService();
+         CS.modifierCompagnie(CoIA,C);    
     }
 }

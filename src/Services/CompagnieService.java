@@ -84,7 +84,7 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             ste=cnx.prepareStatement(
                     "UPDATE compagnie SET NomCom=?,Link=?,"
                             + "Pays=?,Number=?,Siege=?,"
-                            + "AeBase=?,PassagerNum=?,Description=?,id_aeroport=? WHERE Code_IATA=?");
+                            + "AeBase=?,PassagerNum=?,Description=? WHERE Code_IATA=?");
             ste.setString(1,c.getNomCom());
             ste.setString(2,c.getLink());
             ste.setString(3,c.getPays());

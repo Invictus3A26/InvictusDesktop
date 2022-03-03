@@ -20,9 +20,9 @@ public class main{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         CompagnieModel C = new CompagnieModel("DZ", "England" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,"bienvenue en tunisair");
-        CompagnieService CS = new CompagnieService();
-         CS.ajouterCompagnie(C);
+    //     CompagnieModel C = new CompagnieModel("DZ", "England" , "tunisair.tn" , "tunis" ,5,"Tunis","Tuniscartaghe",11,"bienvenue en tunisair");
+      //  CompagnieService CS = new CompagnieService();
+        // CS.ajouterCompagnie(C);
         //CS.modifierCompagnie("TN",C);
      //  CS.deleteCompagnie("DR");
         //System.out.println(CS.afficherCompagnie());
