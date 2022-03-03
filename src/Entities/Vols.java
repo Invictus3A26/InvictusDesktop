@@ -34,7 +34,7 @@ public class Vols {
 
 
 
-  public Vols(int num_vol,int nombrePassager_vol,String date_depart_vol,String date_arrivé_vol, String type_vol,String durée_retard_vol,int annulation_vol){
+  public Vols(int num_vol,int nombrePassager_vol,String date_depart_vol,String date_arrivé_vol, String type_vol,String durée_retard_vol,int annulation_vol,int id_vol){
       this.num_vol=num_vol;
       this.nombrePassager_vol=nombrePassager_vol;
       this.date_depart_vol=date_depart_vol;
@@ -42,6 +42,7 @@ public class Vols {
       this.type_vol=type_vol;
       this.durée_retard_vol=durée_retard_vol;
       this.annulation_vol=annulation_vol;
+      this.id_vol=id_vol;
       
   }
 

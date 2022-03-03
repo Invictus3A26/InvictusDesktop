@@ -52,6 +52,8 @@ public class AjouteVolsController implements Initializable {
     private TextField durée_retard;
     @FXML
     private TextField annulé;
+    int id_vol;
+     
 
     /**
      * Initializes the controller class.
@@ -79,12 +81,10 @@ public class AjouteVolsController implements Initializable {
          
          Vols v = new Vols(numVol, idAeroport, nombrePass, Annulé, idEscale, dateDepartVol, dateArrivéVol, heureDepartVol, heureArrivéVol, typeVol, duréRetard, typeAvion, Compagnie);
         VolsService sv = new VolsService();
-         Alert alert = new Alert(AlertType.INFORMATION);
+       
       
          sv.ajouterVols(v);
-         alert.setTitle("Success");
-         alert.setHeaderText("Added");
-         alert.setContentText("Vol added successfully !");
+       
         
          
         
@@ -94,4 +94,43 @@ public class AjouteVolsController implements Initializable {
          
     }
     
+    public void setTextField(int Id_vol,String Num_vol, String Nombre_passager, String Date_depart_vol, String Date_arrivé_vol, String Type_vol,String duré_arrivé_vol,String annulation) {
+     id_vol=Id_vol;
+     num_vol.setText(Num_vol);
+     nombre_passager.setText(Nombre_passager);
+     date_depart_vol.setText(Date_depart_vol);
+     date_arrivé_vol.setText(Date_arrivé_vol);
+     type_vol.setText(Type_vol);
+     durée_retard.setText(duré_arrivé_vol);
+     annulé.setText(annulation);
+     
+     
+        
+
+
+    }
+
+    @FXML
+    private void ModifierVol(MouseEvent event) {
+         int numVol = Integer.parseInt( num_vol.getText());
+         String dateDepartVol = date_depart_vol.getText();
+         String dateArrivéVol = date_arrivé_vol.getText();
+         String heureArrivéVol = heure_arrivé_vol.getText();
+         String heureDepartVol = heure_depart_vol.getText();
+         int idAeroport = Integer.parseInt(id_aeroport.getText());
+         String typeAvion = type_avion.getText();
+         String typeVol = type_vol.getText();
+         int idEscale = Integer.parseInt(escale.getText());
+         String Compagnie = compagnie.getText();
+         int nombrePass = Integer.parseInt(nombre_passager.getText());
+         String duréRetard = durée_retard.getText();
+         int Annulé = Integer.parseInt(annulé.getText());
+         Vols v = new Vols(numVol, idAeroport, nombrePass, Annulé, idEscale, dateDepartVol, dateArrivéVol, heureDepartVol, heureArrivéVol, typeVol, duréRetard, typeAvion, Compagnie);
+        VolsService sv = new VolsService();
+        VolsService vs = new VolsService();
+        vs.updateVols(v, id_vol);
+        
+        
+    }
+ 
 }

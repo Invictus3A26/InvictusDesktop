@@ -89,7 +89,7 @@ public class VolsService {
         
         public void updateVols(Vols vol,int id_vol){
         
-         String sql ="UPDATE vols SET num_vol=?,date_depart_vol=?,date_arrivé_vol=?,heure_depart_vol=?,heure_arrivé_vol=?,id_aeroport=?,type_avion=?,type_vol=?,escales=?,id_comp=?,nombrePassager_vol=?,durée_retard_vol=?,annulation_vol=?  WHERE id_vol = ? ";
+         String sql ="UPDATE vols SET num_vol=?,date_depart_vol=?,date_arrivé_vol=?,heure_depart_vol=?,heure_arrivé_vol=?,id_aeroport=?,type_avion=?,type_vol=?,id_escale=?,id_comp=?,nombrePassager_vol=?,durée_retard_vol=?,annulation_vol=?  WHERE id_vol = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
              ste.setInt(1,vol.getNum_vol());
@@ -105,7 +105,7 @@ public class VolsService {
              ste.setInt(11,vol.getNombrePassager_vol());
              ste.setString(12,vol.getDurée_retard_vol() );
              ste.setInt(13,vol.isAnnulation_vol());
-             ste.setInt(11, id_vol);
+             ste.setInt(14, id_vol);
              ste.executeUpdate();
             System.out.println("Vol modifier");
          }catch (SQLException ex) {

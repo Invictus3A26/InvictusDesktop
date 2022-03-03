@@ -56,6 +56,9 @@ public class GestionVolsController implements Initializable {
     @FXML
     private TableColumn<Vols, String> annulé;
 
+    Vols vol = null;
+    @FXML
+    private TableColumn<Vols, String> id;
     /**
      * Initializes the controller class.
      */
@@ -76,7 +79,8 @@ public class GestionVolsController implements Initializable {
                         rs.getString("date_arrivé_vol"),
                         rs.getString("type_vol"),
                         rs.getString("durée_retard_vol"),
-                        rs.getInt("annulation_vol")
+                        rs.getInt("annulation_vol"),
+                        rs.getInt("id_vol")
                         
                     
                         
@@ -86,7 +90,7 @@ public class GestionVolsController implements Initializable {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(GestionVolController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionVolsController.class.getName()).log(Level.SEVERE, null, ex);
         }
          loadDate();
         volTable.setItems(VolsList);
@@ -100,6 +104,7 @@ public class GestionVolsController implements Initializable {
          type.setCellValueFactory(new PropertyValueFactory<>("type_vol"));
          retard.setCellValueFactory(new PropertyValueFactory<>("durée_retard_vol"));
          annulé.setCellValueFactory(new PropertyValueFactory<>("annulation_vol"));
+         id.setCellValueFactory(new PropertyValueFactory<>("id_vol"));
      
        
         
@@ -124,8 +129,42 @@ public class GestionVolsController implements Initializable {
 
     @FXML
     private void deleteVol(MouseEvent event) {
-        VolsService vs = new VolsService();
-       // vs.deleteVols(0);
+         vol = volTable.getSelectionModel().getSelectedItem();
+                                VolsService vs = new VolsService();
+                                vs.deleteVols(vol.getId());
+    }
+
+    @FXML
+    private void updateVol(MouseEvent event) {
+         vol = volTable.getSelectionModel().getSelectedItem();
+          FXMLLoader loader = new FXMLLoader ();
+          loader.setLocation(getClass().getResource("../GUI/AjouteVols.fxml"));
+             try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(GestionVolsController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+          AjouteVolsController ajouteVolsController= loader.getController();
+                          
+                            ajouteVolsController.setTextField(
+                                    vol.getId(),
+                                    String.valueOf(vol.getNum_vol()),
+                                    
+                                    String.valueOf(vol.getNombrePassager_vol()) ,
+                                    vol.getDate_depart_vol(),
+                                    vol.getDate_arrivé_vol(),
+                                    vol.getType_vol(),
+                                    vol.getDurée_retard_vol(),
+                                    String.valueOf(vol.isAnnulation_vol()));
+                            Parent parent = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(parent));
+                            stage.initStyle(StageStyle.UTILITY);
+                            stage.show();
+           
+          
+         
+        
         
     }
 }
