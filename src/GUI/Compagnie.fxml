@@ -22,17 +22,17 @@
             <VBox minWidth="117.0" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: #AE0723;" />
             <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="992.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="39.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="200.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../tunisairPfe/src/images/Tunisair_logo.png" />
+                        <Image url="@../../../PIDEV/src/Images/1.jpg" />
                      </image>
                   </ImageView>
-                  <HBox prefHeight="50.0" prefWidth="81.0" />
+                  <HBox prefHeight="50.0" prefWidth="86.0" />
                   <HBox prefHeight="50.0" prefWidth="496.0">
                      <children>
                         <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-style: hidden hidden solid hidden; -fx-border-color: #AE0723; -fx-border-width: 3;" text="Compagnie" />
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white;" text="Avion" />
-                        <Button layoutX="131.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: white;" text="AvionCompagnie" />
+                        <Button layoutX="131.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAvCom" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: white;" text="AvionCompagnie" />
                      </children>
                   </HBox>
                </children>

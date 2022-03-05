@@ -60,7 +60,7 @@ public class CompagnieController implements Initializable {
     @FXML
     private TableColumn<CompagnieModel, String> AeBase;
     @FXML
-    private TableColumn<CompagnieModel, Float> NumP;
+    private TableColumn<CompagnieModel, Integer> NumP;
     @FXML
     private TableColumn<CompagnieModel, String> Description;
     ObservableList<CompagnieModel> compagnieList = FXCollections.observableArrayList();
@@ -170,5 +170,19 @@ public class CompagnieController implements Initializable {
          CompagnieModel C = new CompagnieModel(CoIA,No,Lin,Pay,Nu,Sg,Adb,Np,Ds);
          CompagnieService CS =new CompagnieService();
          CS.modifierCompagnie(CoIA,C);    
+    }
+    @FXML
+    private void goToAvCom(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AvionCompagnie.fxml"));
+            Parent root = loader.load();
+            int width = (int) Screen.getPrimary().getBounds().getWidth();
+            int height = (int) Screen.getPrimary().getBounds().getHeight();
+            
+            Scene scene = new Scene(root,width,height);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setMaximized(true);
+            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+            stage.setScene(scene);
+            stage.show();
     }
 }
