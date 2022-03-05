@@ -101,20 +101,7 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
             System.err.println(ex.getMessage());
         }
     }
-        public List <AvionModel> Calcul() throws SQLException{
-        List<AvionModel> avion = new ArrayList<>();
-      String sql = "Select * from avion ";
-      try {
-      ResultSet rs;
-      PreparedStatement ste=cnx.prepareStatement(sql);
-      rs = ste.executeQuery();
-       List<AvionModel> av = avion.stream().filter(A -> A.getPassagerN() >=1).collect(Collectors.toList());
-          
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-       return avion;
-               }
+       
         public List<AvCom> CalculAvionC(){
         List<AvCom> avcom = new ArrayList<>();
         String query="SELECT CodeC, C.NomCom, COUNT(*) 'nombreAv'\n" +
