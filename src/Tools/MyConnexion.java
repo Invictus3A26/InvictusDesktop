@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.utils;
+package Tools;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,17 +13,17 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author MSI
+ * @author LENOVO
  */
 public class MyConnexion {
     
-    private final String URL="jdbc:mysql://127.0.0.1:3306/airporttt" ;
+    private final String URL="jdbc:mysql://127.0.0.1:3306/airport" ;
     private final String USER="root";
     private final String PWD="";
     
     private static Connection cnx;
     private static MyConnexion instance;
-g
+
     private MyConnexion() {
         
         try {

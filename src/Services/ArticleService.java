@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.service;
+package Services;
 
-import gestionutilisateur1.entity.Article;
-import static gestionutilisateur1.service.CryptWithMD5.cryptWithMD5;
-import gestionutilisateur1.utils.MyConnexion;
+import Entities.Article;
+import static Services.CryptWithMD5.cryptWithMD5;
+import Tools.MyConnexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author MSI
+ * @author LENOVO
  */
 public class ArticleService implements IService<Article> {
     
@@ -37,7 +37,7 @@ public class ArticleService implements IService<Article> {
         try {
             Statement st;
             st=cnx.createStatement();
-            String query="INSERT INTO `article`( `titre`, `contenu`, `description`, `imageURL`, `nbrLike`) VALUES ('"+t.getTitre()+"','"+t.getContenu()+"','"+t.getDescription()+"','"+t.getImageURL()+"','"+t.getNbrLike()+"')";
+            String query="INSERT INTO `article`( `titre`, `contenu`, `description`, `nbrLike`) VALUES ('"+t.getTitre()+"','"+t.getContenu()+"','"+t.getDescription()+"','"+t.getNbrLike()+"')";
             st.executeUpdate(query);
             System.out.println("article ajouter avec success");
         } catch (SQLException ex) {
@@ -51,7 +51,7 @@ public class ArticleService implements IService<Article> {
        try {
             Statement st;
             st=cnx.createStatement();
-            String query="UPDATE `article` SET `titre`='"+t.getTitre()+"',`contenu`='"+t.getContenu()+"',`description`='"+t.getDescription()+"',`imageURL`='"+t.getImageURL()+"',`nbrLike`='"+t.getNbrLike()+"' WHERE idArticle="+id_amodifier ;
+            String query="UPDATE `article` SET `titre`='"+t.getTitre()+"',`contenu`='"+t.getContenu()+"',`description`='"+t.getDescription()+"',`nbrLike`='"+t.getNbrLike()+"' WHERE idArticle="+id_amodifier ;
             if(st.executeUpdate(query)==1){
             System.out.println("article modifiee avec success");
             }else {
@@ -91,7 +91,7 @@ public class ArticleService implements IService<Article> {
                 a.setIdAticle(rs.getLong("idArticle"));
                 a.setContenu(rs.getString("contenu"));
                 a.setDescription(rs.getString("description"));
-                a.setImageURL(rs.getString("imageURL"));
+                
                 a.setTitre(rs.getString("titre"));
                 a.setNbrLike(rs.getInt("nbrLike"));
                 la.add(a);
@@ -110,15 +110,16 @@ public class ArticleService implements IService<Article> {
             Statement st=cnx.createStatement();
             String query="select * from article where idArticle="+idArticle;
             ResultSet rs=st.executeQuery(query);
-            while(rs.next()){
+            if(rs.next()){
                 
                 a.setTitre(rs.getString("titre"));
                 a.setContenu(rs.getString("contenu"));
                 a.setDescription(rs.getString("description"));
                 a.setIdAticle(rs.getLong("idArticle"));
-                a.setImageURL(rs.getString("imageURL"));
+                
                 a.setNbrLike(rs.getInt("nbrLike"));
-        
+            }else{
+                System.out.println("article n existe pas");
               
             }
         } catch (SQLException ex) {
@@ -131,12 +132,22 @@ public class ArticleService implements IService<Article> {
     public List<Article> findByTitre(String titre){
         List<Article> articles=afficher();
         List<Article> resultat=articles.stream().filter(article->titre.equals(article.getTitre())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l article n existe pas");
+        }else{
+            System.out.println("l article existe");
+        }
         return resultat;
     }
     
      public List<Article> findByNbrLike(int nbrLike){
         List<Article> articles=afficher();
         List<Article> resultat=articles.stream().filter(article->nbrLike==article.getNbrLike()).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l article n existe pas");
+        }else{
+            System.out.println("l article existe");
+        }
         return resultat;
     }
      

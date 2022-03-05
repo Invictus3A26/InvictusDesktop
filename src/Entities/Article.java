@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.entity;
+package Entities;
 
 /**
  *
- * @author 
+ * @author LENOVO
  */
 public class Article {
     
@@ -15,26 +15,25 @@ public class Article {
     private String titre;
     private String contenu;
     private String description;
-    private String imageURL ;
+    
     private int nbrLike ;
 
     public Article() {
     }
 
-    public Article(String titre, String contenu, String description, String imageURL, int nbrLike) {
+    public Article(String titre, String contenu, String description) {
         this.titre = titre;
         this.contenu = contenu;
         this.description = description;
-        this.imageURL = imageURL;
-        this.nbrLike = nbrLike;
+       
     }
 
-    public Article(long idAticle, String titre, String contenu, String description, String imageURL, int nbrLike) {
+    public Article(long idAticle, String titre, String contenu, String description, int nbrLike) {
         this.idAticle = idAticle;
         this.titre = titre;
         this.contenu = contenu;
         this.description = description;
-        this.imageURL = imageURL;
+        
         this.nbrLike = nbrLike;
     }
 
@@ -70,13 +69,7 @@ public class Article {
         this.description = description;
     }
 
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
+    
 
     public int getNbrLike() {
         return nbrLike;
@@ -88,7 +81,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" + "idAticle=" + idAticle + ", titre=" + titre + ", contenu=" + contenu + ", description=" + description + ", imageURL=" + imageURL + ", nbrLike=" + nbrLike + '}'+"\n";
+        return  titre + "\n" + description + "\n" + contenu + "\nnbrLike=" + nbrLike + "\n";
     }
     
     

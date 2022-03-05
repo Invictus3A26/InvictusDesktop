@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.service;
+package Services;
 
-import gestionutilisateur1.entity.User;
+import Entities.User;
 import java.util.List;
 
 
 
 /**
  *
- * @author MSI
+ * @author LENOVO
  */
 public interface IService <T> {
    public void ajouter(T t);

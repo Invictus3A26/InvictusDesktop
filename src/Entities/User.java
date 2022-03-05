@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.entity;
+package Entities;
 
 import java.util.Date;
 
 /**
  *
- * @author MSI
+ * @author LENOVO
  */
 public class User {
     

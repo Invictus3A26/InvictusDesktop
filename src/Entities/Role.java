@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionutilisateur1.entity;
+package Entities;
 
 /**
  *
- * @author MSI
+ * @author LENOVO
  */
 public enum Role {
-    ADMIN,INTRNAUTE,PASSAGER,EMPLOYE
+    ADMIN,PASSAGER
 }
