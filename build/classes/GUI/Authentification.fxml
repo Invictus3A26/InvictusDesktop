@@ -70,12 +70,12 @@
             </Label>
             <ImageView fx:id="userIcon" fitHeight="26.0" fitWidth="33.0" layoutX="212.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-nom-52.png" />
+                  <Image url="@/Resources/Icons/icons8-nom-52.png" />
                </image>
             </ImageView>
             <ImageView fx:id="passwordIcon" fitHeight="31.0" fitWidth="26.0" layoutX="212.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-mot-de-passe-52.png" />
+                  <Image url="@/Resources/Icons/icons8-mot-de-passe-52.png" />
                </image>
             </ImageView>
             <ImageView fx:id="numTel2Icon" fitHeight="26.0" fitWidth="26.0" layoutX="359.0" layoutY="174.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
@@ -85,7 +85,7 @@
             </ImageView>
             <ImageView fx:id="matFIcon" fitHeight="26.0" fitWidth="26.0" layoutX="356.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-code-barre-80.png" />
+                  <Image url="@/Resources/Icons/icons8-code-barre-80.png" />
                </image>
             </ImageView>
             <ImageView fx:id="deviseIcon" fitHeight="31.0" fitWidth="32.0" layoutX="356.0" layoutY="232.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
@@ -95,27 +95,27 @@
             </ImageView>
             <ImageView fx:id="numtel1Icon" fitHeight="26.0" fitWidth="26.0" layoutX="38.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-téléphone-débranché-100.png" />
+                  <Image url="@/Resources/Icons/icons8-téléphone-débranché-100.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="emailIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="emailIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-mail-48.png" />
+                  <Image url="@/Resources/Icons/icons8-mail-48.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="paysIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="paysIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-pays-64.png" />
+                  <Image url="@/Resources/Icons/icons8-pays-64.png" />
                </image>
             </ImageView>
             <ImageView fx:id="adresseIcon" fitHeight="26.0" fitWidth="26.0" layoutX="38.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-adresse-100.png" />
+                  <Image url="@/Resources/Icons/icons8-adresse-100.png" />
                </image>
             </ImageView>
             <ImageView fx:id="rsIcon" fitHeight="26.0" fitWidth="26.0" layoutX="37.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Icons/icons8-nouvelle-entreprise-80.png" />
+                  <Image url="@/Resources/Icons/icons8-nom-52.png" />
                </image>
             </ImageView>
             <HBox layoutX="610.0" layoutY="14.0" prefHeight="16.0" prefWidth="62.0" spacing="10.0">

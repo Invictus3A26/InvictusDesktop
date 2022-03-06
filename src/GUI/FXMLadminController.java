@@ -11,6 +11,7 @@ import Services.UserService;
 import static java.awt.PageAttributes.MediaType.C;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -20,6 +21,7 @@ import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -44,6 +46,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import static javafx.scene.input.KeyCode.C;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -361,13 +364,13 @@ public class FXMLadminController implements Initializable {
                     return false;
                 }
 
-
             });
 
         });
         System.out.println(filtereddata);
-
-
+        SortedList<User> sorteddata = new SortedList<>(filtereddata);
+        sorteddata.comparatorProperty().bind(tableviewuser.comparatorProperty());
+        tableviewuser.setItems(filtereddata);
     }
 
     @FXML
