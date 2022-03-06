@@ -6,7 +6,6 @@
 package Services;
 
 import Entities.Article;
-import static Services.CryptWithMD5.cryptWithMD5;
 import Tools.MyConnexion;
 import java.sql.Connection;
 import java.sql.ResultSet;

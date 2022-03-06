@@ -9,18 +9,10 @@ import Entities.Article;
 import Entities.Role;
 import Entities.User;
 import Services.ArticleService;
-import Services.CryptWithMD5;
 import Services.UserService;
-import Tools.Mailapi;
-import Tools.MyConnexion;
-import Tools.Smsapi;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.sql.Date;
 import java.time.Month;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.print.PrintException;
 
 
 

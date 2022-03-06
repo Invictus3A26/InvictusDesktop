@@ -8,20 +8,15 @@ package GUI;
 import Entities.Role;
 import Entities.User;
 import Services.UserService;
-import static java.awt.PageAttributes.MediaType.C;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -30,7 +25,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import static javafx.print.Paper.C;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -39,15 +33,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
-import static javafx.scene.input.KeyCode.C;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
@@ -60,7 +49,7 @@ import tray.notification.TrayNotification;
  * @author LENOVO
  */
 public class FXMLadminController implements Initializable {
-
+    
     @FXML
     private TableView<User> tableviewuser;
     @FXML
@@ -109,6 +98,7 @@ public class FXMLadminController implements Initializable {
     String username_modif;
     @FXML
     private Button btntri;
+   
     ObservableList<String> ss = FXCollections.observableArrayList();
 
     /**
@@ -292,7 +282,7 @@ public class FXMLadminController implements Initializable {
     }
 
     @FXML
-    private void imprimer(ActionEvent event) {
+    private void LogOut(ActionEvent event) {
 
         try {
             Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -336,6 +326,9 @@ public class FXMLadminController implements Initializable {
 
     @FXML
     public void recherche_avance() {
+                System.out.println("*******************");
+
+        System.out.println(Id.user);
         FilteredList<User> filtereddata = new FilteredList<>(data, b -> true);
         System.out.println(recherchetf.getText());
         recherchetf.textProperty().addListener((observable, oldvalue, newValue) -> {
@@ -367,7 +360,7 @@ public class FXMLadminController implements Initializable {
             });
 
         });
-        System.out.println(filtereddata);
+        //System.out.println(filtereddata);
         SortedList<User> sorteddata = new SortedList<>(filtereddata);
         sorteddata.comparatorProperty().bind(tableviewuser.comparatorProperty());
         tableviewuser.setItems(filtereddata);
@@ -386,5 +379,10 @@ public class FXMLadminController implements Initializable {
             tableviewuser.setItems(tri2);
         }
     }
+    
+    
+    
+    
+    
 
 }

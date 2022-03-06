@@ -4,27 +4,20 @@
  */
 package GUI;
 
-import java.io.IOException;
+import Entities.User;
+import Services.UserService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -45,7 +38,7 @@ public class FXMLDashboardController implements Initializable {
     @FXML
     private Label currentTimeTF;
     @FXML
-    private Label societeName;
+    private Label userName;
     @FXML
     private Label numtelLb;
     @FXML
@@ -62,7 +55,6 @@ public class FXMLDashboardController implements Initializable {
     private Label numberAchatLB3;
     @FXML
     private Label numberAchatLB1;
-   
 
     /**
      * Initializes the controller class.
@@ -71,10 +63,9 @@ public class FXMLDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         initClock();
-    }   
-    
-    
-    
+        info();
+    }
+
     private void initClock() {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -84,28 +75,17 @@ public class FXMLDashboardController implements Initializable {
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
     }
-    
-    
-      @FXML
-    private void GoToPassager(ActionEvent event) {
-        try {
-            Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            stageclose.close();
-            Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLadmin.fxml"));
-            Stage stage = new Stage();
+    private void info() {
 
-            Scene scene = new Scene(root);
+        UserService us = new UserService();
+        User u = us.findById(Id.user);
+        System.out.println(u.getNom());
+        numtelLb.setText(u.getEmail());
+        emailLb.setText(u.getNom());
+        matfLb.setText(u.getPrenom());
+        userName.setText(u.getUsername());
 
-            stage.setTitle("Users dashboard");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
-    
-  
-   
-    
+
 }

@@ -10,7 +10,6 @@ import Entities.Role;
 import Entities.User;
 import Services.CryptWithMD5;
 import Services.UserService;
-import Tools.Mailapi;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -313,41 +312,67 @@ public class AuthentificationController implements Initializable {
         if (us.checklogin(loginTF.getText(), CryptWithMD5.cryptWithMD5(passwordTF.getText()))) {
             //7ell interface
             User u = us.findByUsername(loginTF.getText());
-            if (u.getRole().equals(Role.ADMIN)) {
-                try {
-                    Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                    stageclose.close();
-                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLadmin.fxml"));
-                    Stage stage = new Stage();
-
-                    Scene scene = new Scene(root);
-
-                    stage.setTitle("Dashbord Admin");
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException ex) {
-                    Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            } else if (u.getRole().equals(Role.PASSAGER)) {
-                System.out.println("bienveunue Passager");
-                try {
-                    Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                    stageclose.close();
-                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLarticle.fxml"));
-                    Stage stage = new Stage();
-
-                    Scene scene = new Scene(root);
-
-                    stage.setTitle("article");
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException ex) {
-                    Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
+            switch (u.getRole()) {
+                case ADMIN:
+                    try {
+                        Id.user = u.getId();
+                        System.out.println("*****************************");
+                        System.out.println(Id.user);
+                        
+                        Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        
+                        stageclose.close();
+                        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
+                        Stage stage = new Stage();
+                        
+                        Scene scene = new Scene(root);
+                        
+                        stage.setTitle("Dashbord Admin");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case PASSAGER:
+                    System.out.println("bienveunue Passager");
+                    try {
+                        Id.user = u.getId();
+                        
+                        Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        
+                        stageclose.close();
+                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLSideBarPassager.fxml"));
+                        Stage stage = new Stage();
+                        
+                        Scene scene = new Scene(root);
+                        
+                        stage.setTitle("INVICTUS APP");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case EMPLOYE:
+                    System.out.println("bienveunue EMPLOYE");
+                    try {
+                        Id.user = u.getId();
+                        
+                        Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        
+                        stageclose.close();
+                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLSideBarEmploye.fxml"));
+                        Stage stage = new Stage();
+                        
+                        Scene scene = new Scene(root);
+                        
+                        stage.setTitle("INVICTUS APP");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                default:
+                    break;
             }
 
         } else {

@@ -67,7 +67,7 @@
       <Label layoutX="35.0" layoutY="390.0" text="Phone" />
       <Label layoutX="24.0" layoutY="439.0" text="BirthDate" />
       <Label layoutX="38.0" layoutY="491.0" text="Role" />
-      <Button layoutX="963.0" layoutY="621.0" mnemonicParsing="false" onAction="#imprimer" text="LogOut">
+      <Button layoutX="963.0" layoutY="621.0" mnemonicParsing="false" onAction="#LogOut" text="LogOut">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

@@ -30,7 +30,7 @@
                      </children>
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0" />
-                  <JFXButton layoutX="113.0" layoutY="14.0" onAction="#GoToPassager" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #00C0EF;" text="Passagers" textFill="WHITE">
+                  <JFXButton layoutX="113.0" layoutY="14.0" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #00C0EF;" text="Passagers" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -51,7 +51,7 @@
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0">
                      <children>
-                        <JFXButton onAction="#GoToPassager" prefHeight="0.0" prefWidth="133.0" style="-fx-background-color: #00A65A;" text="Employes" textFill="WHITE">
+                        <JFXButton prefHeight="0.0" prefWidth="133.0" style="-fx-background-color: #00A65A;" text="Employes" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -74,7 +74,7 @@
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0">
                      <children>
-                        <JFXButton onAction="#GoToPassager" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #F39C12;" text="Bagages" textFill="WHITE">
+                        <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #F39C12;" text="Bagages" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -96,7 +96,7 @@
                      </children>
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0" />
-                  <JFXButton layoutX="102.0" layoutY="17.0" onAction="#GoToPassager" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #DD4B39;" text="Reclamations" textFill="WHITE">
+                  <JFXButton layoutX="102.0" layoutY="17.0" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #DD4B39;" text="Reclamations" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -110,7 +110,7 @@
       <Label fx:id="currentTimeTF" layoutX="970.0" layoutY="22.0" prefHeight="21.0" prefWidth="235.0" text="Current Time" />
         <AnchorPane layoutX="28.0" layoutY="232.0" prefHeight="463.0" prefWidth="251.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-color: white;">
    <children>
-      <Label fx:id="societeName" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="90.0" prefHeight="29.0" prefWidth="243.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #6a7d9a;" text="Societe Name" />
+      <Label fx:id="userName" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="90.0" prefHeight="29.0" prefWidth="243.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #6a7d9a;" text="Societe Name" />
       <VBox alignment="CENTER" layoutX="14.0" layoutY="255.0" prefHeight="85.0" prefWidth="235.0">
          <children>
             <Label fx:id="numtelLb" alignment="CENTER" prefHeight="29.0" prefWidth="263.0" style="-fx-font-size: 14; -fx-text-fill: #6a7d9a;" text="Num Tel">
@@ -124,7 +124,6 @@
          </font>
          
       </JFXButton>
-            <ImageView fx:id="logoSociete" fitHeight="182.0" fitWidth="243.0" layoutX="6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="matfLb" alignment="CENTER" layoutX="-7.0" layoutY="176.0" prefHeight="28.0" prefWidth="237.0" style="-fx-font-size: 14; -fx-text-fill: #6a7d9a;" text="Matricule Fiscale">
                      
                   </Label>
@@ -137,7 +136,7 @@
          <children>
             <VBox alignment="CENTER" layoutX="14.0" layoutY="255.0" prefHeight="85.0" prefWidth="235.0" />
             <PieChart fx:id="stat" layoutX="16.0" layoutY="51.0" prefHeight="394.0" prefWidth="570.0" />
-            <Label fx:id="societeName12" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="14.0" prefHeight="29.0" prefWidth="243.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #6a7d9a;" text="Statistique Achat" />
+            <Label fx:id="societeName12" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="14.0" prefHeight="29.0" prefWidth="243.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #6a7d9a;" text="Stats" />
          </children>
       </AnchorPane>
       <Pane layoutX="906.0" layoutY="293.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
@@ -153,7 +152,7 @@
             </Pane>
             <VBox layoutX="106.0" layoutY="17.0">
                <children>
-                  <JFXButton onAction="#GoToPassager" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7067CF;" text="Vols" textFill="WHITE">
+                  <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7067CF;" text="Vols" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -175,7 +174,7 @@
                </children>
             </Pane>
             <VBox layoutX="106.0" layoutY="17.0" />
-            <JFXButton layoutX="115.0" layoutY="14.0" onAction="#GoToPassager" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7E5920;" text="Companies" textFill="WHITE">
+            <JFXButton layoutX="115.0" layoutY="14.0" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7E5920;" text="Companies" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
