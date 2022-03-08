@@ -33,6 +33,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import de.jensd.fx.fontawesome.Icon;
+import java.io.File;
+import java.sql.PreparedStatement;
+import jxl.Workbook;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
 
 /**
  * FXML Controller class
@@ -63,6 +69,12 @@ public class AfficherequipementFXController implements Initializable {
      Equipement equipement = null;
     @FXML
     private TableColumn<Equipement, String> id;
+    Connection cnx;
+
+    public AfficherequipementFXController() {
+
+        cnx = MaConnexion.getInstance().getCnx();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -121,5 +133,76 @@ public class AfficherequipementFXController implements Initializable {
          equipement = equipementTable.getSelectionModel().getSelectedItem();
                                 EquipementService ds = new EquipementService();
                                 ds.supprimerEquipement(equipement.getId());
+    }
+    @FXML
+    private void updateDepartement(MouseEvent event) {
+        equipement = equipementTable.getSelectionModel().getSelectedItem();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../GUI/AjouterequipementFX.fxml"));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherdepartementFXController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AjouterequipementFXController AjouterequipementFXController = loader.getController();
+
+        AjouterequipementFXController.setTextField(
+                equipement.getId(),
+                equipement.getTypeEquipement(),
+                equipement.getNomEquipement(),
+                equipement.getDetailEquipement(),
+                equipement.getZoneEquipement(),
+                equipement.getEtatEquipement(),
+                String.valueOf(equipement.getId_departement()));
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.initStyle(StageStyle.UTILITY);
+        stage.show();
+
+    }
+    @FXML
+    private void exel(MouseEvent event) {
+
+        WritableWorkbook wworkbook;
+        try {
+            wworkbook = Workbook.createWorkbook(new File("C:\\Users\\Aziz\\Desktop\\equipements.xls"));
+
+            String query = "select typeEquipement,nomEquipement,detailEquipement,zoneEquipement,etatEquipement from equipements";
+            PreparedStatement ste = cnx.prepareStatement(query);
+            ResultSet rs = ste.executeQuery();
+            WritableSheet wsheet = wworkbook.createSheet("First Sheet", 0);
+            jxl.write.Label label = new jxl.write.Label(0, 2, "A label record");
+            wsheet.addCell(label);
+            int i = 0;
+
+            int j = 1;
+            while (rs.next()) {
+
+                i = 0;
+
+                label = new jxl.write.Label(i++, j, j + "");
+                wsheet.addCell(label);
+                label = new jxl.write.Label(i++, j, rs.getString("typeEquipement"));
+                wsheet.addCell(label);
+                label = new jxl.write.Label(i++, j, rs.getString("nomEquipement"));
+                wsheet.addCell(label);
+                label = new jxl.write.Label(i++, j, rs.getString("detailEquipement"));
+                wsheet.addCell(label);
+                label = new jxl.write.Label(i++, j, rs.getString("zoneEquipement"));
+                wsheet.addCell(label);
+                label = new jxl.write.Label(i++, j, rs.getString("etatEquipement"));
+                wsheet.addCell(label);
+                
+                j++;
+            }
+
+            wworkbook.write();
+            wworkbook.close();
+            System.out.println("fineshed");
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

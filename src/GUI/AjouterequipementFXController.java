@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -38,6 +39,7 @@ public class AjouterequipementFXController implements Initializable {
     private TextField tfetatEquipement;
     @FXML
     private TextField tfid_departement;
+    int id_e;
 
     /**
      * Initializes the controller class.
@@ -99,4 +101,28 @@ public class AjouterequipementFXController implements Initializable {
 
     }
 
+    public void setTextField(int id, String typeEquipement, String nomEquipement, String detailEquipement,String zoneEquipement,String etatEquipement, String id_departement) {
+        id_e = id;
+        tftypeEquipement.setText(typeEquipement);
+        tfnomEquipement.setText(nomEquipement);
+        tfdetailEquipement.setText(detailEquipement);
+        tfzoneEquipement.setText(zoneEquipement);
+        tfetatEquipement.setText(etatEquipement);
+        tfdetailEquipement.setText(id_departement);
+
+    }
+
+    @FXML
+    private void ModifierEquipement(MouseEvent event) {
+        String typeEquipement = tftypeEquipement.getText();
+        String nomEquipement = tfnomEquipement.getText();
+        String detailEquipement = tfdetailEquipement.getText();
+        String zoneEquipement = tfzoneEquipement.getText();
+        String etatEquipement = tfetatEquipement.getText();
+        int id_departement = Integer.parseInt( tfid_departement.getText());
+        Equipement d = new Equipement(typeEquipement, nomEquipement, detailEquipement,zoneEquipement,etatEquipement,id_departement);
+        EquipementService ds = new EquipementService();
+        ds.modifierEquipement(id_e, d);
+
+    }
 }

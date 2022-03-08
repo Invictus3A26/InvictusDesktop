@@ -13,7 +13,8 @@
         <TextField fx:id="tfnomDepartement" layoutX="360.0" layoutY="123.0" promptText="nomDepartement" />
         <TextField fx:id="tfzoneDepartement" layoutX="360.0" layoutY="184.0" promptText="nomDepartement" />
         <TextField fx:id="tfdetailDepartement" layoutX="360.0" layoutY="243.0" promptText="nomDepartement" />
-        <Button layoutX="274.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#AddDepartement" prefHeight="31.0" prefWidth="187.0" text="Ajouter" />
+        <Button layoutX="151.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#AddDepartement" prefHeight="31.0" prefWidth="187.0" text="Ajouter" />
+      <Button layoutX="433.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#ModifierDepartement" prefHeight="31.0" prefWidth="187.0" text="Modifier" />
 
     </children>
     

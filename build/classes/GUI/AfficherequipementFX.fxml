@@ -25,12 +25,22 @@
             <Font name="Arial Bold Italic" size="44.0" />
          </font>
       </Text>
-      <Button layoutX="209.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#AjouterEquipement" prefHeight="73.0" prefWidth="275.0" style="-fx-background-color: #01DF3A;" text="Ajouter Equipement" textFill="WHITE">
+      <Button layoutX="56.0" layoutY="669.0" mnemonicParsing="false" onMouseClicked="#AjouterEquipement" prefHeight="73.0" prefWidth="275.0" style="-fx-background-color: #01DF3A;" text="Ajouter Equipement" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Button>
-      <Button layoutX="517.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#deleteEquipement" prefHeight="73.0" prefWidth="305.0" style="-fx-background-color: #FE2E2E;" text="Supprimer Equipement" textFill="WHITE">
+      <Button layoutX="800.0" layoutY="669.0" mnemonicParsing="false" onMouseClicked="#deleteEquipement" prefHeight="73.0" prefWidth="305.0" style="-fx-background-color: #FE2E2E;" text="Supprimer Equipement" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="401.0" layoutY="669.0" mnemonicParsing="false" onMouseClicked="#updateDepartement" prefHeight="73.0" prefWidth="275.0" style="-fx-background-color: #01DF3A;" text="Modifier Equipement" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="382.0" layoutY="597.0" mnemonicParsing="false" onMouseClicked="#exel" prefHeight="12.0" prefWidth="313.0" style="-fx-background-color: #01DF3A;" text="excel" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="25.0" />
          </font>

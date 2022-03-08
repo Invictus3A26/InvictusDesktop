@@ -77,7 +77,7 @@ public class DepartementService {
         }
     }
 
-    public void modifierDepartement(long id, Departement d) {
+    public void modifierDepartement(int id, Departement d) {
 
         try {
             PreparedStatement ste;
@@ -87,7 +87,7 @@ public class DepartementService {
             ste.setString(1, d.getNomDepartement());
             ste.setString(2, d.getZoneDepartement());
             ste.setString(3, d.getDetailDepartement());
-            ste.setLong(4, id);
+            ste.setInt(4, id);
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -128,6 +128,38 @@ public class DepartementService {
         List<Departement> resultat = Departement.stream().filter(departement -> NomDepartement.equals(departement.getNomDepartement())).collect(Collectors.toList());
         if (resultat.isEmpty()) {
             System.out.println("Aucun departement par ce nom");
+            return null;
+
+        } else {
+            System.out.println("Departement : ");
+            return resultat;
+
+        }
+
+
+    }
+    public List<Departement> findByZone(String ZoneDepartement) {
+
+        List<Departement> Departement = afficherDepartement();
+        List<Departement> resultat = Departement.stream().filter(departement -> ZoneDepartement.equals(departement.getZoneDepartement())).collect(Collectors.toList());
+        if (resultat.isEmpty()) {
+            System.out.println("Aucun departement par cette zone");
+            return null;
+
+        } else {
+            System.out.println("Departement : ");
+            return resultat;
+
+        }
+
+
+    }
+    public List<Departement> findByDetail(String DetailDepartement) {
+
+        List<Departement> Departement = afficherDepartement();
+        List<Departement> resultat = Departement.stream().filter(departement -> DetailDepartement.equals(departement.getDetailDepartement())).collect(Collectors.toList());
+        if (resultat.isEmpty()) {
+            System.out.println("Aucun departement par ce detail");
             return null;
 
         } else {

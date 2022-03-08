@@ -19,7 +19,8 @@
         <TextField fx:id="tfzoneEquipement" layoutX="360.0" layoutY="303.0" promptText="zoneEquipement" />
         <TextField fx:id="tfetatEquipement" layoutX="360.0" layoutY="363.0" promptText="etatEquipement" />
         <TextField fx:id="tfid_departement" layoutX="360.0" layoutY="418.0" promptText="id_departement" />
-        <Button layoutX="274.0" layoutY="492.0" mnemonicParsing="false" onAction="#Addequipement" prefHeight="31.0" prefWidth="187.0" text="Ajouter" />
+        <Button layoutX="208.0" layoutY="492.0" mnemonicParsing="false" onAction="#Addequipement" prefHeight="31.0" prefWidth="187.0" text="Ajouter" />
+      <Button layoutX="454.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#ModifierEquipement" prefWidth="187.0" text="Modifier" />
 
     </children>
     

@@ -28,12 +28,14 @@ import javafx.scene.input.MouseEvent;
  */
 public class AjouterdepartementFXController implements Initializable {
 
+    
     @FXML
     private TextField tfnomDepartement;
     @FXML
     private TextField tfzoneDepartement;
     @FXML
     private TextField tfdetailDepartement;
+    int id_d;
 
     /**
      * Initializes the controller class.
@@ -45,42 +47,54 @@ public class AjouterdepartementFXController implements Initializable {
 
     @FXML
     private void AddDepartement(MouseEvent event) {
+        StringBuilder errors=new StringBuilder();
+        if(tfnomDepartement.getText().trim().isEmpty()){
+            errors.append("Ajouter un nom de departement\n");
+        }
+        if(tfzoneDepartement.getText().trim().isEmpty()){
+            errors.append("Ajouter une zone de departement\n");
+        }
+        if(tfdetailDepartement.getText().trim().isEmpty()){
+            errors.append("Ajouter un detail de departement\n");
+        }
+      
+        if (errors.length() > 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Errors");
+            alert.setContentText(errors.toString());
+            alert.showAndWait();
+        }
         String nomDepartement = tfnomDepartement.getText();
         String zoneDepartement = tfzoneDepartement.getText();
         String detailDepartement = tfdetailDepartement.getText();
 
         Departement d = new Departement(nomDepartement, zoneDepartement, detailDepartement);
         DepartementService ds = new DepartementService();
-        //Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
-        //try {
+        
         ds.ajouterDepartement(d);
-        //alert.setTitle("Success");
-        //alert.setHeaderText("Added");
-        //alert.setContentText("Departement added successfully !");
-
-        //alert.setOnCloseRequest((evn) -> {
-        //try {
-        //URL fxURL = getClass().getResource("AfficherdepartementFX.fxml");
-        //FXMLLoader loader = new FXMLLoader(fxURL);
-        //Parent root = loader.load();
-        //AfficherdepartementFXController sfc = loader.getController();
-        //sfc.setNomDepartement("nomDepartement : " + tfnomDepartement.getText());
-        //sfc.setZoneDepartement("zoneDepartement : " + tfzoneDepartement.getText());
-        //sfc.setDetailDepartement("detailDepartement : " + tfdetailDepartement.getText());
-        //tfnomDepartement.getScene().setRoot(root);
-        //} catch (IOException ex) {
-        //System.out.println(ex.getMessage());
-        //}
-        //});
-        //} catch (SQLException ex) {
-        //alert.setAlertType(Alert.AlertType.ERROR);
-        //alert.setTitle("Error");
-        //alert.setHeaderText("Adding error");
-        //alert.setContentText(ex.getMessage());
-        //} finally {
-        //alert.showAndWait();
-        //}
+        
+        
     }
+
+    public void setTextField(int id, String nomDepartement, String zoneDepartement, String detailDepartement) {
+        id_d = id;
+        tfnomDepartement.setText(nomDepartement);
+        tfzoneDepartement.setText(zoneDepartement);
+        tfdetailDepartement.setText(detailDepartement);
+
+    }
+
+    @FXML
+    private void ModifierDepartement(MouseEvent event) {
+        String nomDepartement = tfnomDepartement.getText();
+        String zoneDepartement = tfzoneDepartement.getText();
+        String detailDepartement = tfdetailDepartement.getText();
+        Departement d = new Departement(nomDepartement, zoneDepartement, detailDepartement);
+        DepartementService ds = new DepartementService();
+        ds.modifierDepartement(id_d, d);
+
+    }
+    
+
 
 }
