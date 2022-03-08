@@ -15,18 +15,24 @@ public class AvionModel {
     private String CodeAvion;
     private String TypeA;
     private String Model;
-    private float PassagerN;
+    private int PassagerN;
     private String CodeC;
 
     public AvionModel() {
     }
 
-    public AvionModel(String CodeAvion, String TypeA, String Model, float PassagerN, String CodeC) {
+    public AvionModel(String CodeAvion, String TypeA, String Model, int PassagerN, String CodeC) {
         this.CodeAvion = CodeAvion;
         this.TypeA = TypeA;
         this.Model = Model;
         this.PassagerN = PassagerN;
         this.CodeC = CodeC;
+    }
+
+    public AvionModel(String TypeA, String Model, int PassagerN) {
+        this.TypeA = TypeA;
+        this.Model = Model;
+        this.PassagerN = PassagerN;
     }
 
    
@@ -55,11 +61,11 @@ public class AvionModel {
         this.Model = Model;
     }
 
-    public float getPassagerN() {
+    public int getPassagerN() {
         return PassagerN;
     }
 
-    public void setPassagerN(float PassagerN) {
+    public void setPassagerN(int PassagerN) {
         this.PassagerN = PassagerN;
     }
 

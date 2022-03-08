@@ -28,7 +28,7 @@ public class NewFXMain extends Application {
         try {
             URL fxURL = getClass().getResource("../GUI/Compagnie.fxml");
             Parent root = FXMLLoader.load(fxURL);
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root, 1046, 623);
             primaryStage.setScene(scene);
             primaryStage.setTitle("FLY INVICTUS");
             primaryStage.show();

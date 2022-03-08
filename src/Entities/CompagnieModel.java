@@ -36,6 +36,17 @@ public class CompagnieModel {
        
     }
 
+    public CompagnieModel(String NomCom, String Link, String Pays, int Number, String Siege, String AeBase, int PassagerNum, String Description) {
+        this.NomCom = NomCom;
+        this.Link = Link;
+        this.Pays = Pays;
+        this.Number = Number;
+        this.Siege = Siege;
+        this.AeBase = AeBase;
+        this.PassagerNum = PassagerNum;
+        this.Description = Description;
+    }
+
     public String getCode_IATA() {
         return Code_IATA;
     }

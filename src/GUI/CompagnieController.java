@@ -35,7 +35,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import Services.CompagnieService;
-
+import Tools.DBConnexion;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javax.swing.JOptionPane;
 /**
  * FXML Controller class
  *
@@ -90,7 +96,17 @@ public class CompagnieController implements Initializable {
     private Button BtnEditCompagnie;
     @FXML
     private Button btneupdateCompagnie1;
-    @Override
+    @FXML
+    private TextField filterField;
+   @FXML
+          private CompagnieModel compt = null;
+    Connection cnx;
+   
+      public CompagnieController() {
+        
+        cnx=DBConnexion.getInstance().getCnx();
+    }
+        @Override
     public void initialize(URL url, ResourceBundle rb) {
        
         
@@ -105,9 +121,7 @@ public class CompagnieController implements Initializable {
                     compagnieList.add(C.get(i));
                     System.out.println(C.get(i));
                 }             
-            
-            
-            Code_IATA.setCellValueFactory(new PropertyValueFactory<>("Code_IATA"));
+           
             NomCom.setCellValueFactory(new PropertyValueFactory<>("NomCom"));
             Link.setCellValueFactory(new PropertyValueFactory<>("Link"));
             Pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
@@ -120,6 +134,18 @@ public class CompagnieController implements Initializable {
             TCompagnie.setItems(compagnieList);
         }
         }
+    @FXML
+    public void loadCompagnie(){
+            NomCom.setCellValueFactory(new PropertyValueFactory<>("NomCom"));
+            Link.setCellValueFactory(new PropertyValueFactory<>("Link"));
+            Pays.setCellValueFactory(new PropertyValueFactory<>("Pays"));
+            NumTel.setCellValueFactory(new PropertyValueFactory<>("Number"));
+            Siege.setCellValueFactory(new PropertyValueFactory<>("Siege"));
+            AeBase.setCellValueFactory(new PropertyValueFactory<>("AeBase"));
+            NumP.setCellValueFactory(new PropertyValueFactory<>("PassagerNum"));
+            Description.setCellValueFactory(new PropertyValueFactory<>("Description"));
+            
+    }
     @FXML
     private void saveCompagnie(ActionEvent event)  {
    
@@ -138,9 +164,20 @@ public class CompagnieController implements Initializable {
     }
     @FXML
     private void deleteCompagnie(ActionEvent event) {
-         CompagnieModel C = TCompagnie.getSelectionModel().getSelectedItem();
-                                CompagnieService CS = new CompagnieService();
-                                CS.deleteCompagnie(C.getCode_IATA());
+
+             CompagnieService cs = new CompagnieService();
+             CompagnieModel comp = new CompagnieModel();
+         comp = TCompagnie.getSelectionModel().getSelectedItem();
+          int input = JOptionPane.showConfirmDialog(null, "Voulez vous vraiment supprimer ?",
+                  "Choisir une option...",
+                  JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+            if (input == 0) { 
+                cs.deleteCompagnie(comp.getCode_IATA());
+                loadCompagnie();
+            }   else if (input == 1)
+            {             loadCompagnie();
+            }
+        
     }
 @FXML
     private void editCompagnie(ActionEvent event) {
@@ -174,6 +211,21 @@ public class CompagnieController implements Initializable {
     @FXML
     private void goToAvCom(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AvionCompagnie.fxml"));
+
+        Parent root = loader.load();
+            int width = (int) Screen.getPrimary().getBounds().getWidth();
+            int height = (int) Screen.getPrimary().getBounds().getHeight();
+            
+            Scene scene = new Scene(root,width,height);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setMaximized(true);
+            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+            stage.setScene(scene);
+            stage.show();
+    }
+        @FXML
+    private void goToAv(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Avion.fxml"));
             Parent root = loader.load();
             int width = (int) Screen.getPrimary().getBounds().getWidth();
             int height = (int) Screen.getPrimary().getBounds().getHeight();
@@ -185,4 +237,43 @@ public class CompagnieController implements Initializable {
             stage.setScene(scene);
             stage.show();
     }
+    @FXML
+    private void refreshTable() {
+        compagnieList.clear();
+          try {
+          ;
+           ResultSet rs = cnx.createStatement().executeQuery("select * from compagnie");
+
+
+
+            while (rs.next()){
+                compagnieList.add(new  CompagnieModel(
+
+                      
+                        rs.getString("NomCom"),
+                        rs.getString("Link"),
+                        rs.getString("Pays"),
+                        rs.getInt("Number"),
+                        rs.getString("Siege"),
+                        rs.getString("AeBase"),
+                        rs.getInt("PassagerNum"),
+                        rs.getString("Description")
+
+
+
+                ));
+
+            }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CompagnieController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      loadCompagnie();
+        TCompagnie.setItems(compagnieList);
+
+
+
+    }
+     
 }

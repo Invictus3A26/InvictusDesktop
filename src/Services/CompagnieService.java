@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -129,7 +130,121 @@ public void modifierCompagnie(String Code_IATA, CompagnieModel c) {
         }
          return avcom;
         }
-
-    
-   
+            
+     public List<CompagnieModel> findbyCode(String CodeC){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->CodeC.equals(a.getCode_IATA())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+      public List<CompagnieModel> findbyNom(String NomCom){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->NomCom.equals(a.getCode_IATA())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+       public List<CompagnieModel> findbyLink(String Link){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->Link.equals(a.getLink())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+        public List<CompagnieModel> findbyCountry(String Pays){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->Pays.equals(a.getPays())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+        
+         public List<CompagnieModel> findbynumb(int Np){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->Np==a.getNumber()).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+          public List<CompagnieModel> findbySiege(String Siege){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->Siege.equals(a.getSiege())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+           public List<CompagnieModel> findbyAB(String AEB){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->AEB.equals(a.getAeBase())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+            public List<CompagnieModel> findbyPassnum(int Np){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->Np==a.getPassagerNum()).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }   
+    public List<CompagnieModel> findbyDescription(String description){
+        List< CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().filter(a->description.equals(a.getDescription())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+                    public List<CompagnieModel> sortBySiege(){
+        List<CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().sorted(Comparator.comparing(CompagnieModel::getSiege)).collect(Collectors.toList());
+        return resultat;
+    }
+                    public List<CompagnieModel> sortByAe(){
+        List<CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().sorted(Comparator.comparing(CompagnieModel::getAeBase)).collect(Collectors.toList());
+        return resultat;
+    }
+                    public List<CompagnieModel> sortByPassnum(){
+        List<CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().sorted(Comparator.comparing(CompagnieModel::getPassagerNum)).collect(Collectors.toList());
+        return resultat;
+    }
+                public List<CompagnieModel> sortByNom(){
+        List<CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().sorted(Comparator.comparing(CompagnieModel::getNomCom)).collect(Collectors.toList());
+        return resultat;
+    }
+                              public List<CompagnieModel> sortBydescription(){
+        List<CompagnieModel> comp=afficherCompagnie();
+        List<CompagnieModel> resultat=comp.stream().sorted(Comparator.comparing(CompagnieModel::getDescription)).collect(Collectors.toList());
+        return resultat;
+    }
 }

@@ -13,7 +13,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -49,7 +53,7 @@ public class AvionService {
                 A.setCodeAvion(rs.getString("CodeAvion"));
                 A.setTypeA(rs.getString("TypeA"));
                 A.setModel(rs.getString("Model"));
-                A.setPassagerN(rs.getFloat("PassagerN"));
+                A.setPassagerN(rs.getInt("PassagerN"));
                   A.setCodeC(rs.getString("CodeC"));
                 avion.add(A);
                 
@@ -89,5 +93,61 @@ public void modifierAvion(String CodeAvion, AvionModel A) {
             System.err.println(ex.getMessage());
         }
     }
-
+public List<AvionModel> findByCA(String type){
+        List<AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().filter(a->type.equals(a.getCodeAvion())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l'avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+    
+    public List<AvionModel> findByType(String type){
+        List<AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().filter(a->type.equals(a.getTypeA())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l'avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+    
+     public List<AvionModel> findbyModel(String Model){
+        List< AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().filter(a->Model.equals(a.getModel())).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+         public List<AvionModel> findbyNP(int Np){
+        List< AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().filter(a->Np==a.getPassagerN()).collect(Collectors.toList());
+        if(resultat.isEmpty()){
+            System.out.println("l avion n existe pas");
+        }else{
+            System.out.println("l avion existe");
+        }
+        return resultat;
+    }
+            public List<AvionModel> sortByTypeA(){
+        List<AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().sorted(Comparator.comparing(AvionModel::getTypeA)).collect(Collectors.toList());
+        return resultat;
+    }
+            public List<AvionModel> sortByModel(){
+        List<AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().sorted(Comparator.comparing(AvionModel::getModel)).collect(Collectors.toList());
+        return resultat;
+    }
+            public List<AvionModel> sortByPN(){
+        List<AvionModel> avion=afficherAvion();
+        List<AvionModel> resultat=avion.stream().sorted(Comparator.comparing(AvionModel::getPassagerN)).collect(Collectors.toList());
+        return resultat;
+    }
 }

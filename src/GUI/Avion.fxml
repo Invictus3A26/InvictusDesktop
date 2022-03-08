@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CompagnieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AvionController">
    <top>
       <HBox prefHeight="50.0" prefWidth="1046.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -30,8 +30,8 @@
                   <HBox prefHeight="50.0" prefWidth="86.0" />
                   <HBox prefHeight="50.0" prefWidth="496.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-style: hidden hidden solid hidden; -fx-border-color: #AE0723; -fx-border-width: 3;" text="Compagnie" />
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAv" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white;" text="Avion" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToCom" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white;" text="Compagnie" />
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-style: hidden hidden solid hidden; -fx-border-color: #AE0723; -fx-border-width: 3;" text="Avion" />
                         <Button layoutX="131.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAvCom" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: white;" text="AvionCompagnie" />
                      </children>
                   </HBox>
@@ -84,26 +84,20 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <Button fx:id="BtnEditCompagnie" mnemonicParsing="false" onAction="#editCompagnie" text="Modifier" />
-                  <Button fx:id="BtnDeleteCompagnie" mnemonicParsing="false" onAction="#deleteCompagnie" text="Supprimer" />
+                  <Button fx:id="BtnEditAvion" mnemonicParsing="false" onAction="#selectAvion" text="Modifier" />
+                  <Button fx:id="BtnDeleteAvion" mnemonicParsing="false" onAction="#deleteAvion" text="Supprimer" />
                   <TextField alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="139.0">
                      <HBox.margin>
                         <Insets left="27.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
                </children>
             </HBox>
-            <TableView fx:id="TCompagnie" minHeight="-Infinity" prefHeight="226.0" prefWidth="964.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="Avion" minHeight="-Infinity" prefHeight="226.0" prefWidth="964.0" VBox.vgrow="ALWAYS">
                <columns>
-                  <TableColumn fx:id="NomCom" prefWidth="145.0" text="Nom" />
-                  <TableColumn fx:id="Link" minWidth="2.0" prefWidth="103.0" text="Site Web" />
-                  <TableColumn fx:id="Pays" prefWidth="45.0" text="Pays" />
-                  <TableColumn fx:id="NumTel" prefWidth="88.0" text="Num Tel" />
-                  <TableColumn fx:id="Siege" prefWidth="45.0" text="Siege" />
-                  <TableColumn fx:id="AeBase" prefWidth="116.0" text="AeBase" />
-                  <TableColumn fx:id="NumP" prefWidth="128.0" text="Num Passagers" />
-                  <TableColumn fx:id="Description" minWidth="0.0" prefWidth="197.0" text="Description" />
+                  <TableColumn fx:id="TypeA" prefWidth="115.0" text="Type avion" />
+                  <TableColumn fx:id="Model" minWidth="2.0" prefWidth="191.0" text="Model" />
+                  <TableColumn fx:id="PassagerN" maxWidth="521.0" prefWidth="291.0" text="Nombre de Place" />
                </columns>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" />
@@ -122,12 +116,12 @@
                                           <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="431.0" VBox.vgrow="ALWAYS" />
                                           <HBox alignment="CENTER" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <TextField fx:id="CI" prefHeight="25.0" prefWidth="201.0" promptText="Code_IATA">
+                                                <TextField fx:id="CA" prefHeight="25.0" prefWidth="201.0" promptText="Code Avion">
                                                    <HBox.margin>
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </TextField>
-                                                <TextField fx:id="NM" prefHeight="25.0" prefWidth="200.0" promptText="Nom">
+                                                <TextField fx:id="TA" prefHeight="25.0" prefWidth="200.0" promptText="Type Avion">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
@@ -136,59 +130,33 @@
                                           </HBox>
                                           <HBox alignment="CENTER" layoutX="10.0" layoutY="39.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <TextField fx:id="SW" prefHeight="25.0" prefWidth="201.0" promptText="Site Web">
+                                                <TextField fx:id="MD" prefHeight="25.0" prefWidth="201.0" promptText="Model">
                                                    <HBox.margin>
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </TextField>
-                                                <TextField fx:id="PS" prefHeight="25.0" prefWidth="200.0" promptText="Pays">
+                                                <TextField fx:id="PN" prefHeight="25.0" prefWidth="200.0" promptText="Nombre de place">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
                                                 </TextField>
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="72.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
-                                             <children>
-                                                <TextField fx:id="NT" prefHeight="25.0" prefWidth="414.0" promptText="Numéro de téléphone">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="72.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS" />
                                           <HBox alignment="CENTER" layoutX="10.0" layoutY="138.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <TextField fx:id="SG" prefHeight="25.0" prefWidth="201.0" promptText="Siege">
-                                                   <HBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </HBox.margin>
-                                                </TextField>
-                                                <TextField fx:id="ADB" prefHeight="25.0" prefWidth="200.0" promptText="Aeroport de base">
+                                                <TextField fx:id="CC" prefHeight="25.0" prefWidth="414.0" promptText="Code Compagnie">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
                                                 </TextField>
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="123.0" prefHeight="33.0" prefWidth="431.0">
-                                             <children>
-                                                <TextField fx:id="NP" prefHeight="25.0" prefWidth="201.0" promptText="Num Passagers">
-                                                   <HBox.margin>
-                                                      <Insets right="15.0" />
-                                                   </HBox.margin>
-                                                </TextField>
-                                                <TextField fx:id="DS" prefHeight="31.0" prefWidth="202.0" promptText="Description">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                </TextField>
-                                             </children>
-                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="123.0" prefHeight="33.0" prefWidth="431.0" />
                                           <HBox alignment="CENTER" prefHeight="53.0" prefWidth="437.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <Button fx:id="btnSaveCompagnie" mnemonicParsing="false" onAction="#saveCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Save" textFill="WHITE" />
-                                                <Button fx:id="btneupdateCompagnie1" mnemonicParsing="false" onAction="#UpdateCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Update" textFill="WHITE" />
+                                                <Button fx:id="btnSaveAvion" mnemonicParsing="false" onAction="#saveAvion" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Save" textFill="WHITE" />
+                                                <Button fx:id="btneupdateAvion" mnemonicParsing="false" onAction="#UpdateAvion" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Update" textFill="WHITE" />
                                              </children>
                                           </HBox>
                                        </children>
