@@ -10,5 +10,5 @@ package Entities;
  * @author LENOVO
  */
 public enum Role {
-    ADMIN,PASSAGER,EMPLOYE
+    PASSAGER,EMPLOYE,ADMIN
 }

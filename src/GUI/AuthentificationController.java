@@ -318,7 +318,6 @@ public class AuthentificationController implements Initializable {
                         Id.user = u.getId();
                         System.out.println("*****************************");
                         System.out.println(Id.user);
-                        
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         
                         stageclose.close();
@@ -341,7 +340,7 @@ public class AuthentificationController implements Initializable {
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         
                         stageclose.close();
-                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLSideBarPassager.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfilePassager.fxml"));
                         Stage stage = new Stage();
                         
                         Scene scene = new Scene(root);
@@ -360,7 +359,7 @@ public class AuthentificationController implements Initializable {
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         
                         stageclose.close();
-                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLSideBarEmploye.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfileEmploye.fxml"));
                         Stage stage = new Stage();
                         
                         Scene scene = new Scene(root);
@@ -434,7 +433,7 @@ public class AuthentificationController implements Initializable {
             u.setPassword(passwordPF.getText());
             u.setPrenom(prenomtf.getText());
             u.setUsername(usernametf.getText());
-            u.setRole(Role.ADMIN);
+            u.setRole(Role.PASSAGER);
             us.ajouter(u);
             TrayNotification tray = new TrayNotification();
 

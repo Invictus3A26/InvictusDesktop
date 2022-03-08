@@ -52,21 +52,23 @@ public class UserService implements IService<User> {
     @Override
     public void modifier(long id_amodifier, User t) {
         try {
+            System.out.println("1");
+
             PreparedStatement st;
-            st = cnx.prepareStatement("UPDATE `user` SET `adresse`=?,`date_naissance`=?,"
-                    + "`email`=?,`nom`=?,`num_tel`=?,"
-                    + "`password`=?,`prenom`=?,"
+            st = cnx.prepareStatement("UPDATE `user` SET `adresse`=?,`date_naissance`=?, `email`=?,`nom`=?,`num_tel`=?,`prenom`=?,"
                     + "`role`=?,`username`=? WHERE id=?");
+            System.out.println("2");
+
             st.setString(1, t.getAdresse());
             st.setDate(2, new java.sql.Date(t.getDate_naissance().getTime()));
             st.setString(3, t.getEmail());
             st.setString(4, t.getNom());
             st.setInt(5, t.getNumTel());
-            st.setString(6, cryptWithMD5(t.getPassword()));
-            st.setString(7, t.getPrenom());
-            st.setString(8, t.getRole().toString());
-            st.setString(9, t.getUsername());
-            st.setLong(10, id_amodifier);
+            // st.setString(6, cryptWithMD5(t.getPassword()));
+            st.setString(6, t.getPrenom());
+            st.setString(7, t.getRole().toString());
+            st.setString(8, t.getUsername());
+            st.setLong(9, id_amodifier);
             if (st.executeUpdate() == 1) {
                 System.out.println("user modifier avec success");
             } else {
@@ -121,7 +123,117 @@ public class UserService implements IService<User> {
         return lu;
     }
 
-    
+    @Override
+    public List<User> afficheremployes() {
+        List<User> lu = new ArrayList<>();
+        try {
+            Statement st = cnx.createStatement();
+            String query = "select * from user where role='EMPLOYE'";
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                User u = new User();
+                u.setAdresse(rs.getString("adresse"));
+                u.setDate_naissance(rs.getDate("date_naissance"));
+                u.setEmail(rs.getString("email"));
+                u.setId(rs.getLong("id"));
+                u.setNom(rs.getString("nom"));
+                u.setNumTel(rs.getInt("num_tel"));
+                u.setPassword(cryptWithMD5(rs.getString("password")));
+                u.setPrenom(rs.getString("prenom"));
+                u.setUsername(rs.getString("username"));
+                u.setRole(Role.valueOf(rs.getString("role")));
+                lu.add(u);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lu;
+    }
+
+    @Override
+    public List<User> afficherpassager() {
+        List<User> lu = new ArrayList<>();
+        try {
+            Statement st = cnx.createStatement();
+            String query = "select * from user where role='PASSAGER'";
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                User u = new User();
+                u.setAdresse(rs.getString("adresse"));
+                u.setDate_naissance(rs.getDate("date_naissance"));
+                u.setEmail(rs.getString("email"));
+                u.setId(rs.getLong("id"));
+                u.setNom(rs.getString("nom"));
+                u.setNumTel(rs.getInt("num_tel"));
+                u.setPassword(cryptWithMD5(rs.getString("password")));
+                u.setPrenom(rs.getString("prenom"));
+                u.setUsername(rs.getString("username"));
+                u.setRole(Role.valueOf(rs.getString("role")));
+                lu.add(u);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lu;
+    }
+
+    @Override
+    public int affichernumber(String role) {
+        if (role.equals("PASSAGER")) {
+            try {
+                Statement st = cnx.createStatement();
+                String query = "select count(*) from user where role='PASSAGER'";
+                ResultSet rs = st.executeQuery(query);
+                if (rs.next()) {
+                    int theCount = rs.getInt(1);
+                    System.out.println(theCount);
+                    return theCount;
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (role.equals("EMPLOYE")) {
+            try {
+                Statement st = cnx.createStatement();
+                String query = "select count(*) from user where role='EMPLOYE'";
+                ResultSet rs = st.executeQuery(query);
+                if (rs.next()) {
+                    int theCount = rs.getInt(1);
+                    System.out.println(theCount);
+                    return theCount;
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int affichercount(String table) {
+        if (table.equals("reclamation")) {
+            try {
+                Statement st = cnx.createStatement();
+                String query = "select count(*) from reclamation";
+                System.out.println("**********************");
+                ResultSet rs = st.executeQuery(query);
+
+                if (rs.next()) {
+                    int theCount = rs.getInt(1);
+                    System.out.println(theCount);
+                    return theCount;
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return 0;
+    }
 
     public User findById(long id) {
         User u = new User();

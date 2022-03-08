@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDashboardController">
+<AnchorPane fx:id="Dashboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDashboardController">
    <children>
       <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Dashboard" />
       <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
@@ -30,7 +30,7 @@
                      </children>
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0" />
-                  <JFXButton layoutX="113.0" layoutY="14.0" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #00C0EF;" text="Passagers" textFill="WHITE">
+                  <JFXButton fx:id="Passagers" layoutX="113.0" layoutY="14.0" onAction="#Passagers" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #00C0EF;" text="Passagers" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -51,7 +51,7 @@
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0">
                      <children>
-                        <JFXButton prefHeight="0.0" prefWidth="133.0" style="-fx-background-color: #00A65A;" text="Employes" textFill="WHITE">
+                        <JFXButton fx:id="Employes" onAction="#Employes" prefHeight="0.0" prefWidth="133.0" style="-fx-background-color: #00A65A;" text="Employes" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -74,7 +74,7 @@
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0">
                      <children>
-                        <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #F39C12;" text="Bagages" textFill="WHITE">
+                        <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #F39C12;" text="Feedbacks" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -152,7 +152,7 @@
             </Pane>
             <VBox layoutX="106.0" layoutY="17.0">
                <children>
-                  <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7067CF;" text="Vols" textFill="WHITE">
+                  <JFXButton prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #7067CF;" text="Flights" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
