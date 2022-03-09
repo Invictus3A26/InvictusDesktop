@@ -24,7 +24,7 @@ public class MyConnexion {
     private static Connection cnx;
     private static MyConnexion instance;
 
-    private MyConnexion() {
+    public MyConnexion() {
         
         try {
             cnx=DriverManager.getConnection(URL,USER,PWD);

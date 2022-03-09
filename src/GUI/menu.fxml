@@ -1,26 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="recpane" prefHeight="632.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
+<AnchorPane id="AnchorPane" fx:id="recpane" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
    <children>
-      <Label layoutX="215.0" layoutY="26.0" prefHeight="17.0" prefWidth="171.0" text="Menu">
-         <font>
-            <Font name="System Bold" size="39.0" />
-         </font>
-      </Label>
-      <Button fx:id="r" layoutX="80.0" layoutY="202.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="40.0" prefWidth="248.0" text="Reclamation" textFill="RED">
+      <Button fx:id="r" layoutX="420.0" layoutY="237.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="40.0" prefWidth="248.0" text="Reclamation" textFill="RED">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="a" layoutX="355.0" layoutY="324.0" mnemonicParsing="false" onAction="#avis" prefHeight="46.0" prefWidth="248.0" text="Avis" textFill="RED">
+      <Button fx:id="a" layoutX="558.0" layoutY="325.0" mnemonicParsing="false" onAction="#avis" prefHeight="46.0" prefWidth="248.0" text="Avis" textFill="RED">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
+      <AnchorPane layoutY="-6.0" prefHeight="649.0" prefWidth="198.0" style="-fx-background-color: #2F2B43;">
+         <children>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="600.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Log Out" textFill="WHITE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-déconnexion-64%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="173.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 5;">
+               <image>
+                  <Image url="@../Resources/Icons/flight.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="450.0" width="1000.0" />
+               </viewport>
+            </ImageView>
+            <Pane layoutY="92.0" prefHeight="61.0" prefWidth="241.0" style="-fx-background-color: #3b7160; -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="23.0" layoutY="23.0" prefHeight="49.0" prefWidth="196.0" text="A Great way to Fly!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="-10.0" prefHeight="49.0" prefWidth="196.0" text="        Invictus" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-nom-100.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="Passagername" layoutX="16.0" layoutY="174.0" prefHeight="49.0" prefWidth="213.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <VBox layoutY="229.0" prefHeight="241.0" prefWidth="241.0" AnchorPane.bottomAnchor="179.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="229.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Your flights" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/send.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Reclamation" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/icons8-mail-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Avis" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Share Your opinion" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/comment-user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -321,7 +321,9 @@ public class AuthentificationController implements Initializable {
                     Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     stageclose.close();
-                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
+                    //Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/Home.fxml"));
+
                     Stage stage = new Stage();
 
                     Scene scene = new Scene(root);
@@ -341,8 +343,8 @@ public class AuthentificationController implements Initializable {
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                         stageclose.close();
-                         Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfilePassager.fxml"));
-                       // Parent root = FXMLLoader.load(getClass().getResource("../GUI/Reclamation.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfilePassager.fxml"));
+                        // Parent root = FXMLLoader.load(getClass().getResource("../GUI/Reclamation.fxml"));
 
                         Stage stage = new Stage();
 

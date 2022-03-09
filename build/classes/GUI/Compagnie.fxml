@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CompagnieController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="649.0" prefWidth="198.0" style="-fx-background-color: #AE0723;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER" />
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="268.0" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER" />
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="297.0" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER" />
+            <AnchorPane prefHeight="649.0" prefWidth="241.0" style="-fx-background-color: #2F2B43;">
+               <children>
+                  <VBox layoutY="203.0" prefHeight="316.0" prefWidth="241.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="203.0">
+                     <children>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="companies" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Icons/company.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Flights" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Icons/send.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Luggage" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Icons/product_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Reclamation" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Reclamation" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Icons/icons8-mail-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Dashboard" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/Icons/dashboard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="40.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="600.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Log Out" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Icons/icons8-déconnexion-64%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="82.0" fitWidth="173.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 5;">
+                     <image>
+                        <Image url="@../Resources/Icons/flight.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="450.0" width="1000.0" />
+                     </viewport>
+                  </ImageView>
+                  <Pane layoutY="98.0" prefHeight="61.0" prefWidth="241.0" style="-fx-background-color: #3b7160; -fx-background-radius: 5;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="23.0" prefHeight="49.0" prefWidth="196.0" text="A Great way to Fly!" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="-10.0" prefHeight="49.0" prefWidth="196.0" text="        Invictus" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Icons/icons8-nom-100.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="55.0" prefWidth="846.0">
+               <children>
+                  <HBox prefHeight="111.0" prefWidth="589.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-style: hidden hidden solid hidden; -fx-border-color: #AE0723; -fx-border-width: 3;" text="Compagnie" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAv" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white;" text="Avion" />
+                        <Button layoutX="131.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAvCom" prefHeight="50.0" prefWidth="196.0" style="-fx-background-color: white;" text="AvionCompagnie" />
+                        <ImageView fitHeight="47.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../PIDEV/src/Images/1.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="89.0" prefWidth="929.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="BtnEditCompagnie" mnemonicParsing="false" onAction="#editCompagnie" text="Modifier" />
+                  <Button fx:id="BtnDeleteCompagnie" mnemonicParsing="false" onAction="#deleteCompagnie" text="Supprimer" />
+                  <TextField alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="139.0">
+                     <HBox.margin>
+                        <Insets left="27.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
+               </children>
+            </HBox>
+            <TableView fx:id="TCompagnie" minHeight="-Infinity" prefHeight="226.0" prefWidth="964.0" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="NomCom" prefWidth="145.0" text="Nom" />
+                  <TableColumn fx:id="Link" minWidth="2.0" prefWidth="103.0" text="Site Web" />
+                  <TableColumn fx:id="Pays" prefWidth="45.0" text="Pays" />
+                  <TableColumn fx:id="NumTel" prefWidth="88.0" text="Num Tel" />
+                  <TableColumn fx:id="Siege" prefWidth="45.0" text="Siege" />
+                  <TableColumn fx:id="AeBase" prefWidth="116.0" text="AeBase" />
+                  <TableColumn fx:id="NumP" prefWidth="128.0" text="Num Passagers" />
+                  <TableColumn fx:id="Description" minWidth="0.0" prefWidth="197.0" text="Description" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="274.0" prefWidth="929.0">
+               <children>
+                  <TabPane prefHeight="259.0" prefWidth="934.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                     <tabs>
+                        <Tab text="Ajouter Compagnie">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox prefHeight="269.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="431.0" VBox.vgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="CI" prefHeight="25.0" prefWidth="201.0" promptText="Code_IATA">
+                                                   <HBox.margin>
+                                                      <Insets right="15.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="NM" prefHeight="25.0" prefWidth="200.0" promptText="Nom">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="39.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="SW" prefHeight="25.0" prefWidth="201.0" promptText="Site Web">
+                                                   <HBox.margin>
+                                                      <Insets right="15.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="PS" prefHeight="25.0" prefWidth="200.0" promptText="Pays">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="72.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="NT" prefHeight="25.0" prefWidth="414.0" promptText="Numéro de téléphone">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="138.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="SG" prefHeight="25.0" prefWidth="201.0" promptText="Siege">
+                                                   <HBox.margin>
+                                                      <Insets right="15.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="ADB" prefHeight="25.0" prefWidth="200.0" promptText="Aeroport de base">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="123.0" prefHeight="33.0" prefWidth="431.0">
+                                             <children>
+                                                <TextField fx:id="NP" prefHeight="25.0" prefWidth="201.0" promptText="Num Passagers">
+                                                   <HBox.margin>
+                                                      <Insets right="15.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="DS" prefHeight="31.0" prefWidth="202.0" promptText="Description">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="53.0" prefWidth="437.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <Button fx:id="btnSaveCompagnie" mnemonicParsing="false" onAction="#saveCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Save" textFill="WHITE" />
+                                                <Button fx:id="btneupdateCompagnie1" mnemonicParsing="false" onAction="#UpdateCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #AE0723;" text="Update" textFill="WHITE" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
