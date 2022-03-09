@@ -315,61 +315,66 @@ public class AuthentificationController implements Initializable {
             switch (u.getRole()) {
                 case ADMIN:
                     try {
-                        Id.user = u.getId();
-                        System.out.println("*****************************");
-                        System.out.println(Id.user);
-                        Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        
-                        stageclose.close();
-                        Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
-                        Stage stage = new Stage();
-                        
-                        Scene scene = new Scene(root);
-                        
-                        stage.setTitle("Dashbord Admin");
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (IOException ex) {
-                        Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    Id.user = u.getId();
+                    System.out.println("*****************************");
+                    System.out.println(Id.user);
+                    Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    stageclose.close();
+                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
+                    Stage stage = new Stage();
+
+                    Scene scene = new Scene(root);
+
+                    stage.setTitle("Dashbord Admin");
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException ex) {
+                    Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
                 case PASSAGER:
                     System.out.println("bienveunue Passager");
                     try {
                         Id.user = u.getId();
-                        
+
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        
+
                         stageclose.close();
-                        Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfilePassager.fxml"));
+                         Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfilePassager.fxml"));
+                       // Parent root = FXMLLoader.load(getClass().getResource("../GUI/Reclamation.fxml"));
+
                         Stage stage = new Stage();
-                        
+
                         Scene scene = new Scene(root);
-                        
+
                         stage.setTitle("INVICTUS APP");
                         stage.setScene(scene);
                         stage.show();
                     } catch (IOException ex) {
                         Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 case EMPLOYE:
                     System.out.println("bienveunue EMPLOYE");
                     try {
                         Id.user = u.getId();
-                        
+
                         Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        
+
                         stageclose.close();
                         Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLProfileEmploye.fxml"));
                         Stage stage = new Stage();
-                        
+
                         Scene scene = new Scene(root);
-                        
+
                         stage.setTitle("INVICTUS APP");
                         stage.setScene(scene);
                         stage.show();
                     } catch (IOException ex) {
                         Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-                    }   break;
+                    }
+                    break;
                 default:
                     break;
             }

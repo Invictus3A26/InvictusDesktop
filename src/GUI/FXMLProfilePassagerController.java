@@ -28,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
@@ -61,6 +62,8 @@ public class FXMLProfilePassagerController implements Initializable {
     private Button save;
     @FXML
     private Button delete;
+    @FXML
+    private AnchorPane ProfilePassager;
 
     /**
      * Initializes the controller class.
@@ -206,5 +209,12 @@ public class FXMLProfilePassagerController implements Initializable {
         }
 
         //  User u = us.findById(Id.user);
+    }
+
+    @FXML
+    private void Avis(ActionEvent event) throws IOException {
+        
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/rating.fxml"));
+        ProfilePassager.getChildren().setAll(pane);
     }
 }

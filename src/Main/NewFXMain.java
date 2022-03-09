@@ -23,11 +23,10 @@ public class NewFXMain extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            //Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLDashboard.fxml"));
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/Authentification.fxml"));
+            //Parent root = FXMLLoader.load(getClass().getResource("../GUI/Reclamation.fxml"));
 
             Scene scene = new Scene(root);
-
             primaryStage.setTitle("Nextec app!");
             primaryStage.setScene(scene);
             primaryStage.show();

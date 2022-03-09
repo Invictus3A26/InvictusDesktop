@@ -5,11 +5,26 @@
  */
 package GUI;
 
+import Entities.Reclamation;
 import Entities.Role;
 import Entities.User;
 import Services.UserService;
+import Tools.MyConnexion;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -266,8 +281,8 @@ public class FXMLpassagersController implements Initializable {
         String username = tableviewuser.getSelectionModel().getSelectedItem().getUsername();
         User u = us.findByUsername(username);
         us.supprimer(u.getId());
-        TrayNotification tray = new TrayNotification();
 
+        TrayNotification tray = new TrayNotification();
         AnimationType type = AnimationType.POPUP;
         tray.setAnimationType(type);
         tray.setTitle("Delete Success");
@@ -386,6 +401,91 @@ public class FXMLpassagersController implements Initializable {
     private void Map(ActionEvent event) throws IOException {
         AnchorPane panee = FXMLLoader.load(getClass().getResource("MapFXML.fxml"));
         DashboardUtilis.getChildren().setAll(panee);
+    }
+
+    @FXML
+    private void pdf(ActionEvent event) throws FileNotFoundException, DocumentException, SQLException {
+
+        User r = new User();
+
+        Document doc = new Document();
+
+        PdfWriter.getInstance(doc, new FileOutputStream("users"));
+        doc.open();
+        Paragraph p = new Paragraph();
+        p.add("liste des users"
+                + "");
+        doc.add(p);
+        PdfPTable table = new PdfPTable(9);
+        PdfPCell c = new PdfPCell(new Phrase("nom"));
+        table.addCell(c);
+        c = new PdfPCell(new Phrase("prenom"));
+        table.addCell(c);
+        c = new PdfPCell(new Phrase("email"));
+
+        table.addCell(c);
+        c = new PdfPCell(new Phrase("username"));
+        table.addCell(c);
+
+        c = new PdfPCell(new Phrase("password"));
+        table.addCell(c);
+
+        c = new PdfPCell(new Phrase("adresse"));
+        table.addCell(c);
+
+        c = new PdfPCell(new Phrase("date_naissance"));
+        table.addCell(c);
+
+        c = new PdfPCell(new Phrase("num_tel"));
+        table.addCell(c);
+
+        c = new PdfPCell(new Phrase("role"));
+        table.addCell(c);
+
+        doc.add(table);
+
+        Connection cnx = MyConnexion.getCnx();
+        String query = "SELECT * FROM user";
+        PreparedStatement smt = cnx.prepareStatement(query);
+        ResultSet rs = smt.executeQuery();
+        PdfPTable t = new PdfPTable(9);
+        while (rs.next()) {
+            PdfPCell c1 = new PdfPCell(new Phrase(rs.getString("nom")));
+            t.addCell(c1);
+            PdfPCell c2 = new PdfPCell(new Phrase(rs.getString("prenom")));
+            t.addCell(c2);
+            PdfPCell c3 = new PdfPCell(new Phrase(rs.getString("email")));
+            t.addCell(c3);
+            PdfPCell c4 = new PdfPCell(new Phrase(rs.getString("username")));
+            t.addCell(c4);
+
+            PdfPCell c5 = new PdfPCell(new Phrase(rs.getString("password")));
+
+            t.addCell(c5);
+
+            PdfPCell c6 = new PdfPCell(new Phrase(rs.getString("adresse")));
+            t.addCell(c6);
+
+            PdfPCell c7 = new PdfPCell(new Phrase(rs.getDate("date_naissance").toString()));
+            t.addCell(c7);
+
+            PdfPCell c8 = new PdfPCell(new Phrase(rs.getInt("num_tel")));
+            t.addCell(c8);
+
+            PdfPCell c9 = new PdfPCell(new Phrase(rs.getString("role")));
+            t.addCell(c9);
+
+        }
+        doc.add(t);
+        doc.close();
+        
+        TrayNotification tray = new TrayNotification();
+        AnimationType type = AnimationType.POPUP;
+        tray.setAnimationType(type);
+        tray.setTitle("pdf generated");
+        tray.setMessage("pdf generated");
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss(Duration.millis(1000));
     }
 
 }

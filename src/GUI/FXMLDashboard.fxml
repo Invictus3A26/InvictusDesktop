@@ -96,7 +96,7 @@
                      </children>
                   </Pane>
                   <VBox layoutX="106.0" layoutY="17.0" />
-                  <JFXButton layoutX="102.0" layoutY="17.0" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #DD4B39;" text="Reclamations" textFill="WHITE">
+                  <JFXButton layoutX="102.0" layoutY="17.0" onAction="#Reclamations" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #DD4B39;" text="Reclamations" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

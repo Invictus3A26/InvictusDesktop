@@ -27,6 +27,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import tray.animations.AnimationType;
@@ -58,6 +59,8 @@ public class FXMLProfileEmployeController implements Initializable {
     private Button delete;
     @FXML
     private DatePicker lib_txt3;
+    @FXML
+    private AnchorPane ProfileEmploye;
 
     /**
      * Initializes the controller class.
@@ -201,5 +204,11 @@ public class FXMLProfileEmployeController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void Reclamation(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Reclamation.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
     }
 }

@@ -9,7 +9,7 @@ package GUI;
  * @author wajih
  */
 public class Id {
-    protected static long user;
+    public static long user;
     
     
 }
