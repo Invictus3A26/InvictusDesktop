@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tests;
+package Main;
 
 import entities.Aeroport;
 import entities.Escale;
@@ -29,10 +29,10 @@ public class Invictus {
      */
     public static void main(String[] args) {
         MaConnexion mc = MaConnexion.getInstance();
-        Aeroport a1 = new Aeroport(1,"tunis carthage","tunis");
-        Aeroport a2 = new Aeroport(2,"paris airport","Paris");
-        Escale e1 = new Escale(1,"11:30","12:30","60");
-        Escale e2 = new Escale(1,"9;30","10:00","30");
+      //  Aeroport a1 = new Aeroport(1,"tunis carthage","tunis");
+      //  Aeroport a2 = new Aeroport(2,"paris airport","Paris");
+        Escale e1 = new Escale(1,1,1,"11:30","12:30","60");
+        Escale e2 = new Escale(1,1,1,"9;30","10:00","30");
         Vols v1 = new Vols(1,155,1,"12/03/2021","13/03/2021","23:00","00:30",1,"rfrffr","depart","hyyh",122,"0",0);
         Vols v2 = new Vols(3,155,1,"12/03/2021","13/03/2021","23:00","00:30",1,"rfrffr","depart","hyyh",140,"0",1);
         AeroportService ser = new AeroportService();
@@ -55,6 +55,7 @@ public class Invictus {
       //vo.rechercheAvecNumVol(154);
       //vo.afficherVols();
        // System.out.println(vo.triNum_vol());  
+       // System.out.println(ser.getAeroportById(6)); 
     }
     
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,7 +37,7 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="date_depart_vol" />
+            <DatePicker fx:id="date_depart_vol" prefHeight="31.0" prefWidth="187.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="172.0" prefHeight="34.0" prefWidth="536.0">
@@ -43,7 +47,7 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="date_arrivé_vol" />
+            <DatePicker fx:id="date_arrivé_vol" prefHeight="31.0" prefWidth="187.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="219.0" prefHeight="34.0" prefWidth="536.0">
@@ -73,17 +77,17 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="id_aeroport" />
+            <ComboBox fx:id="id_aeroport" prefHeight="31.0" prefWidth="188.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="348.0" prefHeight="34.0" prefWidth="536.0">
          <children>
             <Label prefHeight="28.0" prefWidth="261.0" text="type avion">
                <font>
-                  <Font size="19.0" />
+                  <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="type_avion" />
+            <ComboBox fx:id="type_avion" prefHeight="31.0" prefWidth="188.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="400.0" prefHeight="34.0" prefWidth="536.0">
@@ -93,7 +97,7 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="type_vol" />
+            <ChoiceBox fx:id="type_vol" prefHeight="31.0" prefWidth="191.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="441.0" prefHeight="34.0" prefWidth="536.0">
@@ -103,7 +107,7 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="escale" />
+            <ComboBox fx:id="escale" prefHeight="31.0" prefWidth="190.0" visible="false" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="488.0" prefHeight="34.0" prefWidth="536.0">
@@ -113,7 +117,7 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="compagnie" />
+            <ComboBox fx:id="compagnie" prefHeight="31.0" prefWidth="189.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="539.0" prefHeight="34.0" prefWidth="536.0">
@@ -126,7 +130,7 @@
             <TextField fx:id="nombre_passager" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="587.0" prefHeight="34.0" prefWidth="536.0">
+      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="587.0" prefHeight="34.0" prefWidth="460.0">
          <children>
             <Label prefHeight="28.0" prefWidth="272.0" text="durée retard vol">
                <font>
@@ -138,7 +142,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="633.0" prefHeight="34.0" prefWidth="536.0">
          <children>
-            <Label prefHeight="28.0" prefWidth="272.0" text="vol annulée">
+            <Label prefHeight="28.0" prefWidth="267.0" text="vol annulée">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
@@ -146,15 +150,46 @@
             <TextField fx:id="annulé" />
          </children>
       </HBox>
-      <Button layoutX="694.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#ajouterVol" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #00E676;" text="Ajoute Vol" textFill="WHITE">
+      <Button fx:id="ajoute1" layoutX="694.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#ajouterVol" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #00E676;" text="Ajoute Vol" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="694.0" layoutY="614.0" mnemonicParsing="false" onMouseClicked="#ModifierVol" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #F7FE2E;" text="Modifier Vol" textFill="WHITE">
+      <Button fx:id="mod1" layoutX="694.0" layoutY="614.0" mnemonicParsing="false" onMouseClicked="#ModifierVol1" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #F7FE2E;" text="Modifier Vol" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Button>
+      <CheckBox fx:id="volEscale" layoutX="684.0" layoutY="31.0" mnemonicParsing="false" onAction="#Change" text="Vol avec escale">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="ajoute2" layoutX="694.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#ajouterVol2" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #00E676;" text="Ajoute Vol" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="mod2" layoutX="695.0" layoutY="614.0" mnemonicParsing="false" onMouseClicked="#ModifierVol2" prefHeight="53.0" prefWidth="147.0" style="-fx-background-color: #F7FE2E;" text="Modifier Vol" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorNum" layoutX="631.0" layoutY="84.0" prefHeight="21.0" prefWidth="187.0" text="numero de vol existe déja " textFill="#f20404" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="num_vol_error" layoutX="644.0" layoutY="84.0" prefHeight="21.0" prefWidth="159.0" text="Numero de vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="date_depart_error" layoutX="644.0" layoutY="133.0" prefHeight="21.0" prefWidth="188.0" text="date de depart vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="date_arrivé_error" layoutX="644.0" layoutY="179.0" prefHeight="21.0" prefWidth="188.0" text="date arrivée vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="heure_depart_error" layoutX="644.0" layoutY="226.0" prefHeight="21.0" prefWidth="188.0" text="heure depart vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="heure_arrivé_error" layoutX="644.0" layoutY="268.0" prefHeight="21.0" prefWidth="188.0" text="heure arrivé vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="type_error" layoutX="637.0" layoutY="355.0" prefHeight="21.0" prefWidth="188.0" text="type avion est vide" textFill="RED" visible="false" />
+      <Label fx:id="type_vol_error" layoutX="644.0" layoutY="400.0" prefHeight="21.0" prefWidth="188.0" text="type vol est vide" textFill="RED" visible="false" />
+      <Label fx:id="compagnie_error" layoutX="630.0" layoutY="495.0" prefHeight="21.0" prefWidth="188.0" text="compagnie est vide" textFill="RED" visible="false" />
+      <Label fx:id="nombre_error" layoutX="630.0" layoutY="546.0" prefHeight="21.0" prefWidth="188.0" text="nombre passager est vide" textFill="RED" visible="false" />
+      <Label fx:id="duré_error" layoutX="628.0" layoutY="580.0" prefHeight="34.0" prefWidth="191.0" text="durée retard est vide" textFill="RED" visible="false" />
+      <Label fx:id="annulé_error" layoutX="393.0" layoutY="677.0" prefHeight="34.0" prefWidth="191.0" text="vol annulée est vide" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

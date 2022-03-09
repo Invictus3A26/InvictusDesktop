@@ -13,17 +13,25 @@ public class Aeroport {
     private int id_aeroport;
     private String nom_aeroport ;
     private String ville_aeroport;
+    private String pays;
 
     public Aeroport() {
     }
 
-    public Aeroport(int id, String nom_aeroport, String ville_aeroport) {
-        this.id_aeroport = id;
+    public Aeroport(int id_aeroport, String nom_aeroport, String ville_aeroport, String pays) {
+        this.id_aeroport = id_aeroport;
         this.nom_aeroport = nom_aeroport;
         this.ville_aeroport = ville_aeroport;
+        this.pays = pays;
     }
 
-    public int getId() {
+    public Aeroport(String nom_aeroport, String ville_aeroport, String pays) {
+        this.nom_aeroport = nom_aeroport;
+        this.ville_aeroport = ville_aeroport;
+        this.pays = pays;
+    }
+
+    public int getId_aeroport() {
         return id_aeroport;
     }
 
@@ -35,8 +43,12 @@ public class Aeroport {
         return ville_aeroport;
     }
 
-    public void setId(int id) {
-        this.id_aeroport = id;
+    public String getPays() {
+        return pays;
+    }
+
+    public void setId_aeroport(int id_aeroport) {
+        this.id_aeroport = id_aeroport;
     }
 
     public void setNom_aeroport(String nom_aeroport) {
@@ -47,11 +59,14 @@ public class Aeroport {
         this.ville_aeroport = ville_aeroport;
     }
 
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
+
     @Override
     public String toString() {
-        return "aeroport{" + "id=" + id_aeroport + ", nom_aeroport=" + nom_aeroport + ", ville_aeroport=" + ville_aeroport + '}';
+        return "Aeroport{" + "id_aeroport=" + id_aeroport + ", nom_aeroport=" + nom_aeroport + ", ville_aeroport=" + ville_aeroport + ", pays=" + pays + '}';
     }
     
-    
-    
+
 }

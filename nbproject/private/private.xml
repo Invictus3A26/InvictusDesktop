@@ -8,12 +8,17 @@
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tests/Invictus.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/services/VolsService.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tests/FXMain.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionEscaleController.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteVolsController.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/entities/Vols.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/services/EscaleService.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteAeroport.fxml</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/tools/MaConnexion.java</file>
-            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionVolController.java</file>
-            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionVol.fxml</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteEscaleController.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionVolsController.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/GestionAeroportController.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/entities/Escale.java</file>
+            <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteAeroportController.java</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/AjouteVols.fxml</file>
             <file>file:/C:/Users/islem/pfe2021%20Dropbox/gharbi%20islem/Mon%20PC%20(LAPTOP-SC9LQKTJ)/Documents/NetBeansProjects/Invictus/src/gui/gestionvol.css</file>
         </group>

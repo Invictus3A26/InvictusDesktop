@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.controlsfx.control.Notifications;
 import tools.MaConnexion;
 
 /**
@@ -27,12 +28,32 @@ public class VolsService {
       public VolsService(){
           cnx=MaConnexion.getInstance().getCnx();
     }
-      public void ajouterVols(Vols v){
-          String sql="INSERT INTO vols( num_vol, date_depart_vol, date_arrivé_vol, heure_depart_vol, heure_arrivé_vol, id_aeroport, type_avion, type_vol, id_escale, id_comp,nombrePassager_vol,durée_retard_vol,annulation_vol) VALUES ('"+v.getNum_vol()+"','"+v.getDate_depart_vol()+"','"+v.getDate_arrivé_vol()+"','"+v.getHeure_depart_vol()+"','"+v.getHeure_arrivé_vol()+"','"+v.getNom_aeroport()+"','"+v.getType_avion()+"','"+v.getType_vol()+"','"+v.getEscale()+"','"+v.getNomCom()+"','"+v.getNombrePassager_vol()+"','"+v.getDurée_retard_vol()+"','"+v.isAnnulation_vol()+"')";
+      public void ajouterVols1(Vols v){
+          String sql="INSERT INTO vols( num_vol, date_depart_vol, date_arrivé_vol, heure_depart_vol, heure_arrivé_vol, id_aeroport, type_avion, type_vol, id_comp,nombrePassager_vol,durée_retard_vol,annulation_vol) VALUES ('"+v.getNum_vol()+"','"+v.getDate_depart_vol()+"','"+v.getDate_arrivé_vol()+"','"+v.getHeure_depart_vol()+"','"+v.getHeure_arrivé_vol()+"','"+v.getNom_aeroport()+"','"+v.getType_avion()+"','"+v.getType_vol()+"','"+v.getNomCom()+"','"+v.getNombrePassager_vol()+"','"+v.getDurée_retard_vol()+"','"+v.isAnnulation_vol()+"')";
            try {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
             System.out.println("Vols Ajoutée");
+             Notifications notifications=Notifications.create();
+              notifications.text("Vol est ajoutée");
+        notifications.title("Success Message");
+        notifications.show();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+      }
+      
+        public void ajouterVols2(Vols v){
+          String sql="INSERT INTO vols( num_vol, date_depart_vol, date_arrivé_vol, heure_depart_vol, heure_arrivé_vol,  type_avion, type_vol, id_escale, id_comp,nombrePassager_vol,durée_retard_vol,annulation_vol) VALUES ('"+v.getNum_vol()+"','"+v.getDate_depart_vol()+"','"+v.getDate_arrivé_vol()+"','"+v.getHeure_depart_vol()+"','"+v.getHeure_arrivé_vol()+"','"+v.getType_avion()+"','"+v.getType_vol()+"','"+v.getEscale()+"','"+v.getNomCom()+"','"+v.getNombrePassager_vol()+"','"+v.getDurée_retard_vol()+"','"+v.isAnnulation_vol()+"')";
+           try {
+            Statement ste = cnx.createStatement();
+            ste.executeUpdate(sql);
+            System.out.println("Vols Ajoutée");
+              Notifications notifications=Notifications.create();
+
+        notifications.text("Vol est ajoutée");
+        notifications.title("Success Message");
+        notifications.show();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -81,15 +102,23 @@ public class VolsService {
               ste.setInt(1, id);
               ste.executeUpdate();
             System.out.println("Vols Supprimer");
+              Notifications notifications=Notifications.create();
+
+        notifications.text("Aeroport est supprimer");
+        notifications.title("Success Message");
+      notifications.showConfirm();
+        /*notifications.darkStyle();*/
+     /*   notifications.position(Pos.BOTTOM_CENTER);*/
+       // notifications.show();
          }catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
             
     }
         
-        public void updateVols(Vols vol,int id_vol){
+        public void updateVols1(Vols vol,int id_vol){
         
-         String sql ="UPDATE vols SET num_vol=?,date_depart_vol=?,date_arrivé_vol=?,heure_depart_vol=?,heure_arrivé_vol=?,id_aeroport=?,type_avion=?,type_vol=?,id_escale=?,id_comp=?,nombrePassager_vol=?,durée_retard_vol=?,annulation_vol=?  WHERE id_vol = ? ";
+         String sql ="UPDATE vols SET num_vol=?,date_depart_vol=?,date_arrivé_vol=?,heure_depart_vol=?,heure_arrivé_vol=?,id_aeroport=?,type_avion=?,type_vol=?,id_comp=?,nombrePassager_vol=?,durée_retard_vol=?,annulation_vol=?  WHERE id_vol = ? ";
          try {
             PreparedStatement ste = cnx.prepareStatement(sql);
              ste.setInt(1,vol.getNum_vol());
@@ -100,17 +129,72 @@ public class VolsService {
              ste.setInt(6,vol.getNom_aeroport());
              ste.setString(7,vol.getType_avion());
              ste.setString(8,vol.getType_vol());
-             ste.setInt(9,vol.getEscale());
-             ste.setString(10,vol.getNomCom());
-             ste.setInt(11,vol.getNombrePassager_vol());
-             ste.setString(12,vol.getDurée_retard_vol() );
-             ste.setInt(13,vol.isAnnulation_vol());
-             ste.setInt(14, id_vol);
+            
+             ste.setString(9,vol.getNomCom());
+             ste.setInt(10,vol.getNombrePassager_vol());
+             ste.setString(11,vol.getDurée_retard_vol() );
+             ste.setInt(12,vol.isAnnulation_vol());
+             ste.setInt(13, id_vol);
              ste.executeUpdate();
             System.out.println("Vol modifier");
+               Notifications notifications=Notifications.create();
+
+        notifications.text("Vol est modifier");
+        notifications.title("Success Message");
+        notifications.show();
          }catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+         public void updateVols2(Vols vol,int id_vol){
+        
+         String sql ="UPDATE vols SET num_vol=?,date_depart_vol=?,date_arrivé_vol=?,heure_depart_vol=?,heure_arrivé_vol=?,type_avion=?,type_vol=?,id_escale=?,id_comp=?,nombrePassager_vol=?,durée_retard_vol=?,annulation_vol=?  WHERE id_vol = ? ";
+         try {
+            PreparedStatement ste = cnx.prepareStatement(sql);
+             ste.setInt(1,vol.getNum_vol());
+             ste.setString(2,vol.getDate_depart_vol());
+             ste.setString(3,vol.getDate_arrivé_vol());
+             ste.setString(4,vol.getHeure_depart_vol());
+             ste.setString(5,vol.getHeure_arrivé_vol());
+            
+             ste.setString(6,vol.getType_avion());
+             ste.setString(7,vol.getType_vol());
+             ste.setInt(8,vol.getEscale());
+             ste.setString(9,vol.getNomCom());
+             ste.setInt(10,vol.getNombrePassager_vol());
+             ste.setString(11,vol.getDurée_retard_vol() );
+             ste.setInt(12,vol.isAnnulation_vol());
+             ste.setInt(13, id_vol);
+             ste.executeUpdate();
+            System.out.println("Vol modifier");
+               Notifications notifications=Notifications.create();
+
+        notifications.text("Vol est modifier");
+        notifications.title("Success Message");
+        notifications.show();
+         }catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+         
+         public boolean getUtilisateurByEmail(int num_vol) {
+        boolean exist = false;
+
+        try {
+            String sql = "SELECT * FROM vols where num_vol=?";
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setInt(1, num_vol);
+
+            ResultSet rs = ste.executeQuery();//resultat requete sql
+            if (rs.first()) {
+                exist = true;
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return exist;
+
     }
         
         
@@ -175,7 +259,7 @@ public class VolsService {
             return null;
 
         } else {
-            System.out.println("vol exisite");
+            System.out.println("vol exsite");
             return resultat;
 
         }

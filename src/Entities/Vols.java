@@ -30,6 +30,39 @@ public class Vols {
         this.type_avion = type_avion;
         this.id_comp = id_comp;
     }
+       public Vols(int num_vol,  int nombrePassager_vol, int annulation_vol,  String date_depart_vol, int id_escale, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, String type_vol, String durée_retard_vol, String type_avion, String id_comp) {
+        this.num_vol = num_vol;
+       
+        this.nombrePassager_vol = nombrePassager_vol;
+        this.annulation_vol = annulation_vol;
+        this.id_escale = id_escale;
+        this.date_depart_vol = date_depart_vol;
+        this.date_arrivé_vol = date_arrivé_vol;
+        this.heure_depart_vol = heure_depart_vol;
+        this.heure_arrivé_vol = heure_arrivé_vol;
+        this.type_vol = type_vol;
+        this.durée_retard_vol = durée_retard_vol;
+        this.type_avion = type_avion;
+        this.id_comp = id_comp;
+    }
+    
+    
+    
+     public Vols(int num_vol, int id_aeroport, int nombrePassager_vol, int annulation_vol,  String date_depart_vol, String date_arrivé_vol, String heure_depart_vol, String heure_arrivé_vol, String type_vol, String durée_retard_vol, String type_avion, String id_comp) {
+        this.num_vol = num_vol;
+        this.id_aeroport = id_aeroport;
+        this.nombrePassager_vol = nombrePassager_vol;
+        this.annulation_vol = annulation_vol;
+       
+        this.date_depart_vol = date_depart_vol;
+        this.date_arrivé_vol = date_arrivé_vol;
+        this.heure_depart_vol = heure_depart_vol;
+        this.heure_arrivé_vol = heure_arrivé_vol;
+        this.type_vol = type_vol;
+        this.durée_retard_vol = durée_retard_vol;
+        this.type_avion = type_avion;
+        this.id_comp = id_comp;
+    }
    
 
 
