@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouteAeroportController">
+   <children>
+      <Text fill="#3d59a1" layoutX="283.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer un Aèroport" wrappingWidth="329.6708984375">
+         <font>
+            <Font name="Bernard MT Condensed" size="45.0" />
+         </font>
+      </Text>
+      <Label layoutX="283.0" layoutY="656.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="190.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="252.0" text="Nom Aeroport">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nom_aeroport" prefHeight="31.0" prefWidth="197.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="272.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="250.0" text="Pays du l'aeroport">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="pays" prefHeight="31.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="306.0" prefHeight="34.0" prefWidth="536.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="348.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="536.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="536.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="241.0" text="Ville de l'aeroport">
+                           <font>
+                              <Font name="System Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ville" prefHeight="31.0" prefWidth="199.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="400.0" prefHeight="34.0" prefWidth="536.0" />
+      <Button layoutX="628.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#ajouterAeroport" prefHeight="53.0" prefWidth="196.0" style="-fx-background-color: #00E676;" text="Ajoute Aèroport" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="628.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#ModifierAeroport" prefHeight="53.0" prefWidth="196.0" style="-fx-background-color: #F7FE2E;" text="Modifier Aèroport" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

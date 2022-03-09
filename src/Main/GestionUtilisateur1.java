@@ -29,7 +29,7 @@ public class GestionUtilisateur1 {
     public static void main(String[] args) {
          UserService us=new UserService();
          Date d =Date.valueOf(LocalDate.of(2000, Month.MARCH, 17));
-         User u=new User("ahmed","temani",d,"mohameddehmani@gmail.com","dah","admiinnslm1",58760718,"kef",Role.ADMIN);
+         User u=new User("ahmed","",d,"@gmail.com","dah","admiinnslm1",58760718,"kef",Role.ADMIN);
        
          Article a= new Article("tenis","tenisbravo","dd");
          ArticleService as=new ArticleService();

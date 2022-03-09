@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouteEscaleController">
+   <children>
+      <Text fill="#3d59a1" layoutX="299.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer un Escale" wrappingWidth="277.6708984375">
+         <font>
+            <Font name="Bernard MT Condensed" size="45.0" />
+         </font>
+      </Text>
+      <Label layoutX="283.0" layoutY="656.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="141.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="252.0" text="Aeroport de depart">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="aeroport_depart" prefHeight="31.0" prefWidth="196.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="206.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="250.0" text="Aeroport de retour">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="aeroport_retour" prefHeight="31.0" prefWidth="198.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="272.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="249.0" text="Heure arrivé">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="heure_arrivé" prefHeight="31.0" prefWidth="194.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="118.0" layoutY="306.0" prefHeight="34.0" prefWidth="536.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="348.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="536.0">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="235.0" text="Heure depart">
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="heure_depart" prefHeight="31.0" prefWidth="196.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="125.0" layoutY="400.0" prefHeight="34.0" prefWidth="536.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="536.0">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="239.0" text="Durée d'escale">
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="durée" prefHeight="31.0" prefWidth="190.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Button layoutX="658.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#ajouterEscale" prefHeight="53.0" prefWidth="166.0" style="-fx-background-color: #00E676;" text="Ajoute Escale" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="658.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#ModifierEscale" prefHeight="53.0" prefWidth="166.0" style="-fx-background-color: #F7FE2E;" text="Modifier Escale" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
