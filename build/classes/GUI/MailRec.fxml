@@ -13,7 +13,7 @@
       <TextField fx:id="destad" layoutX="251.0" layoutY="116.0" prefHeight="25.0" prefWidth="312.0" promptText="example@example.com" />
       <Label layoutX="41.0" layoutY="151.0" prefHeight="25.0" prefWidth="203.0" text="Tap your address :" />
       <Label layoutX="41.0" layoutY="116.0" prefHeight="25.0" prefWidth="178.0" text="Tap your destination's address :" />
-      <Label layoutX="199.0" layoutY="49.0" prefHeight="33.0" prefWidth="203.0" text="Spirity's Mail Service">
+      <Label layoutX="199.0" layoutY="57.0" prefHeight="25.0" prefWidth="228.0" text="mail sur perte Bagage">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

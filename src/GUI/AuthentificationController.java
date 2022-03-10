@@ -322,7 +322,7 @@ public class AuthentificationController implements Initializable {
 
                     stageclose.close();
                     //Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
-                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/Home.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDashboard.fxml"));
 
                     Stage stage = new Stage();
 

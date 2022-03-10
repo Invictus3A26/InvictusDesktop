@@ -15,118 +15,6 @@
 
 <AnchorPane fx:id="ProfileEmploye" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLProfileEmployeController">
    <children>
-      <AnchorPane layoutY="-7.0" prefHeight="649.0" prefWidth="198.0" style="-fx-background-color: #2F2B43;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-7.0">
-         <children>
-            <VBox layoutY="203.0" prefHeight="316.0" prefWidth="241.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="203.0">
-               <children>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="companies" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/company.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Flights" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/send.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Luggage" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/product_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Reclamation" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Reclamation" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/icons8-mail-48.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Dashboard" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/dashboard.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-               </children>
-            </VBox>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="600.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Log Out" textFill="WHITE">
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-            </Button>
-            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Icons/icons8-déconnexion-64%20(1).png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="82.0" fitWidth="173.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 5;">
-               <image>
-                  <Image url="@../Resources/Icons/flight.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D height="450.0" width="1000.0" />
-               </viewport>
-            </ImageView>
-            <Pane layoutY="98.0" prefHeight="61.0" prefWidth="241.0" style="-fx-background-color: #3b7160; -fx-background-radius: 5;">
-               <children>
-                  <Label layoutX="23.0" layoutY="23.0" prefHeight="49.0" prefWidth="196.0" text="A Great way to Fly!" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="23.0" layoutY="-10.0" prefHeight="49.0" prefWidth="196.0" text="        Invictus" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-            </Button>
-            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Icons/icons8-nom-100.png" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
       <Label layoutX="539.0" layoutY="10.0" text="Profile Settings" textFill="WHITE">
          <font>
             <Font name="Nakula" size="40.0" />
@@ -186,5 +74,118 @@
       <Button fx:id="save" layoutX="856.0" layoutY="283.0" mnemonicParsing="false" onAction="#Save" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #3b7160; -fx-background-radius: 5; -fx-border-radius: 5;" text="save" textFill="WHITE" />
       <Button fx:id="delete" layoutX="856.0" layoutY="356.0" mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #b51c1c; -fx-background-radius: 5; -fx-border-radius: 5;" text="Delete my account!" textFill="WHITE" />
       <DatePicker fx:id="lib_txt3" layoutX="558.0" layoutY="297.0" prefHeight="26.0" prefWidth="163.0" style="-fx-background-color: whitesmoke;" />
+      <AnchorPane layoutY="-1.0" prefHeight="649.0" prefWidth="198.0" style="-fx-background-color: #2F2B43;">
+         <children>
+            <VBox layoutY="203.0" prefHeight="316.0" prefWidth="241.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="203.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#companies" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="companies" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/company.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#flights" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Flights" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/send.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#luggage" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Luggage" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/product_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Reclamation" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Reclamation" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/icons8-mail-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Infra" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Infra" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/Icons/product_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="600.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Log Out" textFill="WHITE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-déconnexion-64%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="173.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 5;">
+               <image>
+                  <Image url="@../Resources/Icons/flight.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="450.0" width="1000.0" />
+               </viewport>
+            </ImageView>
+            <Pane layoutY="98.0" prefHeight="61.0" prefWidth="241.0" style="-fx-background-color: #3b7160; -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="23.0" layoutY="23.0" prefHeight="49.0" prefWidth="196.0" text="A Great way to Fly!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="-10.0" prefHeight="49.0" prefWidth="196.0" text="        Invictus" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" onAction="#profile" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="131.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icons/icons8-nom-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

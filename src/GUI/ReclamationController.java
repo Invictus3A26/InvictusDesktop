@@ -854,6 +854,12 @@ public class ReclamationController implements Initializable {
 
     @FXML
     private void mail(ActionEvent event) {
-        Mailapi.send("amenallah.benkhalifa@esprit.tn", "Khalifaamen123", "amen.benkhalifaaa@gmail.com", "test", " test");
+        Mailapi.send("amenallah.benkhalifa@esprit.tn", "Khalifaamen123", "amen.benkhalifaaa@gmail.com", "reclamation", " votre reclamatioçn est en cours de traitement");
+    }
+
+    @FXML
+    private void stat(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/chart.fxml"));
+        recpane.getChildren().setAll(pane);
     }
 }

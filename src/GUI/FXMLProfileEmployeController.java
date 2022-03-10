@@ -211,4 +211,38 @@ public class FXMLProfileEmployeController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Reclamation.fxml"));
         ProfileEmploye.getChildren().setAll(pane);
     }
+
+    @FXML
+    private void companies(ActionEvent event) throws IOException {
+        
+        System.out.println("test");
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLcompanies.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
+
+    }
+
+    @FXML
+    private void flights(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLFlights.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
+
+    }
+
+    @FXML
+    private void luggage(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Home.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Infra(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Homeaziz.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void profile(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLProfileEmploye.fxml"));
+        ProfileEmploye.getChildren().setAll(pane);
+    }
 }

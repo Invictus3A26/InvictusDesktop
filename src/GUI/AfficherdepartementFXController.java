@@ -26,12 +26,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 //import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 //import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -64,6 +67,8 @@ public class AfficherdepartementFXController implements Initializable {
     @FXML
     private TableColumn<Departement, String> tbldetailDepartement;
     @FXML
+    private ComboBox<String> combotri;
+    @FXML
     private TextField recherchet;
     ObservableList<Departement> data = FXCollections.observableArrayList();
     DepartementService ds = new DepartementService();
@@ -71,6 +76,7 @@ public class AfficherdepartementFXController implements Initializable {
     Departement departement = null;
     private TableColumn<Departement, String> id;
     Connection cnx;
+    ObservableList<String> ss = FXCollections.observableArrayList();
 
     public AfficherdepartementFXController() {
 
@@ -99,8 +105,15 @@ public class AfficherdepartementFXController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(AfficherdepartementFXController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        loadDate();
+        //loadDate();
         departementTable.setItems(departementList);
+        ss.add("Par nom");
+        ss.add("Par zone");
+        
+        
+        combotri.setItems(ss);
+        refreshlist();
+        //recherche_avance();
 
     }
 
@@ -148,9 +161,9 @@ public class AfficherdepartementFXController implements Initializable {
                 JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
         if (input == 0) {
             ds.supprimerDepartement(departement.getId());
-
+            
         } else if (input == 1) {
-
+            
         }
 
     }
@@ -252,5 +265,19 @@ public class AfficherdepartementFXController implements Initializable {
         sorteddata.comparatorProperty().bind(departementTable.comparatorProperty());
         departementTable.setItems(filtereddata);
     }
+    @FXML
+    private void trilist(ActionEvent event) {
+        if (combotri.getValue().equals("Par nom")) {
+            ObservableList<Departement> tri1 = FXCollections.observableArrayList();
+            tri1 = FXCollections.observableArrayList(ds.sortByNom());
+            departementTable.setItems(tri1);
+
+        } else if (combotri.getValue().equals("Par zone")) {
+            ObservableList<Departement> tri2 = FXCollections.observableArrayList();
+            tri2 = FXCollections.observableArrayList(ds.sortByZone());
+            departementTable.setItems(tri2);
+        }
+    }
+    
 
 }

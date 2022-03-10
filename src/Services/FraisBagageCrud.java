@@ -5,17 +5,19 @@
  */
 package Services;
 
-import Tools.MyConnexion;
 import Entities.FraisBagage;
+import Tools.MyConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -59,26 +61,27 @@ public class FraisBagageCrud implements Iservice<FraisBagage>  {
             pst.executeUpdate();
             
         } catch (SQLException ex) {
-            Logger.getLogger(BagagesCrud.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FraisBagageCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-     public void delete(int id){
-        String requete="delete from Fraisbagage where id ="+id;
-        
+     public int supprimer(int id){
+       int i = 0;
         try {
-            ste=connection.createStatement();
-            ste.executeUpdate(requete);
+            Statement ste = connection.createStatement();
+            String sql = "DELETE FROM fraisbagage WHERE id=" + id;
+            i = ste.executeUpdate(sql);
         } catch (SQLException ex) {
-            Logger.getLogger(BagagesCrud.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Logger.getLogger(FraisBagageCrud.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        return i;
     }
      
      public void modifierBagages(long id , FraisBagage f) {
 
         try {
             PreparedStatement ste;
-            ste=connection.prepareStatement("UPDATE `Fraisbagage` SET `poids`=?,"
+            ste=connection.prepareStatement("UPDATE `bagages` SET `poids`=?,"
                     + "`dimension`=?,`tarifs_base`=?,`tarifs_confort`=?,`Montant`=? WHERE `id`=?"  );
             ste.setString(1, f.getPoids());
             ste.setString(2,f.getDimension());
@@ -94,16 +97,48 @@ public class FraisBagageCrud implements Iservice<FraisBagage>  {
         }}
      
         public List<FraisBagage> getAllFraisBagage() throws SQLException {
-        String req = "SELECT * FROM Fraisbagage ";
-        ste = connection.createStatement();
-            rs = ste.executeQuery(req);
-        while (rs.next()) {
-            list.add(new FraisBagage(rs.getInt("id"), rs.getString("poids"), rs.getString("dimension"), rs.getInt("tarifs_base"), rs.getInt("tarifs_confort"), rs.getInt("montant")));
+       List<FraisBagage> lu=new ArrayList<>();
+        try {
+            
+            Statement ste=connection.createStatement();
+            String query="select * from FraisBagage";
+            ResultSet rs=ste.executeQuery(query);
+            while(rs.next()){
+                FraisBagage a =new FraisBagage();
+                a.setId(rs.getInt("id"));
+ 
+                a.setPoids(rs.getString("poids"));
+                a.setDimension(rs.getString("dimension"));
+                a.setTarifs_base(rs.getInt("tarifs_base"));
+                a.setTarifs_confort(rs.getInt("tarifs_confort"));
+                 a.setMontant(rs.getInt("montant"));
+
+
+                
+
+                lu.add(a);
+                
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FraisBagageCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return list;
+        return lu;
     }
 
-    @Override
+        
+        public List<FraisBagage> sortByMontant() throws SQLException{
+         List<FraisBagage> FraisBagages=getAllFraisBagage();
+         List<FraisBagage> resultat=FraisBagages.stream().sorted(Comparator.comparing(FraisBagage::getMontant)).collect(Collectors.toList());
+         return resultat;
+     }
+     
+     public List<FraisBagage> sortByTarifs_base() throws SQLException{
+         List<FraisBagage> FraisBagages=getAllFraisBagage();
+         List<FraisBagage> resultat=FraisBagages.stream().sorted(Comparator.comparing(FraisBagage::getTarifs_base)).collect(Collectors.toList());
+         return resultat;
+     }
+
     public void ajouter(FraisBagage t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

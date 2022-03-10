@@ -7,16 +7,25 @@ package GUI;
 
 import Entities.Equipement;
 import Services.EquipementService;
+
+import Tools.MyConnexion;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -37,9 +46,13 @@ public class AjouterequipementFXController implements Initializable {
     private TextField tfzoneEquipement;
     @FXML
     private TextField tfetatEquipement;
-    @FXML
-    private TextField tfid_departement;
     int id_e;
+    @FXML
+    private ComboBox<String> tfid_departement;
+    
+    
+    
+    ObservableList options = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
@@ -66,7 +79,7 @@ public class AjouterequipementFXController implements Initializable {
         if (tfetatEquipement.getText().trim().isEmpty()) {
             errors.append("Ajouter une etat d'equipement\n");
         }
-        if (tfid_departement.getText().trim().isEmpty()) {
+        if (tfid_departement.getValue()==null) {
             errors.append("Ajouter l'id de departement\n");
         }
 
@@ -81,7 +94,7 @@ public class AjouterequipementFXController implements Initializable {
             String detailEquipement = tfdetailEquipement.getText();
             String zoneEquipement = tfzoneEquipement.getText();
             String etatEquipement = tfetatEquipement.getText();
-            int id_departement = Integer.parseInt(tfid_departement.getText());
+            int id_departement = Integer.parseInt(tfid_departement.getValue());
 
             Equipement p = new Equipement(typeEquipement, nomEquipement, detailEquipement, zoneEquipement, etatEquipement, id_departement);
             EquipementService ps = new EquipementService();
@@ -155,7 +168,7 @@ public class AjouterequipementFXController implements Initializable {
         if (tfetatEquipement.getText().trim().isEmpty()) {
             errors.append("Ajouter une etat d'equipement\n");
         }
-        if (tfid_departement.getText().trim().isEmpty()) {
+        if (tfid_departement.getValue().trim().isEmpty()) {
             errors.append("Ajouter l'id de departement\n");
         }
 
@@ -170,11 +183,28 @@ public class AjouterequipementFXController implements Initializable {
         String detailEquipement = tfdetailEquipement.getText();
         String zoneEquipement = tfzoneEquipement.getText();
         String etatEquipement = tfetatEquipement.getText();
-        int id_departement = Integer.parseInt(tfid_departement.getText());
+        int id_departement = Integer.parseInt(tfid_departement.getValue());
         Equipement d = new Equipement(typeEquipement, nomEquipement, detailEquipement, zoneEquipement, etatEquipement, id_departement);
         EquipementService ds = new EquipementService();
         ds.modifierEquipement(id_e, d);
             }
+
+    }
+    public void comboDepartement() {
+        try {
+            Connection con = MyConnexion.getInstance().getCnx();
+            ResultSet rs = con.createStatement().executeQuery("SELECT id FROM departement");
+
+            while (rs.next()) {
+                options.add(
+                        rs.getString("id")
+                );
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherdepartementFXController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
         

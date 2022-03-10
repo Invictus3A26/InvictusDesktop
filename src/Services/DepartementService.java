@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import Tools.MaConnexion;
 import java.util.Comparator;
 import java.util.stream.Collectors;
+import org.controlsfx.control.Notifications;
 
 /**
  *
@@ -38,6 +39,11 @@ public class DepartementService {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
             System.out.println("Departement Ajoutee");
+            Notifications notifications = Notifications.create();
+
+            notifications.text("departement ajoute");
+            notifications.title("Success Message");
+            notifications.show();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -97,11 +103,11 @@ public class DepartementService {
     }
 
     public void ChercherDepartement() throws SQLException {
-        
+
         List<Departement> departement = new ArrayList<>();
         try {
 
-            String sql = "Select * from departement WHERE `id` =" ;
+            String sql = "Select * from departement WHERE `id` =";
             ResultSet rs;
             PreparedStatement ste;
             ste = cnx.prepareStatement(sql);
@@ -115,6 +121,11 @@ public class DepartementService {
                 u.setDetailDepartement(rs.getString(4));
 
                 departement.add(u);
+                Notifications notifications = Notifications.create();
+
+                notifications.text("departement est modifier");
+                notifications.title("Success Message");
+                 
             }
         } catch (SQLException ex) {
             Logger.getLogger(DepartementService.class.getName()).log(Level.SEVERE, null, ex);
@@ -137,8 +148,8 @@ public class DepartementService {
 
         }
 
-
     }
+
     public List<Departement> findByZone(String ZoneDepartement) {
 
         List<Departement> Departement = afficherDepartement();
@@ -153,8 +164,8 @@ public class DepartementService {
 
         }
 
-
     }
+
     public List<Departement> findByDetail(String DetailDepartement) {
 
         List<Departement> Departement = afficherDepartement();
@@ -169,11 +180,17 @@ public class DepartementService {
 
         }
 
-
     }
+
     public List<Departement> sortByNom() {
         List<Departement> departement = afficherDepartement();
         List<Departement> resultat = departement.stream().sorted(Comparator.comparing(Departement::getNomDepartement)).collect(Collectors.toList());
+        return resultat;
+    }
+
+    public List<Departement> sortByZone() {
+        List<Departement> departement = afficherDepartement();
+        List<Departement> resultat = departement.stream().sorted(Comparator.comparing(Departement::getZoneDepartement)).collect(Collectors.toList());
         return resultat;
     }
 

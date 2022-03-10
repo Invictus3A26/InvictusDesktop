@@ -34,6 +34,8 @@ import org.controlsfx.control.Notifications;
 import Services.AeroportService;
 import Services.VolsService;
 import Tools.MaConnexion;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -56,6 +58,8 @@ public class GestionAeroportController implements Initializable {
     
     Aeroport aeroport = null;
          ObservableList<Aeroport> AeroportList = FXCollections.observableArrayList();
+    @FXML
+    private AnchorPane airportt;
 
     /**
      * Initializes the controller class.
@@ -105,7 +109,7 @@ public class GestionAeroportController implements Initializable {
     @FXML
     private void AjouteAeroport(MouseEvent event) {
           try {
-            Parent parent = FXMLLoader.load(getClass().getResource("../gui/AjouteAeroport.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/GUI/AjouteAeroport.fxml"));
             Scene scene =new Scene (parent);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -144,7 +148,7 @@ public class GestionAeroportController implements Initializable {
         aeroport=es.getAeroportById(aeroport.getId_aeroport());
      
           FXMLLoader loader = new FXMLLoader ();
-          loader.setLocation(getClass().getResource("../GUI/AjouteAeroport.fxml"));
+          loader.setLocation(getClass().getResource("/GUI/AjouteAeroport.fxml"));
              try {
                                 loader.load();
                             } catch (IOException ex) {
@@ -204,5 +208,51 @@ public class GestionAeroportController implements Initializable {
         AeroportTable.setItems(AeroportList);
       
     }
-    
+
+    @FXML
+    private void Reclamation(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Reclamation.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void LogOut(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Authentification.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void companies(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Compagnie.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void flights(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLFlights.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void luggage(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Home.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Infra(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Homeaziz.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void profile(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ProfileEmploye.fxml"));
+        airportt.getChildren().setAll(pane);
+    }
+
 }

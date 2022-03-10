@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -28,6 +29,8 @@ public class MenuController implements Initializable {
     private Button r;
     @FXML
     private Button a;
+    @FXML
+    private Label Passagername;
 
    @FXML
     private void reclamation(ActionEvent event) throws IOException {
@@ -43,5 +46,33 @@ public class MenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    
+     
+    @FXML
+    private void LogOut(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Authentification.fxml"));
+        recpane.getChildren().setAll(pane);   
+    }
+
+
+    @FXML
+    private void flights(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/GestionVolsUser.fxml"));
+        recpane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Feedbacks(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/menu.fxml"));
+        recpane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Profile(ActionEvent event) throws IOException {
+        
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLProfilePassager.fxml"));
+        recpane.getChildren().setAll(pane);
+    }
     
 }

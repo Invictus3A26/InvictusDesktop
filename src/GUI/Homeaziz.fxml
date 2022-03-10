@@ -11,15 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+<AnchorPane id="AnchorPane" fx:id="Infra" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
    <children>
-      <Button layoutX="358.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#AccesEquipement" prefHeight="26.0" prefWidth="241.0" style="-fx-background-color: #c102f1;" text="Equipement" textAlignment="CENTER" />
-      <Button layoutX="383.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#AccesDepartement" prefHeight="26.0" prefWidth="344.0" style="-fx-background-color: #f102c4;" text="Departement" textAlignment="CENTER" />
+      <Button layoutX="358.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#AccesEquipement" prefHeight="26.0" prefWidth="365.0" style="-fx-background-color: #c102f1;" text="Equipement" textAlignment="CENTER" />
+      <Button layoutX="541.0" layoutY="340.0" mnemonicParsing="false" onAction="#AccesDepartement" onMouseClicked="#AccesDepartement" prefHeight="26.0" prefWidth="344.0" style="-fx-background-color: #f102c4;" text="Departement" textAlignment="CENTER" />
       <AnchorPane prefHeight="649.0" prefWidth="198.0" style="-fx-background-color: #2F2B43;">
          <children>
             <VBox layoutY="203.0" prefHeight="316.0" prefWidth="241.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="203.0">
                <children>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="companies" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#companies" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="companies" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -34,7 +34,7 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Flights" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#flights" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Flights" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -46,7 +46,7 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Luggage" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#luggage" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Luggage" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -70,23 +70,11 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Dashboard" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Infra" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="Infra" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Resources/Icons/dashboard.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="INFRA" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/dashboard.png" />
+                              <Image url="@../Resources/Icons/product_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -128,7 +116,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutY="551.0" mnemonicParsing="false" onAction="#profile" prefHeight="49.0" prefWidth="241.0" styleClass="button1" stylesheets="/GUI/SideBar.css" text="My profile" textFill="WHITE">
                <padding>
                   <Insets left="40.0" />
                </padding>

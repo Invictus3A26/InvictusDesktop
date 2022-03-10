@@ -106,6 +106,7 @@ public class AfficherequipementFXController implements Initializable {
 
     }
 
+    @FXML
     public void refreshlist() {
         data.clear();
         data = FXCollections.observableArrayList(es.afficherEquipement());

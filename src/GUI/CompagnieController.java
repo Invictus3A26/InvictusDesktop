@@ -41,6 +41,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javax.swing.JOptionPane;
 
 /**
@@ -96,6 +98,8 @@ public class CompagnieController implements Initializable {
     @FXML
     private Button btneupdateCompagnie1;
     Connection cnx;
+    @FXML
+    private BorderPane company;
 
     public CompagnieController() {
 
@@ -266,11 +270,49 @@ public class CompagnieController implements Initializable {
     }
 
     @FXML
-    private void Reclamation(ActionEvent event) {
+    private void Reclamation(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Reclamation.fxml"));
+        company.getChildren().setAll(pane);
     }
 
     @FXML
-    private void LogOut(ActionEvent event) {
+    private void LogOut(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Authentification.fxml"));
+        company.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void companies(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Compagnie.fxml"));
+        company.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void flights(ActionEvent event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLFlights.fxml"));
+        company.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void luggage(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Home.fxml"));
+        company.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Infra(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Homeaziz.fxml"));
+        company.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void profile(ActionEvent event) throws IOException {
+        
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLProfileEmploye.fxml"));
+        company.getChildren().setAll(pane);
     }
 
 }

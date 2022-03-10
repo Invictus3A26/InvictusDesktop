@@ -15,6 +15,11 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.TextField;
 import Entities.Reclamation;
 import Services.ReclamationServices;
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -31,25 +36,31 @@ public class StatisticsController implements Initializable {
     private CategoryAxis y;
     @FXML
     private TextField fd;
+    @FXML
+    private Button b2;
+    @FXML
+    private AnchorPane recpane;
 
     /**
      * Initializes the controller class.
      */
-    
-       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         ReclamationServices rs = new ReclamationServices();
+        ReclamationServices rs = new ReclamationServices();
         Reclamation r = new Reclamation();
         BarChart.Series set1 = new BarChart.Series<>();
-        
-        fd.setText("vous avez "+rs.getNbrReclamation()+"reclamation") ;
-       
-       
-        set1.getData().add(new BarChart.Data("1",rs.getNbrReclamation()));
-        
+
+        fd.setText("vous avez " + rs.getNbrReclamation() + "reclamation");
+
+        set1.getData().add(new BarChart.Data("1", rs.getNbrReclamation()));
+
         rt.getData().addAll(set1);
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    private void back1(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Reclamation.fxml"));
+        recpane.getChildren().setAll(pane);
+    }
 }

@@ -211,10 +211,31 @@ public class FXMLProfilePassagerController implements Initializable {
         //  User u = us.findById(Id.user);
     }
 
-    @FXML
     private void Avis(ActionEvent event) throws IOException {
         
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/rating.fxml"));
         ProfilePassager.getChildren().setAll(pane);
     }
+    
+    
+
+    @FXML
+    private void flights(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/GestionVolsUser.fxml"));
+        ProfilePassager.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Feedbacks(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/menu.fxml"));
+        ProfilePassager.getChildren().setAll(pane);
+    }
+
+    @FXML
+    private void Profile(ActionEvent event) throws IOException {
+        
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLProfilePassager.fxml"));
+        ProfilePassager.getChildren().setAll(pane);
+    }
+    
 }

@@ -112,5 +112,6 @@
       <Button fx:id="BtnChat" layoutX="670.0" layoutY="598.0" mnemonicParsing="false" onAction="#msg" prefHeight="45.0" prefWidth="117.0" text="Chat" />
       <Button layoutX="821.0" layoutY="603.0" mnemonicParsing="false" onAction="#pdf" prefHeight="38.0" prefWidth="144.0" text="Convertir PDF   " />
       <Button layoutX="1002.0" layoutY="603.0" mnemonicParsing="false" onAction="#mail" prefHeight="38.0" prefWidth="144.0" text="envoyer" />
+      <Button fx:id="statBtn" layoutX="524.0" layoutY="553.0" mnemonicParsing="false" onAction="#stat" prefHeight="45.0" prefWidth="117.0" text="Statistiques" />
    </children>
 </AnchorPane>
