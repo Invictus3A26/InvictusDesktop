@@ -6,34 +6,36 @@
 package Services;
 
 import Tools.DataSource;
-import entities.Bagages;
+import entities.Bagage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 
 
-public class BagagesCrud implements Iservice <Bagages> {
+public class BagagesCrud implements Iservice <Bagage> {
     
     private Connection connection;
     private Statement ste;
     private PreparedStatement pst;
     private ResultSet rs;
-    private List<Bagages> list = new ArrayList<>();
+    private List<Bagage> list = new ArrayList<>();
 
 
     public BagagesCrud() {
         connection=DataSource.getInstance().getCnx();        
     }
     
-     public void ajouterBagage(Bagages b){
-        String requete="insert into bagages (poidsS,poidsM,num_valise) values ('"+b.getPoidsS()+"','"+b.getPoidsM()+"','"+b.getNum_valise()+"')";
+     public void ajouterBagage(Bagage b){
+        String requete="insert into bagage (poidsS,poidsM,num_valise,poids,dimension) values ('"+b.getPoidsS()+"','"+b.getPoidsM()+"','"+b.getNum_valise()+"','"+b.getPoids()+"','"+b.getDimension()+"')";
         
         try {
             ste=connection.createStatement();
@@ -43,8 +45,8 @@ public class BagagesCrud implements Iservice <Bagages> {
         }
         
     }
-     public void ajouterBagagesPst(Bagages b){
-       String requete="insert into bagages (poidsS,poidsM,num_valise) values (?,?,?)";
+     public void ajouterBagagesPst(Bagage b){
+       String requete="insert into bagage (poidsS,poidsM,num_valise,poids,dimension) values (?,?,?,?,?)";
        
         try {
             pst=connection.prepareStatement(requete);
@@ -52,36 +54,43 @@ public class BagagesCrud implements Iservice <Bagages> {
             pst.setString(1, b.getPoidsS());
             pst.setString(2, b.getPoidsM());
             pst.setInt(3, b.getNum_valise());
-
+            pst.setString(4, b.getPoids());
+            pst.setString(5, b.getDimension());
             pst.executeUpdate();
             
         } catch (SQLException ex) {
             Logger.getLogger(BagagesCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-     public void delete(int id){
-        String requete="delete from bagages where id ="+id;
-        
+     public int supprimerbagage(int id)throws SQLException {
+ 
+            
+     int i = 0;
         try {
-            ste=connection.createStatement();
-            ste.executeUpdate(requete);
+            Statement ste = connection.createStatement();
+            String sql = "DELETE FROM bagage WHERE id=" + id;
+            i = ste.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(BagagesCrud.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
+        return i;
     }
+
      
      
      
-    public void modifierBagages(long id , Bagages b) {
+    public void modifierBagages(long id , Bagage b) {
 
         try {
             PreparedStatement ste;
-            ste=connection.prepareStatement("UPDATE `bagages` SET `poidsS`=?,"
+            ste=connection.prepareStatement("UPDATE `bagage` SET `poidsS`=?,"
                     + "`poidsM`=?,`num_valise`=? WHERE `id`=?"  );
             ste.setString(1, b.getPoidsS());
             ste.setString(2, b.getPoidsM());
             ste.setInt(3, b.getNum_valise());
             ste.setLong(4, id);
+            ste.setString(4, b.getPoids());
+            ste.setString(3, b.getDimension());
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -92,17 +101,50 @@ public class BagagesCrud implements Iservice <Bagages> {
 
 
     }
-     public List<Bagages> getAllBagages() throws SQLException {
-        String req = "SELECT * FROM Bagages";
+     public List<Bagage> getAllBagages() throws SQLException {
+        String req = "SELECT * FROM Bagage";
         ste = connection.createStatement();
         rs = ste.executeQuery(req);
         while (rs.next()) {
-            list.add(new Bagages(rs.getInt("id"), rs.getString("poidsS"), rs.getString("poidsM"), rs.getInt("Num_valise")));
+            list.add(new Bagage(rs.getInt("id"), rs.getString("poidsS"), rs.getString("poidsM"), rs.getInt("Num_valise") , rs.getString("poids"), rs.getString("dimension")));
         }
         return list;
     }
-    
-     /* public  void modifierBagages(long id , Bagages b) {
+      public Bagage findById(long id){
+         Bagage u =new Bagage();
+          try {
+        ste = connection.createStatement();
+            String query="select * from user where id="+id;
+            ResultSet rs=ste.executeQuery(query);
+            if(rs.next()){
+                
+                u.setPoidsM(rs.getString("PoidsM"));
+                u.setPoidsS(rs.getString("poidsS"));
+                u.setDimension(rs.getString("dimension"));
+                u.setPoids(rs.getString("Poids"));
+                u.setNum_valise(rs.getInt("Num_valise"));
+               
+            }else{
+                System.out.println("bagage n existe pas");
+                
+              
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BagagesCrud.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return u;
+        
+    }
+      
+      public List<Bagage> sortByNum_valise() throws SQLException{
+         List<Bagage> bagages=getAllBagages();
+         List<Bagage> resultat=bagages.stream().sorted(Comparator.comparing(Bagage::getNum_valise)).collect(Collectors.toList());
+         return resultat;
+     }
+
+
+      
+     /* public  void modifierBagages(long id , Bagage b) {
        
             
             String requete = "UPDATE `bagages` SET `poidsS`=?,"
@@ -123,18 +165,18 @@ public class BagagesCrud implements Iservice <Bagages> {
           
 
     }*/
-    /*public Bagages BagageParId(int id_b) throws SQLException {
+    /*public Bagage BagageParId(int id_b) throws SQLException {
     List<Bagages> arr=new ArrayList<>();
     //JSONArray roles = new JSONArray();
         
     ste = connection.createStatement();
     ResultSet rs=ste.executeQuery("select * from personnel where id='"+id_b+"'");
-    Bagages b = new Bagages();
+    Bagage b = new Bagage();
      while (rs.next()) {                
               int id=rs.getInt("id");
               
                 
-                b= new Bagages(id, poidsS , poidsM , num_valise);
+                b= new Bagage(id, poidsS , poidsM , num_valise);
   
                
      }
@@ -165,28 +207,28 @@ public class BagagesCrud implements Iservice <Bagages> {
     
 
     @Override
-    public void ajouter(Bagages t) {
+    public void ajouter(Bagage t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
     @Override
-    public Bagages readById(int id) {
+    public Bagage readById(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Bagages t) {
+    public void delete(Bagage t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void modifier(Bagages t) {
+    public void modifier(Bagage t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Bagages> readAll() {
+    public List<Bagage> readAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

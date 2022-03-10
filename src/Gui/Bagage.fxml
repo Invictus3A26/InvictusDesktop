@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.BagageController">
+     <top>
+      <HBox prefHeight="49.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="31.0" prefWidth="1046.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox minWidth="117.0" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: #AE0723;" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="992.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="49.0" prefWidth="223.0">
+                           <children>
+                             
+                              
+                           </children></HBox>
+                        <HBox prefHeight="50.0" prefWidth="496.0">
+                           <children>
+                              <Button layoutX="131.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white; -fx-border-style: hidden hidden solid hidden; -fx-border-width: 3; -fx-border-color: #AE0723;" text="bagage" />
+                              <Button layoutX="252.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: white;" text="FraisBagage" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxWidth="86.0" minWidth="117.0" prefHeight="580.0" prefWidth="117.0" style="-fx-background-color: #AE0723;" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER">
+                     <children>
+                       
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="268.0" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER">
+                     <children>
+                       
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="297.0" prefHeight="57.0" prefWidth="50.0" VBox.vgrow="NEVER">
+                     
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="929.0" style="-fx-background-color: white;">
+               <padding>
+                  
+               </padding>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#editBagage" text="Modifier">
+                     <HBox.margin>
+                       
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#deleteBagage" text="Supprimer">
+                     <HBox.margin>
+                       
+                     </HBox.margin></Button>
+                  <TextField fx:id="search" alignment="BOTTOM_LEFT" onKeyTyped="#qq" prefHeight="22.0" prefWidth="352.0" promptText="Rechercher...">
+                     <HBox.margin>
+                        
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TableView fx:id="TableBagage" editable="true" minHeight="-Infinity" prefHeight="213.0" prefWidth="909.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
+                  <TableColumn fx:id="num_valise" prefWidth="81.33334350585938" text="num_valise" />
+                  <TableColumn fx:id="PoidsS" minWidth="2.0" prefWidth="87.0" text="PoidsS" />
+                  <TableColumn fx:id="poidsM" prefWidth="91.0" text="poidsM" />
+                  <TableColumn fx:id="poids" prefWidth="133.0" text="poids" />
+                  <TableColumn fx:id="dimension" prefWidth="133.0" text="dimension" />
+               </columns>
+               <VBox.margin>
+                 
+               </VBox.margin>
+               <columnResizePolicy>
+                 
+               </columnResizePolicy>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="251.0" prefWidth="929.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane onKeyTyped="#qq" prefHeight="250.0" prefWidth="437.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                     <tabs>
+                        <Tab text="Gestion de bagage ">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox prefHeight="269.0" prefWidth="431.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="431.0" VBox.vgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="bagageInputid" prefHeight="25.0" prefWidth="201.0" promptText="Id">
+                                                   <HBox.margin>
+                                                      
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="bagageInputnum_valise" prefHeight="25.0" prefWidth="200.0" promptText="num_valise">
+                                                   <HBox.margin>
+                                                   
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="39.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="bagageInputpoidsS" prefHeight="25.0" prefWidth="201.0" promptText="poidsS">
+                                                   <HBox.margin>
+                                                      
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="bagageInputpoidsM" prefHeight="25.0" prefWidth="200.0" promptText="poidsM">
+                                                   <HBox.margin>
+                                                     
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="72.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="bagageInputpoids" prefHeight="25.0" prefWidth="201.0" promptText="poids">
+                                                   <HBox.margin>
+                                                     
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="bagageInputdimension" prefHeight="25.0" prefWidth="200.0" promptText="dimension">
+                                                   <HBox.margin>
+                                                     
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="138.0" prefHeight="33.0" prefWidth="431.0" VBox.vgrow="ALWAYS" />
+                                          <HBox alignment="CENTER" prefHeight="84.0" prefWidth="431.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <Button fx:id="btnSaveBagage" mnemonicParsing="false" onAction="#saveBagage" prefHeight="40.0" prefWidth="410.0" style="-fx-background-color: #AE0723;" text="Enregistrer" textFill="WHITE" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </content></Tab>
+                     </tabs>
+                  </TabPane>
+                  <TabPane prefHeight="250.0" prefWidth="504.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
