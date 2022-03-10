@@ -88,7 +88,7 @@ public class Home implements Initializable {
     @FXML
     private void companies(ActionEvent event) throws IOException {
 
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLcompanies.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Test.fxml"));
         bagages.getChildren().setAll(pane);
     }
 

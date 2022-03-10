@@ -7,6 +7,7 @@ package Services;
 
 import Tools.MyConnexion;
 import Entities.Bagage;
+import GUI.Id;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,8 +36,7 @@ public class BagagesCrud implements Iservice <Bagage> {
     }
     
      public void ajouterBagage(Bagage b){
-        String requete="insert into bagage (poidsS,poidsM,num_valise,poids,dimension) values ('"+b.getPoidsS()+"','"+b.getPoidsM()+"','"+b.getNum_valise()+"','"+b.getPoids()+"','"+b.getDimension()+"')";
-        
+ String requete = "insert into bagage (poidsS,poidsM,num_valise,poids,dimension,id_userr) values ('" + b.getPoidsS() + "','" + b.getPoidsM() + "','" + b.getNum_valise() + "','" + b.getPoids() + "','" + b.getDimension() + "','" + Id.user + "')";        
         try {
             ste=connection.createStatement();
             ste.executeUpdate(requete);

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GestionCompagnieController">
+   <children>
+      <ImageView fitHeight="962.0" fitWidth="1570.0" layoutX="-118.0" layoutY="-41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/1586358.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="TCompagnie" editable="true" layoutX="395.0" layoutY="76.0" minHeight="-Infinity" prefHeight="304.0" prefWidth="980.0" style="-fx-background-color: transparent;">
+         <columns>
+            <TableColumn fx:id="NomCom" prefWidth="145.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Nom" />
+            <TableColumn fx:id="Link" minWidth="2.0" prefWidth="110.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Site Web" />
+            <TableColumn fx:id="Pays" prefWidth="61.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Pays" />
+            <TableColumn fx:id="NumTel" prefWidth="99.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Num Tel" />
+            <TableColumn fx:id="Siege" prefWidth="76.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Siege" />
+            <TableColumn fx:id="AeBase" prefWidth="106.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="AeBase" />
+            <TableColumn fx:id="NumP" prefWidth="139.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Num Passagers" />
+            <TableColumn fx:id="Description" minWidth="0.0" prefWidth="244.0" style="-fx-background-color: #e2e2f6; -fx-border-color: black;" text="Description" />
+         </columns>
+         <columnResizePolicy>
+
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="CI" layoutX="538.0" layoutY="501.0" prefHeight="33.0" prefWidth="287.0" promptText="Code_IATA" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <TextField fx:id="NM" layoutX="1033.0" layoutY="501.0" prefHeight="33.0" prefWidth="241.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <TextField fx:id="SW" layoutX="538.0" layoutY="560.0" prefHeight="33.0" prefWidth="287.0" promptText="Site Web" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Label blendMode="MULTIPLY" layoutX="357.0" layoutY="506.0" prefHeight="21.0" prefWidth="145.0" text="Code Compagnie :" />
+      <Label blendMode="MULTIPLY" layoutX="868.0" layoutY="506.0" prefHeight="21.0" prefWidth="145.0" text="Nom Compagnie :" />
+      <Label blendMode="MULTIPLY" layoutX="357.0" layoutY="565.0" prefHeight="21.0" prefWidth="145.0" text="Site officiel :" />
+      <Label blendMode="MULTIPLY" layoutX="868.0" layoutY="565.0" prefHeight="21.0" prefWidth="145.0" text="Pays Compagnie :" />
+      <ChoiceBox fx:id="PS" layoutX="1033.0" layoutY="560.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <TextField fx:id="NT" layoutX="538.0" layoutY="614.0" prefHeight="33.0" prefWidth="287.0" promptText="Numéro de téléphone" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Label blendMode="MULTIPLY" layoutX="357.0" layoutY="619.0" prefHeight="21.0" prefWidth="157.0" text="Numéro de téléphone :" />
+      <TextField fx:id="SG" layoutX="1033.0" layoutY="603.0" prefHeight="33.0" prefWidth="241.0" promptText="Siege" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Label blendMode="MULTIPLY" layoutX="905.0" layoutY="604.0" prefHeight="21.0" prefWidth="72.0" text="Siège :" />
+      <TextField fx:id="ADB" layoutX="538.0" layoutY="664.0" prefHeight="31.0" prefWidth="287.0" promptText="Aeroport de base" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Label blendMode="MULTIPLY" layoutX="357.0" layoutY="670.0" prefHeight="21.0" prefWidth="157.0" text="Aéroport de Base :" />
+      <TextField fx:id="NP" layoutX="1033.0" layoutY="664.0" prefHeight="33.0" prefWidth="241.0" promptText="Num Passagers" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Label blendMode="MULTIPLY" layoutX="856.0" layoutY="670.0" prefHeight="21.0" prefWidth="157.0" text="Nombre de passagers :" />
+      <Label blendMode="MULTIPLY" layoutX="357.0" layoutY="739.0" prefHeight="21.0" prefWidth="157.0" text="Description :" />
+      <TextArea fx:id="DS" blendMode="MULTIPLY" layoutX="538.0" layoutY="711.0" prefHeight="118.0" prefWidth="485.0" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <Button fx:id="btnSaveCompagnie" blendMode="DARKEN" layoutX="1057.0" layoutY="724.0" mnemonicParsing="false" onAction="#saveCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #65a9a8;" text="Save" textFill="WHITE" />
+      <Button fx:id="btneupdateCompagnie1" blendMode="DARKEN" layoutX="1057.0" layoutY="780.0" mnemonicParsing="false" onAction="#UpdateCompagnie" prefHeight="31.0" prefWidth="217.0" style="-fx-background-color: #65a9a8;" text="Update" textFill="WHITE" />
+      <ImageView fitHeight="78.0" fitWidth="90.0" layoutX="1336.0" layoutY="701.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/pdf.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1329.0" layoutY="787.0" style="-fx-background-color: transparent;" text="Save as PDF" />
+      <Button layoutX="1301.0" layoutY="673.0" mnemonicParsing="false" onAction="#pdf" prefHeight="147.0" prefWidth="145.0" style="-fx-background-color: transparent;" />
+      <ImageView fitHeight="68.0" fitWidth="43.0" layoutX="1388.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/refresh.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1388.0" layoutY="65.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="55.0" prefWidth="43.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="BtnEditCompagnie" layoutX="516.0" layoutY="11.0" mnemonicParsing="false" onAction="#editCompagnie" prefHeight="55.0" prefWidth="116.0" text="Modifier" visible="false" />
+      <Label layoutX="702.0" layoutY="38.0" prefHeight="21.0" prefWidth="137.0" text="Click To Delete :" />
+      <Button layoutX="825.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteCompagnie" prefHeight="72.0" prefWidth="137.0" text="Delete" visible="false" />
+      <ImageView fitHeight="78.0" fitWidth="72.0" layoutX="538.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/edit.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="65.0" layoutX="825.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/delete.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="411.0" layoutY="38.0" prefHeight="21.0" prefWidth="137.0" text="Click To Modify:" />
+      <ImageView fitHeight="63.0" fitWidth="49.0" layoutX="1225.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/return.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1097.0" layoutY="37.0" prefHeight="21.0" prefWidth="137.0" text="Return To List :" />
+      <Button layoutX="1205.0" layoutY="16.0" mnemonicParsing="false" onAction="#Back" prefHeight="49.0" prefWidth="97.0" style="-fx-background-color: tranparent;" />
+      <TextField fx:id="recherchetxt" layoutX="905.0" layoutY="31.0" onKeyTyped="#chercher" promptText="Recherche" style="-fx-background-color: transparent; -fx-border-color: black;" />
+      <ImageView fitHeight="43.0" fitWidth="29.0" layoutX="1065.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/search.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Err" layoutX="557.0" layoutY="593.0" prefHeight="21.0" prefWidth="202.0" text="Int Please !!!" textFill="#ff2626" visible="false" />
+      <Label fx:id="Err1" layoutX="1287.0" layoutY="670.0" prefHeight="21.0" prefWidth="157.0" text="Int Please !!!" textFill="#ff2626" visible="false" />
+   </children>
+</AnchorPane>

@@ -6,7 +6,7 @@
 package Services;
 
 import Entities.AvionModel;
-import Tools.MyConnexion;
+import Tools.DBConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
+//import org.controlsfx.control.Notifications;
 /**
  *
  * @author Anis
@@ -27,7 +27,7 @@ public class AvionService {
     Connection cnx;
 
     public AvionService() {
-        cnx=MyConnexion.getInstance().getCnx();
+        cnx=DBConnexion.getInstance().getCnx();
     }
  public void ajouterAvion(AvionModel A){
           String sql="INSERT INTO avion(CodeAvion,TypeA,Model,PassagerN,CodeC) VALUES ('"+A.getCodeAvion()+"','"+A.getTypeA()+"','"+A.getModel()+"','"+A.getPassagerN()+"','"+A.getCodeC()+"')";
@@ -35,6 +35,13 @@ public class AvionService {
             Statement ste = cnx.createStatement();
             ste.executeUpdate(sql);
             System.out.println("Avion Ajoutée");
+           /* Notifications notifications=Notifications.create();
+
+        notifications.text("Avion est Ajouter");
+        notifications.title("Success Message");
+
+     
+        notifications.show();*/
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -71,6 +78,13 @@ public class AvionService {
               ste.setString(1, CodeAvion);
               ste.executeUpdate();
             System.out.println("Compagnie Supprimer");
+           /*  Notifications notifications=Notifications.create();
+
+        notifications.text("Avion est supprimer");
+        notifications.title("Success Message");
+
+     
+        notifications.show();*/
          }catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -89,6 +103,13 @@ public void modifierAvion(String CodeAvion, AvionModel A) {
               ste.setString(5,A.getCodeC());
             ste.setString(6, CodeAvion);
             ste.executeUpdate();
+         /*    Notifications notifications=Notifications.create();
+
+        notifications.text("Avion est Modifier");
+        notifications.title("Success Message");
+
+     
+        notifications.show();*/
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }

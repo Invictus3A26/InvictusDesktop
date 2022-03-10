@@ -83,7 +83,7 @@ public class HomeController implements Initializable {
     @FXML
     private void companies(ActionEvent event) throws IOException {
 
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLcompanies.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Test.fxml"));
         Infra.getChildren().setAll(pane);
     }
 

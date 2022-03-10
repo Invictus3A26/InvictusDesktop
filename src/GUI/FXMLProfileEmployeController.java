@@ -216,7 +216,7 @@ public class FXMLProfileEmployeController implements Initializable {
     private void companies(ActionEvent event) throws IOException {
         
         System.out.println("test");
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/FXMLcompanies.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Test.fxml"));
         ProfileEmploye.getChildren().setAll(pane);
 
     }
