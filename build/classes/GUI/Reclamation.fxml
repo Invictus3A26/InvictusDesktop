@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="735.0" prefWidth="1430.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReclamationController">
+   <children>
+      <TextField fx:id="id_nbr" layoutX="155.0" layoutY="128.0" />
+      <Label fx:id="nom" layoutX="17.0" layoutY="214.0" prefHeight="17.0" prefWidth="109.0" text="Nom" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="prenom" layoutX="17.0" layoutY="256.0" prefHeight="17.0" prefWidth="109.0" text="Prenom" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id_nom" layoutX="155.0" layoutY="214.0" />
+      <Label fx:id="date" layoutX="17.0" layoutY="489.0" prefHeight="17.0" prefWidth="109.0" text="Date" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id_prenom" layoutX="155.0" layoutY="256.0" />
+      <Button layoutX="20.0" layoutY="601.0" onAction="#ajouterReclamation" style="-fx-background-color: #26d094;" text="Insert" textFill="#f0fff9">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableviewreclamation" layoutX="355.0" layoutY="89.0" onMouseClicked="#getSelected" prefHeight="430.0" prefWidth="1047.0">
+         <columns>
+            <TableColumn fx:id="id1" prefWidth="52.0" text="id" />
+            <TableColumn fx:id="nb" prefWidth="117.0" text="nbr" />
+            <TableColumn fx:id="t" prefWidth="84.0" text="tel" />
+            <TableColumn fx:id="n" prefWidth="113.0" text="nom" />
+            <TableColumn fx:id="p" prefWidth="113.0" text="prenom" />
+            <TableColumn fx:id="e" prefWidth="113.0" text="email" />
+            <TableColumn fx:id="d" prefWidth="113.0" text="description" />
+            <TableColumn fx:id="ty" prefWidth="113.0" text="type" />
+            <TableColumn fx:id="et" prefWidth="113.0" text="etat" />
+            <TableColumn fx:id="da" prefWidth="113.0" text="Date" />
+         </columns>
+      </TableView>
+      <Button layoutX="251.0" layoutY="601.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: ff0000;" text="Delete" textFill="#fff3f3">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="126.0" layoutY="601.0" mnemonicParsing="false" onAction="#modifierReclamation" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #1a00e1;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="69.0" prefWidth="434.0" text="Gestion des Reclamations">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="tel" layoutX="21.0" layoutY="173.0" prefHeight="30.0" prefWidth="76.0" text="Tel" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbr" layoutX="21.0" layoutY="128.0" prefHeight="30.0" prefWidth="76.0" text="Nbr" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="email" layoutX="21.0" layoutY="302.0" prefHeight="30.0" prefWidth="76.0" text="Email" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="desc" layoutX="17.0" layoutY="354.0" prefHeight="30.0" prefWidth="109.0" text="Description" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="type" layoutX="23.0" layoutY="396.0" prefHeight="30.0" prefWidth="76.0" text="Type" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="etat" layoutX="21.0" layoutY="441.0" prefHeight="30.0" prefWidth="76.0" text="Etat" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id_email" layoutX="155.0" layoutY="302.0" />
+      <TextField fx:id="id_description" layoutX="155.0" layoutY="354.0" />
+      <TextField fx:id="id_type" layoutX="155.0" layoutY="396.0" />
+      <TextField fx:id="id_etat" layoutX="155.0" layoutY="441.0" />
+      <TextField fx:id="id_tel" layoutX="155.0" layoutY="173.0" />
+      <DatePicker fx:id="dpdate" layoutX="157.0" layoutY="496.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="filterField" layoutX="421.0" layoutY="605.0" onKeyTyped="#chercher" />
+   </children>
+</AnchorPane>
